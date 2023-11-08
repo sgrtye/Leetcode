@@ -17,20 +17,24 @@ from typing import *
 # @lc code=start
 class Solution:
     def trap(self, height: List[int]) -> int:
-        left_max = [0] * len(height)
-        right_max = [0] * (len(height) + 1)
-        water_amount = [0] * len(height)
+        left_max = height[0]
+        right_max = height[-1]
+        water_amount = 0
 
-        for i in range(len(height)):
-            left_max[i] = max(left_max[i - 1], height[i])
+        l = 0
+        r = len(height) - 1
         
-        for i in range(len(height) - 1, -1, -1):
-            right_max[i] = max(right_max[i + 1], height[i])
-        
-        for i in range(1, len(height) - 1):
-            water_amount[i] = max(min(left_max[i - 1], right_max[i + 1]) - height[i], 0)
-        
-        return sum(water_amount)
+        while l < r:
+            if left_max <= right_max:
+                l += 1
+                water_amount += max(left_max - height[l], 0)
+                left_max = max(left_max, height[l])
+            else:
+                r -= 1
+                water_amount += max(right_max - height[r], 0)
+                right_max = max(right_max, height[r])
+
+        return water_amount
 
 # @lc code=end
 
@@ -43,6 +47,10 @@ class Solution:
 
 # @lcpr case=start
 # [4,2,0,3,2,5]\n
+# @lcpr case=end
+
+# @lcpr case=start
+# [5,5,1,7,1,1,5,2,7,6]\n
 # @lcpr case=end
 
 #
