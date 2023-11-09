@@ -16,16 +16,22 @@ from typing import *
 # @lcpr-template-end
 # @lc code=start
 class Solution:
-    def generateParenthesis(self, n: int) -> List[str]:
+    def getParenthesis(self, n: int) -> List[str]:
+        if self.parenthesis_list[n]: return self.parenthesis_list[n]
         if n == 0: return ['']
 
         result = []
         for i in range(n):
-            for left in self.generateParenthesis(i):
-                for right in self.generateParenthesis(n - i - 1):
+            for left in self.getParenthesis(i):
+                for right in self.getParenthesis(n - i - 1):
                     result.append(f'{left}({right})')
         
         return result
+
+    def generateParenthesis(self, n: int) -> List[str]:
+        self.parenthesis_list = [None] * (n + 1)
+        
+        return self.getParenthesis(n)
             
 # @lc code=end
 
