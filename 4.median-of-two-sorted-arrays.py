@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem4 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -12,6 +13,7 @@ from typing import *
 
 
 # @lcpr-template-start
+
 
 # @lcpr-template-end
 # @lc code=start
@@ -29,16 +31,28 @@ class Solution:
             mid = l + ((r - l) // 2)
             other = half_size - mid - 2
 
-            short_left = short[mid] if 0 <= mid <= len(short) - 1 else float('-infinity')
-            short_right = short[mid + 1] if 0 <= mid + 1 <= len(short) - 1 else float('infinity')
-            long_left = long[other] if 0 <= other <= len(long) - 1 else float('-infinity')
-            long_right = long[other + 1] if 0 <= other + 1 <= len(long) - 1 else float('infinity')
+            short_left = (
+                short[mid] if 0 <= mid <= len(short) - 1 else float("-infinity")
+            )
+            short_right = (
+                short[mid + 1] if 0 <= mid + 1 <= len(short) - 1 else float("infinity")
+            )
+            long_left = (
+                long[other] if 0 <= other <= len(long) - 1 else float("-infinity")
+            )
+            long_right = (
+                long[other + 1]
+                if 0 <= other + 1 <= len(long) - 1
+                else float("infinity")
+            )
 
             if short_left <= long_right and long_left <= short_right:
                 if (len(long) + len(short)) % 2 == 1:
                     return min(short_right, long_right)
                 else:
-                    return (max(short_left, long_left) + min(short_right, long_right)) / 2
+                    return (
+                        max(short_left, long_left) + min(short_right, long_right)
+                    ) / 2
             elif short_left > long_right:
                 r = mid - 1
             else:
@@ -46,7 +60,6 @@ class Solution:
 
 
 # @lc code=end
-
 
 
 #
@@ -59,4 +72,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

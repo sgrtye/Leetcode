@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -23,8 +24,9 @@ class Solution:
                 l += 1
             else:
                 return [l + 1, r + 1]
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -41,4 +43,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

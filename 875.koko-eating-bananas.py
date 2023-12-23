@@ -5,6 +5,7 @@
 # [875] Koko Eating Bananas
 #
 
+
 # @lc code=start
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
@@ -19,7 +20,7 @@ class Solution:
 
             for p in piles:
                 totalTime += p // mid if p % mid == 0 else (p // mid) + 1
-                
+
             if totalTime <= h:
                 res = mid
                 r = mid - 1
@@ -28,8 +29,8 @@ class Solution:
 
         return res
 
-# @lc code=end
 
+# @lc code=end
 
 
 #
@@ -46,4 +47,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

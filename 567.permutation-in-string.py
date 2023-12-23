@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem567 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -12,6 +13,7 @@ from typing import *
 
 
 # @lcpr-template-start
+
 
 # @lcpr-template-end
 # @lc code=start
@@ -32,22 +34,20 @@ class Solution:
 
             if current == s1_dict:
                 return True
-            
+
             while current.get(char, 0) > s1_dict.get(char, 0):
                 tmp = s2[l]
 
                 current[tmp] = current[tmp] - 1
                 if current[tmp] == 0:
                     del current[tmp]
-                    
+
                 l += 1
 
         return False
 
 
-        
 # @lc code=end
-
 
 
 #
@@ -60,4 +60,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

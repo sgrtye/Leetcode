@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -23,10 +24,11 @@ class Solution:
                 l += 1
             else:
                 r -= 1
-        
-        return max_Area
-# @lc code=end
 
+        return max_Area
+
+
+# @lc code=end
 
 
 #
@@ -39,4 +41,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

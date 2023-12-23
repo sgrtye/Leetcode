@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for a binary tree node.
@@ -18,12 +19,13 @@
 #         self.right = right
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        if not root: return 0
+        if not root:
+            return 0
 
         return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
-        
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -36,4 +38,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

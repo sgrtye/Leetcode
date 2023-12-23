@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem206 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -12,6 +13,7 @@ from typing import *
 
 
 # @lcpr-template-start
+
 
 # @lcpr-template-end
 # @lc code=start
@@ -30,11 +32,11 @@ class Solution:
             curr.next = prev
             prev = curr
             curr = temp
-            
-        return prev
-            
-# @lc code=end
 
+        return prev
+
+
+# @lc code=end
 
 
 #
@@ -51,4 +53,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

@@ -8,12 +8,14 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class TrieNode:
     def __init__(self):
         self.children = dict()
         self.end = False
+
 
 class WordDictionary:
     def __init__(self):
@@ -33,7 +35,7 @@ class WordDictionary:
         for c in word:
             new_list = []
 
-            if c == '.':
+            if c == ".":
                 for d in current:
                     new_list.extend(d.children.values())
                 current = new_list
@@ -49,8 +51,9 @@ class WordDictionary:
         for d in current:
             if d.end:
                 return True
-        
+
         return False
+
 
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()

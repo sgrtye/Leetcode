@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem98 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -27,11 +28,11 @@ class Solution:
         if node.left:
             if not self.inOrder(node.left):
                 return False
-        
+
         if self.list:
             if node.val <= self.list[-1]:
                 return False
-        
+
         self.list.append(node.val)
 
         if node.right:
@@ -39,11 +40,13 @@ class Solution:
                 return False
 
         return True
-    
+
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        if not root: return True
+        if not root:
+            return True
         self.list = []
         return self.inOrder(root)
+
 
 # @lc code=end
 

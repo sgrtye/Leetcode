@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -19,13 +20,13 @@ class Solution:
             while stack and t > temperatures[stack[-1]]:
                 index = stack.pop()
                 result[index] = i - index
-        
+
             stack.append(i)
-        
+
         return result
 
-# @lc code=end
 
+# @lc code=end
 
 
 #
@@ -42,4 +43,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

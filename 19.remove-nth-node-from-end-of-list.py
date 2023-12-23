@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for singly-linked list.
@@ -21,19 +22,20 @@ class Solution:
         node.next = head
         head = node
         pointer = node
-    
+
         for _ in range(n):
             pointer = pointer.next
-        
+
         while pointer.next:
             pointer = pointer.next
             head = head.next
-        
+
         head.next = head.next.next
 
         return node.next
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -50,4 +52,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

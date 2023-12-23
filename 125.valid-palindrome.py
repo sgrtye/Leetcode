@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem125 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #

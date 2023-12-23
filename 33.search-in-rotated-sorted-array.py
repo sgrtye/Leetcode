@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem33 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -12,6 +13,7 @@ from typing import *
 
 
 # @lcpr-template-start
+
 
 # @lcpr-template-end
 # @lc code=start
@@ -37,7 +39,7 @@ class Solution:
                     break
                 else:
                     r = mid - 1
-        
+
         while l <= r:
             mid = l + ((r - l) // 2)
 
@@ -47,11 +49,11 @@ class Solution:
                 r = mid - 1
             else:
                 l = mid + 1
-        
+
         return -1
 
-# @lc code=end
 
+# @lc code=end
 
 
 #
@@ -68,4 +70,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

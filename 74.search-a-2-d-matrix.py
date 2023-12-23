@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem74 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -12,6 +13,7 @@ from typing import *
 
 
 # @lcpr-template-start
+
 
 # @lcpr-template-end
 # @lc code=start
@@ -27,19 +29,18 @@ class Solution:
             mid = l + ((r - l) // 2)
 
             value = matrix[mid // col][mid % col]
-            
+
             if value < target:
                 l = mid + 1
             elif value > target:
                 r = mid - 1
             else:
                 return True
-        
-        return False
-            
-        
-# @lc code=end
 
+        return False
+
+
+# @lc code=end
 
 
 #
@@ -56,4 +57,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

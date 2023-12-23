@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for a binary tree node.
@@ -18,13 +19,15 @@
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if not root: return root
+        if not root:
+            return root
         root.left, root.right = root.right, root.left
         self.invertTree(root.left)
         self.invertTree(root.right)
         return root
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -41,4 +44,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

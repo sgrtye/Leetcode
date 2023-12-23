@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem138 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -23,14 +24,15 @@ from typing import *
 #         self.next = next
 #         self.random = random
 
+
 class Solution:
-    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+    def copyRandomList(self, head: "Optional[Node]") -> "Optional[Node]":
         res = Node(0)
 
         # Create all the copied nodes, then link both links together
         copied_head = res
         while head:
-            new = Node(head.val, random = head)
+            new = Node(head.val, random=head)
 
             copied_head.next = new
             copied_head = copied_head.next
@@ -38,7 +40,7 @@ class Solution:
             tmp = head.next
             head.next = new
             head = tmp
-        
+
         # Correct the copied version by adding the correct random field and removing all the original nodes
         copied_head = res.next
         while copied_head:
@@ -47,10 +49,11 @@ class Solution:
             else:
                 copied_head.random = None
             copied_head = copied_head.next
-        
-        return res.next
-# @lc code=end
 
+        return res.next
+
+
+# @lc code=end
 
 
 #
@@ -71,4 +74,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

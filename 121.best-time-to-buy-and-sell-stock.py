@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -23,10 +24,11 @@ class Solution:
                 l = r
 
             r = r + 1
-        
-        return current_profit
-# @lc code=end
 
+        return current_profit
+
+
+# @lc code=end
 
 
 #
@@ -39,4 +41,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

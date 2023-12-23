@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem853 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -13,12 +14,13 @@ from typing import *
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
     def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
         info = list(zip(position, speed))
-        info.sort(key = lambda x: x[0], reverse = True)
+        info.sort(key=lambda x: x[0], reverse=True)
 
         count = 0
         previous_time = None
@@ -33,11 +35,11 @@ class Solution:
             else:
                 # In this case, the current cat catches to the front car
                 pass
-        
+
         return count
 
-# @lc code=end
 
+# @lc code=end
 
 
 #
@@ -54,4 +56,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

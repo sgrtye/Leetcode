@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for a binary tree node.
@@ -18,16 +19,19 @@
 #         self.right = right
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        if not root: return True
-        if abs(self.maxDepth(root.left) - self.maxDepth(root.right)) > 1: return False
+        if not root:
+            return True
+        if abs(self.maxDepth(root.left) - self.maxDepth(root.right)) > 1:
+            return False
         return self.isBalanced(root.left) and self.isBalanced(root.right)
-            
-            
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
-        if not root: return 0
-        return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
-# @lc code=end
 
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+
+
+# @lc code=end
 
 
 #
@@ -44,4 +48,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem142 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -21,6 +22,7 @@ from typing import *
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         fast = head
@@ -31,16 +33,18 @@ class Solution:
             fast = fast.next.next
             if slow == fast:
                 break
-        
-        if not fast or not fast.next: return None
+
+        if not fast or not fast.next:
+            return None
 
         while fast != head:
             head = head.next
             fast = fast.next
-        
-        return head
-# @lc code=end
 
+        return head
+
+
+# @lc code=end
 
 
 #
@@ -57,4 +61,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

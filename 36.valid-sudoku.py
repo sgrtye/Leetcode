@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -16,18 +17,19 @@ class Solution:
         for i in range(9):
             for j in range(9):
                 element = board[i][j]
-                if element != '.':
+                if element != ".":
                     sub_boards[i].append(element)
                     sub_boards[j + 9].append(element)
-                    sub_boards[i//3*3 + j//3 + 18].append(element)
-        
+                    sub_boards[i // 3 * 3 + j // 3 + 18].append(element)
+
         for sub in sub_boards:
             if len(sub) != len(set(sub)):
                 return False
-        
-        return True
-# @lc code=end
 
+        return True
+
+
+# @lc code=end
 
 
 #
@@ -40,4 +42,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

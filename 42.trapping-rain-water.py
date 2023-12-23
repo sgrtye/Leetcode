@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem42 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -13,6 +14,7 @@ from typing import *
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -23,7 +25,7 @@ class Solution:
 
         l = 0
         r = len(height) - 1
-        
+
         while l < r:
             if left_max <= right_max:
                 l += 1
@@ -36,8 +38,8 @@ class Solution:
 
         return water_amount
 
-# @lc code=end
 
+# @lc code=end
 
 
 #
@@ -54,4 +56,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

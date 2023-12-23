@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for a binary tree node.
@@ -20,7 +21,7 @@ class Solution:
     def helper(self, node: TreeNode, max_number: int) -> None:
         if node.val >= max_number:
             self.good += 1
-        
+
         current_amx = max(max_number, node.val)
 
         if node.left:
@@ -32,9 +33,9 @@ class Solution:
         self.good = 0
         self.helper(root, root.val)
         return self.good
-        
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -51,4 +52,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

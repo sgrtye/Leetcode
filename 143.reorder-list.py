@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem143 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -21,6 +22,8 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
+
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
         """
@@ -32,7 +35,7 @@ class Solution:
         while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
-        
+
         second_half = slow.next
         previous = slow.next = None
 
@@ -41,7 +44,7 @@ class Solution:
             second_half.next = previous
             previous = second_half
             second_half = tmp
-        
+
         first_half = head
         second_half = previous
         current = ListNode()
@@ -53,11 +56,9 @@ class Solution:
             current.next = second_half
             second_half = second_half.next
             current = current.next
-        
+
         if first_half:
             current.next = first_half
-
-
 
 
 # @lc code=end

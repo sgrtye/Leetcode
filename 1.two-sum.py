@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -19,10 +20,11 @@ class Solution:
                 result[target - n] = i
             else:
                 return [i, result[n]]
-        
-        return None
-# @lc code=end
 
+        return None
+
+
+# @lc code=end
 
 
 #
@@ -39,4 +41,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem238 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -13,6 +14,7 @@ from typing import *
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -24,14 +26,15 @@ class Solution:
         suffix = [1] * (len(nums) + 1)
         for i in range(len(nums) - 1, -1, -1):
             suffix[i] = suffix[i + 1] * nums[i]
-        
+
         result = [1] * len(nums)
         for i in range(len(nums)):
             result[i] = prefix[i - 1] * suffix[i + 1]
-        
-        return result
-# @lc code=end
 
+        return result
+
+
+# @lc code=end
 
 
 #
@@ -44,4 +47,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

@@ -12,13 +12,15 @@
 # @lc code=start
 from collections import Counter
 
+
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         count = Counter(nums)
-        frequentList = sorted(count.items(), key = lambda x: x[1], reverse = True)
+        frequentList = sorted(count.items(), key=lambda x: x[1], reverse=True)
         return [x for x, y in frequentList[:k]]
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -31,4 +33,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

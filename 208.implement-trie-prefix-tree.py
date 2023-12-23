@@ -8,12 +8,14 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class TrieNode:
     def __init__(self):
         self.children = [None] * 26
         self.end = False
+
 
 class Trie:
     def __init__(self):
@@ -22,7 +24,7 @@ class Trie:
     def insert(self, word: str) -> None:
         current = self.start
         for c in word:
-            i = ord(c) - ord('a')
+            i = ord(c) - ord("a")
             if not current.children[i]:
                 current.children[i] = TrieNode()
             current = current.children[i]
@@ -31,7 +33,7 @@ class Trie:
     def search(self, word: str) -> bool:
         current = self.start
         for c in word:
-            i = ord(c) - ord('a')
+            i = ord(c) - ord("a")
             if not current.children[i]:
                 return False
             current = current.children[i]
@@ -40,7 +42,7 @@ class Trie:
     def startsWith(self, prefix: str) -> bool:
         current = self.start
         for c in prefix:
-            i = ord(c) - ord('a')
+            i = ord(c) - ord("a")
             if not current.children[i]:
                 return False
             current = current.children[i]
@@ -53,6 +55,3 @@ class Trie:
 # param_2 = obj.search(word)
 # param_3 = obj.startsWith(prefix)
 # @lc code=end
-
-
-

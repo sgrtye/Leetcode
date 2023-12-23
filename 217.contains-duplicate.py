@@ -8,13 +8,15 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         return len(nums) != len(set(nums))
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -31,4 +33,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -28,12 +29,11 @@ class Solution:
                     l += 1
                 current_set.add(s[r])
                 r += 1
-        
-        return ans
-                
-                    
-# @lc code=end
 
+        return ans
+
+
+# @lc code=end
 
 
 #
@@ -50,4 +50,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

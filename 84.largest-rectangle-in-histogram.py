@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem84 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -13,13 +14,14 @@ from typing import *
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
         stack = []
         max_area = 0
-        
+
         for i, h in enumerate(heights):
             if not stack:
                 stack.append((h, i))
@@ -33,13 +35,14 @@ class Solution:
                         tmp = stack.pop()
                         max_area = max(max_area, (i - tmp[1]) * tmp[0])
                     stack.append((h, tmp[1]))
-        
+
         for h, i in stack:
             max_area = max(max_area, (len(heights) - i) * h)
-        
-        return max_area
-# @lc code=end
 
+        return max_area
+
+
+# @lc code=end
 
 
 #
@@ -60,4 +63,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

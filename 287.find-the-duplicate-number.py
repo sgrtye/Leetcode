@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -21,7 +22,7 @@ class Solution:
 
             if slow == fast:
                 break
-        
+
         slow = 0
         while True:
             slow = nums[slow]
@@ -29,8 +30,9 @@ class Solution:
 
             if slow == fast:
                 return slow
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -43,4 +45,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

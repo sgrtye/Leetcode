@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for a binary tree node.
@@ -18,20 +19,22 @@
 #         self.right = right
 class Solution:
     def findMax(self, node: Optional[TreeNode]) -> int:
-        if not node: return 0
+        if not node:
+            return 0
 
         left = self.findMax(node.left)
         right = self.findMax(node.right)
         current_max = max(node.val, left + node.val, right + node.val)
         self.max = max(self.max, max(current_max, left + right + node.val))
         return current_max
-    
+
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        self.max = float('-inf')
+        self.max = float("-inf")
         self.findMax(root)
         return self.max
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -59,4 +62,3 @@ class Solution:
 # [5,4,8,11,null,13,4,7,2,null,null,null,1]
 # @lcpr case=end
 #
-

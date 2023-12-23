@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem22 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -13,34 +14,35 @@ from typing import *
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
     def backTrack(self, left: int, right: int, n: int) -> None:
         if left == right == n:
-            self.result.append(''.join(self.stack))
+            self.result.append("".join(self.stack))
             return
-        
+
         if left < n:
-            self.stack.append('(')
+            self.stack.append("(")
             self.backTrack(left + 1, right, n)
             self.stack.pop()
-        
+
         if right < left:
-            self.stack.append(')')
+            self.stack.append(")")
             self.backTrack(left, right + 1, n)
             self.stack.pop()
 
     def generateParenthesis(self, n: int) -> List[str]:
         self.result = []
         self.stack = []
-        
+
         self.backTrack(0, 0, n)
 
         return self.result
-            
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -53,4 +55,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -15,23 +16,23 @@ class Solution:
         stack = []
 
         for t in tokens:
-            if t == '+':
+            if t == "+":
                 stack.append(stack.pop() + stack.pop())
-            elif t == '-':
+            elif t == "-":
                 tmp = stack.pop()
                 stack.append(stack.pop() - tmp)
-            elif t == '*':
+            elif t == "*":
                 stack.append(stack.pop() * stack.pop())
-            elif t == '/':
+            elif t == "/":
                 tmp = stack.pop()
                 stack.append(int(stack.pop() / tmp))
             else:
                 stack.append(int(t))
-        
+
         return stack[0]
 
-# @lc code=end
 
+# @lc code=end
 
 
 #
@@ -48,4 +49,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

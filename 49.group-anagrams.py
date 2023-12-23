@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem49 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -13,6 +14,7 @@ from typing import *
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -20,15 +22,15 @@ class Solution:
         result = dict()
 
         for s in strs:
-            key = ''.join(sorted(s))
+            key = "".join(sorted(s))
             current = result.get(key, [])
             current.append(s)
             result[key] = current
-    
+
         return result.values()
 
-# @lc code=end
 
+# @lc code=end
 
 
 #
@@ -45,4 +47,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

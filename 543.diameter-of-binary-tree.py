@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for a binary tree node.
@@ -18,18 +19,20 @@
 #         self.right = right
 class Solution:
     def diameterOfSubTree(self, root: Optional[TreeNode]) -> int:
-        if not root: return 0
+        if not root:
+            return 0
         left = self.diameterOfSubTree(root.left)
         right = self.diameterOfSubTree(root.right)
         self.max = max(self.max, left + right)
         return max(left, right) + 1
-    
+
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         self.max = 0
         self.diameterOfSubTree(root)
         return self.max
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -42,4 +45,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

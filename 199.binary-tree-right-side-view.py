@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for a binary tree node.
@@ -18,7 +19,8 @@
 #         self.right = right
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        if not root: return []
+        if not root:
+            return []
         res = []
         current = [root]
 
@@ -32,10 +34,11 @@ class Solution:
                 level_result = node.val
             current = new_list
             res.append(level_result)
-        
-        return res
-# @lc code=end
 
+        return res
+
+
+# @lc code=end
 
 
 #
@@ -52,4 +55,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

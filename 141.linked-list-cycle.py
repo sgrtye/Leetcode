@@ -16,6 +16,7 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         slow = head
@@ -26,10 +27,11 @@ class Solution:
 
             if slow == head:
                 return True
-        
-        return False
-# @lc code=end
 
+        return False
+
+
+# @lc code=end
 
 
 #
@@ -46,4 +48,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

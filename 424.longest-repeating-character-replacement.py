@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -23,15 +24,15 @@ class Solution:
             while max(current_window.values()) + k < r - l + 1:
                 current_window[s[l]] -= 1
                 l += 1
-            
+
             current_max = max(current_max, r - l + 1)
 
             r += 1
-        
+
         return current_max
 
-# @lc code=end
 
+# @lc code=end
 
 
 #
@@ -48,4 +49,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

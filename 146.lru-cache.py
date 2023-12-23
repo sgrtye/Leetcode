@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Node:
@@ -17,8 +18,8 @@ class Node:
         self.prev = None
         self.next = None
 
-class LRUCache:
 
+class LRUCache:
     def __init__(self, capacity: int):
         self.dict = dict()
         self.head = Node(None, None)
@@ -27,13 +28,13 @@ class LRUCache:
 
         self.head.next = self.tail
         self.tail.prev = self.head
-    
+
     def insert(self, node: Node) -> None:
         node.next = self.tail
         node.prev = self.tail.prev
         self.tail.prev.next = node
         self.tail.prev = node
-    
+
     def remove(self, node: Node) -> None:
         node.prev.next = node.next
         node.next.prev = node.prev
@@ -53,22 +54,21 @@ class LRUCache:
         if key in self.dict:
             node = self.dict[key]
             node.val = value
-                
+
             self.remove(node)
         else:
             if len(self.dict) == self.capacity:
                 del self.dict[self.head.next.key]
                 self.remove(self.head.next)
-  
+
             node = Node(key, value)
             self.dict[key] = node
 
         self.insert(node)
+
+
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
 # obj.put(key,value)
 # @lc code=end
-
-
-

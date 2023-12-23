@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem212 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -13,12 +14,14 @@ from typing import *
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class TrieNode:
     def __init__(self):
         self.children = {}
         self.end = False
+
 
 class Trie:
     def __init__(self):
@@ -32,18 +35,23 @@ class Trie:
             current = current.children[c]
         current.end = True
 
+
 class Solution:
     def dfs(self, row: int, col: int, node: TrieNode, word: str) -> None:
-        if row < 0 or col < 0: return
-        if row == self.ROWS or col == self.COLS: return
-        if self.board[row][col] not in node.children: return
-        if (row, col) in self.visit: return
+        if row < 0 or col < 0:
+            return
+        if row == self.ROWS or col == self.COLS:
+            return
+        if self.board[row][col] not in node.children:
+            return
+        if (row, col) in self.visit:
+            return
 
         word = word + self.board[row][col]
         node = node.children[self.board[row][col]]
         if node.end:
             self.res.add(word)
-        
+
         self.visit.add((row, col))
 
         self.dfs(row + 1, col, node, word)
@@ -58,7 +66,7 @@ class Solution:
         self.board = board
         for w in words:
             self.tree.insert(w)
-        
+
         self.ROWS, self.COLS = len(self.board), len(self.board[0])
         self.res, self.visit = set(), set()
 
@@ -72,7 +80,6 @@ class Solution:
 # @lc code=end
 
 
-
 #
 # @lcpr case=start
 # [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]]\n["oath","pea","eat","rain"]\n
@@ -83,4 +90,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

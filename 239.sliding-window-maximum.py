@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem239 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -17,6 +18,7 @@ from typing import *
 # @lc code=start
 from collections import deque
 
+
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         queue = deque()
@@ -25,21 +27,19 @@ class Solution:
         for index in range(len(nums)):
             while queue and nums[queue[-1]] < nums[index]:
                 queue.pop()
-            
+
             queue.append(index)
 
             if queue[0] <= index - k:
                 queue.popleft()
-            
+
             if index + 1 >= k:
                 res.append(nums[queue[0]])
-        
+
         return res
 
 
-            
 # @lc code=end
-
 
 
 #
@@ -52,4 +52,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

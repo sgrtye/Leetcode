@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for singly-linked list.
@@ -16,7 +17,9 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    def addTwoNumbers(
+        self, l1: Optional[ListNode], l2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         dummy = result = ListNode()
         carry = 0
 
@@ -31,10 +34,11 @@ class Solution:
 
             l1 = l1.next if l1 else l1
             l2 = l2.next if l2 else l2
-            
-        return dummy.next
-# @lc code=end
 
+        return dummy.next
+
+
+# @lc code=end
 
 
 #
@@ -51,4 +55,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

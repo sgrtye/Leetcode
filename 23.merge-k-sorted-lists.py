@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for singly-linked list.
@@ -27,17 +28,16 @@ class Solution:
             else:
                 current.next = l2
                 l2 = l2.next
-            
+
             current = current.next
-        
+
         if l1:
             current.next = l1
-        
+
         if l2:
             current.next = l2
-        
-        return res.next
 
+        return res.next
 
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         while len(lists) > 1:
@@ -47,13 +47,13 @@ class Solution:
                 l1 = lists[i]
                 l2 = lists[i + 1] if (i + 1) < len(lists) else None
                 new_list.append(self.mergeList(l1, l2))
-            
+
             lists = new_list
 
         return lists[0] if lists else None
-    
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -70,4 +70,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

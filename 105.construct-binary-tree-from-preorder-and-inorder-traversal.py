@@ -32,9 +32,11 @@ class Solution:
         count = 0
         while inorder[count] != preorder[0]:
             count += 1
-        node.left = self.buildTree(preorder[1 : count + 1], inorder[0 : count])
+        node.left = self.buildTree(preorder[1 : count + 1], inorder[0:count])
         node.right = self.buildTree(preorder[count + 1 :], inorder[count + 1 :])
         return node
+
+
 # @lc code=end
 
 

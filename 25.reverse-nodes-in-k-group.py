@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem25 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -12,6 +13,7 @@ from typing import *
 
 
 # @lcpr-template-start
+
 
 # @lcpr-template-end
 # @lc code=start
@@ -26,19 +28,21 @@ class Solution:
             if not node:
                 return False
             node = node.next
-        
+
         return True
-    
-    def reverse(self, node: Optional[ListNode], k: int) -> (Optional[ListNode], Optional[ListNode]):
+
+    def reverse(
+        self, node: Optional[ListNode], k: int
+    ) -> (Optional[ListNode], Optional[ListNode]):
         prev = None
         curr = node
-        
+
         for _ in range(k):
             tmp = curr.next
             curr.next = prev
             prev = curr
             curr = tmp
-        
+
         node.next = curr
 
         return prev, node
@@ -53,10 +57,11 @@ class Solution:
             previous.next = new_head
             previous = new_tail
             current = new_tail.next
-        
-        return dummy.next
-# @lc code=end
 
+        return dummy.next
+
+
+# @lc code=end
 
 
 #
@@ -69,4 +74,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

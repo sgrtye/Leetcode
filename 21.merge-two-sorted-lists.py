@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem21 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -13,6 +14,7 @@ from typing import *
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 # Definition for singly-linked list.
@@ -21,7 +23,9 @@ from typing import *
 #         self.val = val
 #         self.next = next
 class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         res = current = ListNode()
 
         while list1 and list2:
@@ -33,17 +37,17 @@ class Solution:
                 list2 = list2.next
 
             current = current.next
-            
+
         if list1 is not None:
             current.next = list1
-            
+
         if list2 is not None:
             current.next = list2
-            
-        return res.next
-        
-# @lc code=end
 
+        return res.next
+
+
+# @lc code=end
 
 
 #
@@ -60,4 +64,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

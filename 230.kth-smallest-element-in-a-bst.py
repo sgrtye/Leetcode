@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem230 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -12,6 +13,7 @@ from typing import *
 
 
 # @lcpr-template-start
+
 
 # @lcpr-template-end
 # @lc code=start
@@ -25,23 +27,22 @@ class Solution:
     def inOrder(self, node: Optional[TreeNode], k: int) -> None:
         if len(self.list) > k:
             return
-        
+
         if node.left:
             self.inOrder(node.left, k)
-        
+
         self.list.append(node.val)
 
         if node.right:
             self.inOrder(node.right, k)
 
-    
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         self.list = []
         self.inOrder(root, k)
         return self.list[k - 1]
-        
-# @lc code=end
 
+
+# @lc code=end
 
 
 #
@@ -54,4 +55,3 @@ class Solution:
 # @lcpr case=end
 
 #
-

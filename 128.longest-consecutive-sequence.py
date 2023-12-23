@@ -8,6 +8,7 @@
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
 class Solution:
@@ -23,10 +24,11 @@ class Solution:
                     tmp += 1
                     tmp_result += 1
                 result = max(result, tmp_result)
-        
-        return result
-# @lc code=end
 
+        return result
+
+
+# @lc code=end
 
 
 #
@@ -39,4 +41,3 @@ class Solution:
 # @lcpr case=end
 
 #
-
