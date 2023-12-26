@@ -1,3 +1,8 @@
+# @lcpr-before-debug-begin
+from python3problem217 import *
+from typing import *
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=217 lang=python3
 # @lcpr version=30105
@@ -13,7 +18,14 @@
 # @lc code=start
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        return len(nums) != len(set(nums))
+        number_set = set()
+        
+        for n in nums:
+            if n in number_set:
+                return True
+            number_set.add(n)
+        
+        return False
 
 
 # @lc code=end

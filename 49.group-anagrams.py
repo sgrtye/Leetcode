@@ -22,10 +22,14 @@ class Solution:
         result = dict()
 
         for s in strs:
-            key = "".join(sorted(s))
-            current = result.get(key, [])
-            current.append(s)
-            result[key] = current
+            dict_key = dict()
+            for c in s:
+                dict_key[c] = dict_key.get(c, 0) + 1
+
+            key = frozenset(dict_key.items())
+            list = result.get(key, [])
+            list.append(s)
+            result[key] = list
 
         return result.values()
 
@@ -40,6 +44,10 @@ class Solution:
 
 # @lcpr case=start
 # [""]\n
+# @lcpr case=end
+
+# @lcpr case=start
+# ["ddddddddddg","dgggggggggg"]\n
 # @lcpr case=end
 
 # @lcpr case=start

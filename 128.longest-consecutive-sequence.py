@@ -1,3 +1,8 @@
+# @lcpr-before-debug-begin
+from python3problem128 import *
+from typing import *
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=128 lang=python3
 # @lcpr version=30105

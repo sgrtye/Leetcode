@@ -27,7 +27,7 @@ class Solution:
         for i in range(len(nums) - 1, -1, -1):
             suffix[i] = suffix[i + 1] * nums[i]
 
-        result = [1] * len(nums)
+        result = [None] * len(nums)
         for i in range(len(nums)):
             result[i] = prefix[i - 1] * suffix[i + 1]
 
