@@ -1,3 +1,9 @@
+# @lcpr-before-debug-begin
+from python3problem167 import *
+from typing import *
+
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=167 lang=python3
 # @lcpr version=30106
@@ -13,8 +19,7 @@
 # @lc code=start
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        l = 0
-        r = len(numbers) - 1
+        l, r = 0, len(numbers) - 1
 
         while l < r:
             result = numbers[l] + numbers[r]

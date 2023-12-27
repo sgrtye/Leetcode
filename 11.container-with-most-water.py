@@ -1,3 +1,9 @@
+# @lcpr-before-debug-begin
+from python3problem11 import *
+from typing import *
+
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=11 lang=python3
 # @lcpr version=30106
@@ -13,19 +19,18 @@
 # @lc code=start
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        max_Area = 0
-        l = 0
-        r = len(height) - 1
+        max_amount = 0
+        l, r = 0, len(height) - 1
 
         while l < r:
-            max_Area = max(max_Area, (r - l) * min(height[l], height[r]))
+            max_amount = max(max_amount, min(height[l], height[r]) * (r - l))
 
             if height[l] < height[r]:
                 l += 1
             else:
                 r -= 1
 
-        return max_Area
+        return max_amount
 
 
 # @lc code=end

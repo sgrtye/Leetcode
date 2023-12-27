@@ -19,30 +19,30 @@ from typing import *
 # @lc code=start
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        new_nums = sorted(nums)
-        result = []
+        nums.sort()
 
-        for i in range(len(new_nums)):
-            if i != 0 and new_nums[i] == new_nums[i - 1]:
+        result = []
+        previous = None
+
+        for i, n in enumerate(nums):
+            tmp = previous
+            previous = n
+            if n == tmp:
                 continue
 
-            l = i + 1
-            r = len(new_nums) - 1
+            l, r = i + 1, len(nums) - 1
 
             while l < r:
-                three_sum = new_nums[i] + new_nums[l] + new_nums[r]
-
-                if three_sum > 0:
+                if nums[l] + nums[r] < -n:
+                    l += 1
+                elif nums[l] + nums[r] > -n:
                     r -= 1
-                elif three_sum < 0:
-                    l += 1
                 else:
-                    result.append([new_nums[i], new_nums[l], new_nums[r]])
-                    l += 1
-                    while new_nums[l] == new_nums[l - 1] and l < r:
-                        l += 1
+                    result.append([n, nums[l], nums[r]])
 
-            i += 1
+                    left_number = nums[l]
+                    while l < r and nums[l] == left_number:
+                        l += 1
 
         return result
 
