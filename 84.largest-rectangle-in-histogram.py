@@ -19,25 +19,19 @@ from typing import *
 # @lc code=start
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
-        stack = []
         max_area = 0
+        stack = []
 
         for i, h in enumerate(heights):
-            if not stack:
-                stack.append((h, i))
-            else:
-                if h > stack[-1][0]:
-                    stack.append((h, i))
-                elif h == stack[-1][0]:
-                    continue
-                else:
-                    while stack and h < stack[-1][0]:
-                        tmp = stack.pop()
-                        max_area = max(max_area, (i - tmp[1]) * tmp[0])
-                    stack.append((h, tmp[1]))
+            start = i
+            while stack and stack[-1][1] > h:
+                index, height = stack.pop()
+                max_area = max(max_area, height * (i - index))
+                start = index
+            stack.append((start, h))
 
-        for h, i in stack:
-            max_area = max(max_area, (len(heights) - i) * h)
+        for i, h in stack:
+            max_area = max(max_area, h * (len(heights) - i))
 
         return max_area
 

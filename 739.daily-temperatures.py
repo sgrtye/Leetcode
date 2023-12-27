@@ -1,3 +1,9 @@
+# @lcpr-before-debug-begin
+from python3problem739 import *
+from typing import *
+
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=739 lang=python3
 # @lcpr version=30106
@@ -16,8 +22,8 @@ class Solution:
         result = [0] * len(temperatures)
         stack = []
 
-        for i, t in enumerate(temperatures):
-            while stack and t > temperatures[stack[-1]]:
+        for i in range(len(temperatures)):
+            while stack and temperatures[stack[-1]] < temperatures[i]:
                 index = stack.pop()
                 result[index] = i - index
 

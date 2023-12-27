@@ -20,7 +20,7 @@ class Solution:
         parentheses = {"(": ")", "[": "]", "{": "}"}
 
         for c in s:
-            if c in parentheses.keys():
+            if c in parentheses:
                 stack.append(c)
             else:
                 if not stack or parentheses[stack.pop()] != c:
