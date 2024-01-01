@@ -19,31 +19,27 @@ from typing import *
 # @lc code=start
 class TimeMap:
     def __init__(self):
-        self.values = dict()
-        self.times = dict()
+        self.structure = {}
 
     def set(self, key: str, value: str, timestamp: int) -> None:
-        self.values[key + str(timestamp)] = value
-        self.times[key] = self.times.get(key, [])
-        self.times[key].append(timestamp)
+        if key not in self.structure:
+            self.structure[key] = []
+        self.structure[key].append([value, timestamp])
 
     def get(self, key: str, timestamp: int) -> str:
-        timestamps = self.times.get(key, [])
+        ans = ""
+        temp = self.structure.get(key, [])
 
-        l = 0
-        r = len(timestamps) - 1
-        res = ""
-
+        l, r = 0, len(temp) - 1
         while l <= r:
-            mid = l + ((r - l) // 2)
+            mid = (l + r) // 2
 
-            if timestamps[mid] <= timestamp:
+            if temp[mid][1] <= timestamp:
+                ans = temp[mid][0]
                 l = mid + 1
-                res = self.values[key + str(timestamps[mid])]
             else:
                 r = mid - 1
-
-        return res
+        return ans
 
 
 # Your TimeMap object will be instantiated and called as such:

@@ -1,3 +1,9 @@
+# @lcpr-before-debug-begin
+from python3problem875 import *
+from typing import *
+
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=875 lang=python3
 # @lcpr version=30109
@@ -9,8 +15,7 @@
 # @lc code=start
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        l = 1
-        r = max(piles)
+        l, r = 1, max(piles)
         res = r
 
         while l <= r:

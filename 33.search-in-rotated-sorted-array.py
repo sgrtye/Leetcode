@@ -19,36 +19,30 @@ from typing import *
 # @lc code=start
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        l = 0
-        r = len(nums) - 1
-
-        while l <= r:
-            mid = l + ((r - l) // 2)
-
-            # left is sorted
-            if nums[l] <= nums[mid]:
-                if nums[l] <= target <= nums[mid]:
-                    r = mid
-                    break
-                else:
-                    l = mid + 1
-            # right is sorted
-            else:
-                if nums[mid] <= target <= nums[r]:
-                    l = mid
-                    break
-                else:
-                    r = mid - 1
+        l, r = 0, len(nums) - 1
 
         while l <= r:
             mid = l + ((r - l) // 2)
 
             if nums[mid] == target:
                 return mid
-            elif target < nums[mid]:
-                r = mid - 1
+
+            # if left half is sorted
+            if nums[mid] > nums[r]:
+                if nums[l] <= target < nums[mid]:
+                    change_left_pointer = False
+                else:
+                    change_left_pointer = True
             else:
+                if nums[mid] < target <= nums[r]:
+                    change_left_pointer = True
+                else:
+                    change_left_pointer = False
+
+            if change_left_pointer:
                 l = mid + 1
+            else:
+                r = mid - 1
 
         return -1
 
