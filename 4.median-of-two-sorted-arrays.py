@@ -31,11 +31,11 @@ class Solution:
             mid = l + ((r - l) // 2)
             other = half_size - mid - 2
 
-            short_left = float("-infinity") if mid < 0 else short[mid]
-            short_right = float("infinity") if mid > len(short) - 2 else short[mid + 1]
+            short_left = float("-inf") if mid < 0 else short[mid]
+            short_right = float("inf") if mid + 1 > len(short) - 1 else short[mid + 1]
 
-            long_left = float("-infinity") if other < 0 else long[other]
-            long_right = float("infinity") if other > len(long) - 2 else long[other + 1]
+            long_left = float("-inf") if other < 0 else long[other]
+            long_right = float("inf") if other + 1 > len(long) - 1 else long[other + 1]
 
             if short_left <= long_right and long_left <= short_right:
                 if (len(long) + len(short)) % 2 == 1:
