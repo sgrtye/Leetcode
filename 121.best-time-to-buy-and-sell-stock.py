@@ -1,3 +1,8 @@
+# @lcpr-before-debug-begin
+from python3problem121 import *
+from typing import *
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=121 lang=python3
 # @lcpr version=30109
@@ -13,19 +18,19 @@
 # @lc code=start
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        l = 0
-        r = 1
-        current_profit = 0
+        low = prices[0]
+        high = prices[0]
+        profit = 0
 
-        while r < len(prices):
-            if prices[l] < prices[r]:
-                current_profit = max(current_profit, prices[r] - prices[l])
-            else:
-                l = r
-
-            r = r + 1
-
-        return current_profit
+        for p in prices:
+            if p < low:
+                low = p
+                high = p
+            elif p > high:
+                high = p
+                profit = max(profit, high - low)
+        
+        return profit
 
 
 # @lc code=end

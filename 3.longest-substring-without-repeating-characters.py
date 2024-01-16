@@ -1,3 +1,9 @@
+# @lcpr-before-debug-begin
+from python3problem3 import *
+from typing import *
+
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=3 lang=python3
 # @lcpr version=30109
@@ -14,23 +20,18 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         l = 0
-        r = 0
-        ans = 0
-        current_set = set()
+        result = 0
+        char_set = set()
 
-        while r < len(s):
-            if s[r] not in current_set:
-                current_set.add(s[r])
-                ans = max(ans, len(current_set))
-                r += 1
-            else:
-                while s[r] in current_set:
-                    current_set.remove(s[l])
-                    l += 1
-                current_set.add(s[r])
-                r += 1
+        for r, c in enumerate(s):
+            while c in char_set:
+                char_set.remove(s[l])
+                l = l + 1
 
-        return ans
+            char_set.add(c)
+            result = max(result, r - l + 1)
+
+        return result
 
 
 # @lc code=end

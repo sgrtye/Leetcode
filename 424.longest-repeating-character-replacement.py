@@ -1,3 +1,9 @@
+# @lcpr-before-debug-begin
+from python3problem424 import *
+from typing import *
+
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=424 lang=python3
 # @lcpr version=30109
@@ -13,23 +19,20 @@
 # @lc code=start
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
+        count = dict()
+
         l = 0
-        r = 0
-        current_max = 0
-        current_window = dict()
+        maxf = 0
 
-        while r < len(s):
-            current_window[s[r]] = current_window.get(s[r], 0) + 1
+        for r in range(len(s)):
+            count[s[r]] = 1 + count.get(s[r], 0)
+            maxf = max(maxf, count[s[r]])
 
-            while max(current_window.values()) + k < r - l + 1:
-                current_window[s[l]] -= 1
+            while (r - l + 1) - maxf > k:
+                count[s[l]] -= 1
                 l += 1
 
-            current_max = max(current_max, r - l + 1)
-
-            r += 1
-
-        return current_max
+        return r - l + 1
 
 
 # @lc code=end

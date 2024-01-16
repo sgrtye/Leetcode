@@ -19,29 +19,30 @@ from typing import *
 # @lc code=start
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
-        l = 0
-        r = 0
-        current = dict()
-
         s1_dict = dict()
         for s in s1:
             s1_dict[s] = s1_dict.get(s, 0) + 1
+        s1_length = len(s1)
 
-        while r < len(s2):
+        l = 0
+        current = dict()
+        for r in range(len(s2)):
             char = s2[r]
             current[char] = current.get(char, 0) + 1
-            r += 1
 
-            if current == s1_dict:
+            if r - l + 1 == s1_length and current == s1_dict:
                 return True
-
-            while current.get(char, 0) > s1_dict.get(char, 0):
-                tmp = s2[l]
-
-                current[tmp] = current[tmp] - 1
-                if current[tmp] == 0:
-                    del current[tmp]
-
+            
+            if char not in s1_dict:
+                l = r + 1
+                current = dict()
+            elif current[char] > s1_dict[char]:
+                while s2[l] != char:
+                    current[s2[l]] = current[s2[l]] - 1
+                    if current[s2[l]] == 0:
+                        del current[s2[l]]
+                    l += 1
+                current[s2[l]] = current[s2[l]] - 1
                 l += 1
 
         return False
