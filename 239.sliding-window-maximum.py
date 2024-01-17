@@ -22,7 +22,7 @@ from collections import deque
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         queue = deque()
-        res = []
+        result = []
 
         for index in range(len(nums)):
             while queue and nums[queue[-1]] < nums[index]:
@@ -34,9 +34,9 @@ class Solution:
                 queue.popleft()
 
             if index + 1 >= k:
-                res.append(nums[queue[0]])
+                result.append(nums[queue[0]])
 
-        return res
+        return result
 
 
 # @lc code=end
