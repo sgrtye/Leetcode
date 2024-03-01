@@ -18,12 +18,10 @@ from typing import *
 # @lcpr-template-end
 # @lc code=start
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
         """
@@ -36,14 +34,15 @@ class Solution:
             fast = fast.next.next
             slow = slow.next
 
-        second_half = slow.next
-        previous = slow.next = None
+        previous = None
+        current = slow.next
+        slow.next = None
 
-        while second_half:
-            tmp = second_half.next
-            second_half.next = previous
-            previous = second_half
-            second_half = tmp
+        while current:
+            temp = current.next
+            current.next = previous
+            previous = current
+            current = temp
 
         first_half = head
         second_half = previous

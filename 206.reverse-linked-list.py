@@ -24,16 +24,16 @@ from typing import *
 #         self.next = next
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        prev = None
-        curr = head
+        previous = None
+        current = head
 
-        while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
+        while current:
+            tmp = current.next
+            current.next = previous
+            previous = current
+            current = tmp
 
-        return prev
+        return previous
 
 
 # @lc code=end
