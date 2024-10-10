@@ -19,15 +19,15 @@ from typing import *
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        location_dict = dict()
+        index_dict: dict[int, int] = dict()
 
         for i, n in enumerate(nums):
-            if target - n in location_dict:
-                return [location_dict[target - n], i]
+            remaining = target - n
 
-            location_dict[n] = i
-
-        return False
+            if remaining in index_dict:
+                return [i, index_dict[remaining]]
+            
+            index_dict[n] = i
 
 
 # @lc code=end

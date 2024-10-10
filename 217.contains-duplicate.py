@@ -18,14 +18,9 @@ from typing import *
 # @lc code=start
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        number_set = set()
-        
-        for n in nums:
-            if n in number_set:
-                return True
-            number_set.add(n)
-        
-        return False
+        nums_set: set[int] = set(nums)
+
+        return len(nums) != len(nums_set)
 
 
 # @lc code=end

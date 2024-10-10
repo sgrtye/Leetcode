@@ -22,15 +22,14 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        s_dict = dict()
-        t_dict = dict()
+        s_dict: dict[str, int] = dict()
+        t_dict: dict[str, int] = dict()
 
-        for i, j in zip(s, t):
-            s_dict[i] = s_dict.get(i, 0) + 1
-            t_dict[j] = t_dict.get(j, 0) + 1
+        for i in range(len(s)):
+            s_dict[s[i]] = s_dict.get(s[i], 0) + 1
+            t_dict[t[i]] = t_dict.get(t[i], 0) + 1
 
         return s_dict == t_dict
-
 
 # @lc code=end
 
