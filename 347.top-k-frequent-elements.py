@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem347 import *
 from typing import *
+from collections import Counter
 
 # @lcpr-before-debug-end
 
@@ -19,14 +20,12 @@ from typing import *
 # @lc code=start
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        counter = dict()
+        nums_list: list[tuple[int, int]] = sorted(
+            Counter(nums).items(), key=lambda x: x[1], reverse=True
+        )
+        result: list[int] = [n for n, f in nums_list[:k]]
 
-        for num in nums:
-            counter[num] = counter.get(num, 0) + 1
-
-        counter = sorted(counter.items(), key=lambda x: x[1], reverse=True)
-
-        return [x for x, y in counter[:k]]
+        return result
 
 
 # @lc code=end

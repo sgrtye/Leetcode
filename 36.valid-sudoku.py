@@ -1,3 +1,10 @@
+# @lcpr-before-debug-begin
+from python3problem36 import *
+from typing import *
+import itertools
+
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=36 lang=python3
 # @lcpr version=30105
@@ -13,18 +20,24 @@
 # @lc code=start
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        sub_boards = [[] for _ in range(27)]
-        for i in range(9):
-            for j in range(9):
-                element = board[i][j]
-                if element != ".":
-                    sub_boards[i].append(element)
-                    sub_boards[j + 9].append(element)
-                    sub_boards[i // 3 * 3 + j // 3 + 18].append(element)
+        check_set: list[set[int]] = [set() for _ in range(27)]
 
-        for sub in sub_boards:
-            if len(sub) != len(set(sub)):
+        for i, j in itertools.product(range(9), range(9)):
+            element: str = board[i][j]
+
+            if element == ".":
+                continue
+
+            if (
+                element in check_set[i]
+                or element in check_set[j + 9]
+                or element in check_set[i // 3 * 3 + j // 3 + 18]
+            ):
                 return False
+            else:
+                check_set[i].add(element)
+                check_set[j + 9].add(element)
+                check_set[i // 3 * 3 + j // 3 + 18].add(element)
 
         return True
 

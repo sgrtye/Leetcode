@@ -19,19 +19,15 @@ from typing import *
 # @lc code=start
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        prefix = [1] * (len(nums) + 1)
+        prefix: list[int] = [1] * (len(nums) + 1)
         for i in range(len(nums)):
             prefix[i] = prefix[i - 1] * nums[i]
 
-        suffix = [1] * (len(nums) + 1)
+        suffix: list[int] = [1] * (len(nums) + 1)
         for i in range(len(nums) - 1, -1, -1):
             suffix[i] = suffix[i + 1] * nums[i]
 
-        result = [None] * len(nums)
-        for i in range(len(nums)):
-            result[i] = prefix[i - 1] * suffix[i + 1]
-
-        return result
+        return [prefix[i - 1] * suffix[i + 1] for i in range(len(nums))]
 
 
 # @lc code=end

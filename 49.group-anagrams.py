@@ -19,17 +19,12 @@ from typing import *
 # @lc code=start
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        result = dict()
+        result: dict[str, list[str]] = dict()
 
         for s in strs:
-            dict_key = dict()
-            for c in s:
-                dict_key[c] = dict_key.get(c, 0) + 1
-
-            key = frozenset(dict_key.items())
-            list = result.get(key, [])
-            list.append(s)
-            result[key] = list
+            key: str = ''.join(sorted(s))
+            result[key] = result.get(key, [])
+            result[key].append(s)
 
         return result.values()
 

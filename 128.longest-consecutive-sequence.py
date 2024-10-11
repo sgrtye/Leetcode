@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem128 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -18,19 +19,20 @@ from typing import *
 # @lc code=start
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        new_nums = set(nums)
-        result = 0
+        nums_set: set[int] = set(nums)
+        max_length: int = 0
 
-        for n in nums:
-            if n - 1 not in new_nums:
-                tmp = n
-                tmp_result = 1
-                while tmp + 1 in new_nums:
-                    tmp += 1
-                    tmp_result += 1
-                result = max(result, tmp_result)
+        for num in nums_set:
+            if num - 1 in nums_set:
+                continue
 
-        return result
+            count: int = 1
+            while num + count in nums_set:
+                count += 1
+
+            max_length = max(count, max_length)
+
+        return max_length
 
 
 # @lc code=end
@@ -43,6 +45,10 @@ class Solution:
 
 # @lcpr case=start
 # [0,3,7,2,5,8,4,6,0,1]\n
+# @lcpr case=end
+
+# @lcpr case=start
+# [0]\n
 # @lcpr case=end
 
 #
