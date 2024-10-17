@@ -19,11 +19,11 @@ from typing import *
 # @lc code=start
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
-        result = [0] * len(temperatures)
-        stack = []
+        stack: list[int] = []
+        result: list[int] = [0] * len(temperatures)
 
-        for i in range(len(temperatures)):
-            while stack and temperatures[stack[-1]] < temperatures[i]:
+        for i, t in enumerate(temperatures):
+            while stack and t > temperatures[stack[-1]]:
                 index = stack.pop()
                 result[index] = i - index
 

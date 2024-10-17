@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem150 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -18,23 +19,21 @@ from typing import *
 # @lc code=start
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
-        stack = []
+        evaluation: list[int] = []
+        operations: dict[str, Callable[[int, int]], int] = {
+            "+": lambda addend2, addend1: addend1 + addend2,
+            "-": lambda subtrahend, minuend: minuend - subtrahend,
+            "*": lambda factor2, factor1: factor1 * factor2,
+            "/": lambda divisor, dividend: int(dividend / divisor),
+        }
 
         for t in tokens:
-            if t == "+":
-                stack.append(stack.pop() + stack.pop())
-            elif t == "-":
-                tmp = stack.pop()
-                stack.append(stack.pop() - tmp)
-            elif t == "*":
-                stack.append(stack.pop() * stack.pop())
-            elif t == "/":
-                tmp = stack.pop()
-                stack.append(int(stack.pop() / tmp))
+            if t in operations:
+                evaluation.append(operations[t](evaluation.pop(), evaluation.pop()))
             else:
-                stack.append(int(t))
+                evaluation.append(int(t))
 
-        return stack[0]
+        return evaluation[0]
 
 
 # @lc code=end
@@ -53,4 +52,8 @@ class Solution:
 # ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]\n
 # @lcpr case=end
 
+
+# @lcpr case=start
+# ["6", "-132", "/"]\n
+# @lcpr case=end
 #

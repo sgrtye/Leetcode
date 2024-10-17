@@ -18,30 +18,24 @@ from typing import *
 # @lcpr-template-end
 # @lc code=start
 class Solution:
-    def backTracking(self, len, left, right):
-        if len == 0:
-            if left == right:
-                self.result.append("".join(self.stack))
-            return
-
-        if right > left:
-            return
-
-        self.stack.append("(")
-        self.backTracking(len - 1, left + 1, right)
-        self.stack.pop()
-
-        self.stack.append(")")
-        self.backTracking(len - 1, left, right + 1)
-        self.stack.pop()
-
     def generateParenthesis(self, n: int) -> List[str]:
-        self.result = []
-        self.stack = []
+        result: list[list[str]] = []
+        # string, No. of left parenthesis, No. of right parenthesis
+        stack: list[tuple[str, int, int]] = [("", 0, 0)]
 
-        self.backTracking(n * 2, 0, 0)
+        while stack:
+            current, left, right = stack.pop()
 
-        return self.result
+            if left == right == n:
+                result.append(current)
+
+            if left < n:
+                stack.append((current + "(", left + 1, right))
+
+            if left > right:
+                stack.append((current + ")", left, right + 1))
+
+        return result
 
 
 # @lc code=end

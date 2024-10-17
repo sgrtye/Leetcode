@@ -1,3 +1,9 @@
+# @lcpr-before-debug-begin
+from python3problem20 import *
+from typing import *
+
+# @lcpr-before-debug-end
+
 #
 # @lc app=leetcode id=20 lang=python3
 # @lcpr version=30106
@@ -13,17 +19,17 @@
 # @lc code=start
 class Solution:
     def isValid(self, s: str) -> bool:
-        if (len(s)) % 2 != 0:
+        if len(s) % 2 != 0:
             return False
 
-        stack = []
-        parentheses = {"(": ")", "[": "]", "{": "}"}
+        stack: list[str] = []
+        parentheses: dict[str, str] = {"(": ")", "[": "]", "{": "}"}
 
-        for c in s:
-            if c in parentheses:
-                stack.append(c)
+        for char in s:
+            if char in parentheses:
+                stack.append(char)
             else:
-                if not stack or parentheses[stack.pop()] != c:
+                if not stack or char != parentheses[stack.pop()]:
                     return False
 
         return not stack

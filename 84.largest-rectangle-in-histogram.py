@@ -19,21 +19,24 @@ from typing import *
 # @lc code=start
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
-        max_area = 0
-        stack = []
+        max_Area: int = 0
+        # list[(index, height)]
+        stack: list[tuple[int, int]] = []
 
         for i, h in enumerate(heights):
-            start = i
-            while stack and stack[-1][1] > h:
+            start: int = i
+
+            while stack and h < stack[-1][1]:
                 index, height = stack.pop()
-                max_area = max(max_area, height * (i - index))
+                max_Area = max(max_Area, height * (i - index))
                 start = index
+
             stack.append((start, h))
 
         for i, h in stack:
-            max_area = max(max_area, h * (len(heights) - i))
+            max_Area = max(max_Area, h * (len(heights) - i))
 
-        return max_area
+        return max_Area
 
 
 # @lc code=end

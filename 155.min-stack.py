@@ -1,6 +1,6 @@
 #
 # @lc app=leetcode id=155 lang=python3
-# @lcpr version=30106
+# @lcpr version=30204
 #
 # [155] Min Stack
 #
@@ -12,25 +12,24 @@
 # @lcpr-template-end
 # @lc code=start
 class MinStack:
+
     def __init__(self):
-        self.stack = []
-        self.min_stack = []
+        self.stack: list[int] = []
+        self.min_stack: list[int] = []
 
     def push(self, val: int) -> None:
         self.stack.append(val)
-        min_val = min(val, self.min_stack[-1]) if self.min_stack else val
-        self.min_stack.append(min_val)
+        self.min_stack.append(min(val, self.min_stack[-1] if self.min_stack else val))
 
     def pop(self) -> None:
-        if self.stack:
-            self.stack.pop()
-            self.min_stack.pop()
+        self.stack.pop()
+        self.min_stack.pop()
 
     def top(self) -> int:
-        return self.stack[-1] if self.stack else None
+        return self.stack[-1]
 
     def getMin(self) -> int:
-        return self.min_stack[-1] if self.min_stack else None
+        return self.min_stack[-1]
 
 
 # Your MinStack object will be instantiated and called as such:

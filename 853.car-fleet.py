@@ -19,24 +19,16 @@ from typing import *
 # @lc code=start
 class Solution:
     def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
-        info = list(zip(position, speed))
-        info.sort(key=lambda x: x[0], reverse=True)
+        info: list[tuple[int, int]] = sorted(zip(position, speed), reverse=True)
+        stack: list[float] = []
 
-        count = 0
-        previous_time = None
-        for p, s in info:
-            required_time = (target - p) / s
-            if not previous_time:
-                previous_time = required_time
-                count += 1
-            elif previous_time < required_time:
-                previous_time = required_time
-                count += 1
-            else:
-                # In this case, the current cat catches to the front car
-                pass
+        for pos, spd in info:
+            time: float = (target - pos) / spd
 
-        return count
+            if not stack or time > stack[-1]:
+                stack.append(time)
+
+        return len(stack)
 
 
 # @lc code=end
