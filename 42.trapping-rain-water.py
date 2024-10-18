@@ -19,22 +19,21 @@ from typing import *
 # @lc code=start
 class Solution:
     def trap(self, height: List[int]) -> int:
-        if not height:
-            return 0
+        left_height: int = 0
+        right_height: int = 0
+        left: int = 0
+        right: int = len(height) - 1
+        water: int = 0
 
-        l, r = 0, len(height) - 1
-        left_max, right_max = 0, 0
-        water = 0
-
-        while l <= r:
-            if left_max < right_max:
-                water += max(0, min(left_max, right_max) - height[l])
-                left_max = max(left_max, height[l])
-                l += 1
+        while left <= right:
+            if left_height < right_height:
+                water += max(min(left_height, right_height) - height[left], 0)
+                left_height = max(left_height, height[left])
+                left += 1
             else:
-                water += max(0, min(left_max, right_max) - height[r])
-                right_max = max(right_max, height[r])
-                r -= 1
+                water += max(min(left_height, right_height) - height[right], 0)
+                right_height = max(right_height, height[right])
+                right -= 1
 
         return water
 
@@ -53,6 +52,10 @@ class Solution:
 
 # @lcpr case=start
 # [5,5,1,7,1,1,5,2,7,6]\n
+# @lcpr case=end
+
+# @lcpr case=start
+# [4]\n
 # @lcpr case=end
 
 #

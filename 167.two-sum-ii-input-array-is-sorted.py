@@ -19,16 +19,18 @@ from typing import *
 # @lc code=start
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        l, r = 0, len(numbers) - 1
+        left: int = 0
+        right: int = len(numbers) - 1
 
-        while l < r:
-            result = numbers[l] + numbers[r]
-            if result > target:
-                r -= 1
-            elif result < target:
-                l += 1
+        while left < right:
+            n: int = numbers[left] + numbers[right]
+
+            if n == target:
+                return [left + 1, right + 1]
+            elif n > target:
+                right -= 1
             else:
-                return [l + 1, r + 1]
+                left += 1
 
 
 # @lc code=end

@@ -19,18 +19,19 @@ from typing import *
 # @lc code=start
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        max_amount = 0
-        l, r = 0, len(height) - 1
+        max_area: int = 0
+        left: int = 0
+        right: int = len(height) - 1
 
-        while l < r:
-            max_amount = max(max_amount, min(height[l], height[r]) * (r - l))
+        while left < right:
+            max_area = max(max_area, (right - left) * min(height[left], height[right]))
 
-            if height[l] < height[r]:
-                l += 1
+            if height[left] < height[right]:
+                left += 1
             else:
-                r -= 1
+                right -= 1
 
-        return max_amount
+        return max_area
 
 
 # @lc code=end

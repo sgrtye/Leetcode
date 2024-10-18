@@ -20,29 +20,34 @@ from typing import *
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
+        previous: int | None = None
+        result: list[list[int]] = []
 
-        result = []
-        previous = None
-
-        for i, n in enumerate(nums):
-            tmp = previous
-            previous = n
-            if n == tmp:
+        for i in range(len(nums) - 2):
+            if nums[i] == previous:
                 continue
+            previous = nums[i]
 
-            l, r = i + 1, len(nums) - 1
+            left: int = i + 1
+            right: int = len(nums) - 1
 
-            while l < r:
-                if nums[l] + nums[r] < -n:
-                    l += 1
-                elif nums[l] + nums[r] > -n:
-                    r -= 1
+            while left < right:
+                total: int = nums[i] + nums[left] + nums[right]
+                if total == 0:
+                    result.append([nums[i], nums[left], nums[right]])
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+
+                    left += 1
+                    right -= 1
+
+                elif total < 0:
+                    left += 1
+
                 else:
-                    result.append([n, nums[l], nums[r]])
-
-                    left_number = nums[l]
-                    while l < r and nums[l] == left_number:
-                        l += 1
+                    right -= 1
 
         return result
 
