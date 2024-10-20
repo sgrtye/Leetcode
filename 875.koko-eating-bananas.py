@@ -12,27 +12,30 @@ from typing import *
 #
 
 
+# @lcpr-template-start
+
+
+# @lcpr-template-end
 # @lc code=start
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        l, r = 1, max(piles)
-        res = r
+        left: int = 1
+        right: int = max(piles)
+        min_speed: int = 0
 
-        while l <= r:
-            mid = l + ((r - l) // 2)
+        while left <= right:
+            mid: int = (left + right) // 2
+            time: int = sum(
+                [p // mid if p % mid == 0 else (p // mid) + 1 for p in piles]
+            )
 
-            totalTime = 0
-
-            for p in piles:
-                totalTime += p // mid if p % mid == 0 else (p // mid) + 1
-
-            if totalTime <= h:
-                res = mid
-                r = mid - 1
+            if time <= h:
+                right = mid - 1
+                min_speed = mid
             else:
-                l = mid + 1
+                left = mid + 1
 
-        return res
+        return min_speed
 
 
 # @lc code=end
@@ -49,6 +52,11 @@ class Solution:
 
 # @lcpr case=start
 # [30,11,23,4,20]\n6\n
+# @lcpr case=end
+
+
+# @lcpr case=start
+# [1,1,1,1,1,11]\n7\n
 # @lcpr case=end
 
 #

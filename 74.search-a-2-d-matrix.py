@@ -19,18 +19,19 @@ from typing import *
 # @lc code=start
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        ROWS, COLS = len(matrix), len(matrix[0])
+        ROW: int = len(matrix)
+        COLUMN: int = len(matrix[0])
+        left: int = 0
+        right: int = (ROW * COLUMN) - 1
 
-        l, r = 0, (ROWS * COLS) - 1
+        while left <= right:
+            mid: int = (left + right) // 2
+            mid_number = matrix[mid // COLUMN][mid % COLUMN]
 
-        while l <= r:
-            mid = l + ((r - l) // 2)
-            value = matrix[mid // COLS][mid % COLS]
-
-            if value < target:
-                l = mid + 1
-            elif value > target:
-                r = mid - 1
+            if mid_number < target:
+                left = mid + 1
+            elif mid_number > target:
+                right = mid - 1
             else:
                 return True
 

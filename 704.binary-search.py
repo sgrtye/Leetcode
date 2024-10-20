@@ -19,15 +19,16 @@ from typing import *
 # @lc code=start
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        l, r = 0, len(nums) - 1
+        left: int = 0
+        right: int = len(nums) - 1
 
-        while l <= r:
-            mid = l + ((r - l) // 2)
+        while left <= right:
+            mid: int = (left + right) // 2
 
             if nums[mid] < target:
-                l = mid + 1
+                left = mid + 1
             elif nums[mid] > target:
-                r = mid - 1
+                right = mid - 1
             else:
                 return mid
 
