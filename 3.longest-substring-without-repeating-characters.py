@@ -19,19 +19,22 @@ from typing import *
 # @lc code=start
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        l = 0
-        result = 0
-        char_set = set()
+        left: int = 0
+        right: int = 0
+        max_length: int = 0
+        letter_set: set[str] = set()
 
-        for r, c in enumerate(s):
-            while c in char_set:
-                char_set.remove(s[l])
-                l = l + 1
+        while right < len(s):
+            letter: str = s[right]
+            while letter in letter_set:
+                letter_set.remove(s[left])
+                left += 1
 
-            char_set.add(c)
-            result = max(result, r - l + 1)
+            letter_set.add(letter)
+            max_length = max(max_length, right - left + 1)
+            right += 1
 
-        return result
+        return max_length
 
 
 # @lc code=end

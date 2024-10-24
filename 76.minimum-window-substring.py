@@ -19,38 +19,37 @@ from typing import *
 # @lc code=start
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        t_dict = dict()
+        t_dict: dict[str, int] = dict()
         for c in t:
             t_dict[c] = t_dict.get(c, 0) + 1
 
-        unsatisfied_count = len(t_dict)
-        window_dict = dict()
-        l = 0
-        result = None
-        for r in range(len(s)):
-            char = s[r]
-            window_dict[char] = window_dict.get(char, 0) + 1
+        result: str = s
+        found: bool = False
+        window_dict: dict[str, int] = dict()
+        unsatisfied_count: int = len(t_dict)
 
-            if char not in t_dict:
-                continue
-
-            if window_dict[char] == t_dict[char]:
+        left: int = 0
+        for right in range(len(s)):
+            window_dict[s[right]] = window_dict.get(s[right], 0) + 1
+            if s[right] in t_dict and window_dict[s[right]] == t_dict[s[right]]:
                 unsatisfied_count -= 1
 
             if unsatisfied_count == 0:
                 while unsatisfied_count == 0:
-                    remove_char = s[l]
-                    if remove_char in t_dict and window_dict[remove_char] == t_dict[remove_char]:
+                    if s[left] in t_dict and window_dict[s[left]] == t_dict[s[left]]:
                         unsatisfied_count += 1
-                    window_dict[remove_char] = window_dict[remove_char] - 1
-                    l += 1
 
-                if result is not None:
-                    result = s[l - 1:r + 1] if r - l + 2 < len(result) else result
-                else:
-                    result = s[l - 1:r + 1]
+                    window_dict[s[left]] -= 1
+                    left += 1
 
-        return result if result is not None else ""
+                found = True
+                result = (
+                    s[left - 1 : right + 1]
+                    if right - left + 2 < len(result)
+                    else result
+                )
+
+        return result if found else ""
 
 
 # @lc code=end

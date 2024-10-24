@@ -14,26 +14,24 @@ from typing import *
 
 # @lcpr-template-start
 
+
 # @lcpr-template-end
 # @lc code=start
-from collections import deque
-
-
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        queue = deque()
-        result = []
+        queue: Deque[int] = Deque()
+        result: list[int] = []
 
-        for index in range(len(nums)):
-            while queue and nums[queue[-1]] < nums[index]:
+        for i in range(len(nums)):
+            while queue and nums[queue[-1]] < nums[i]:
                 queue.pop()
 
-            queue.append(index)
+            queue.append(i)
 
-            if queue[0] <= index - k:
+            if queue[0] <= i - k:
                 queue.popleft()
 
-            if index + 1 >= k:
+            if i + 1 >= k:
                 result.append(nums[queue[0]])
 
         return result

@@ -19,31 +19,35 @@ from typing import *
 # @lc code=start
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
-        s1_dict = dict()
+        if len(s1) > len(s2):
+            return False
+        length: int = len(s1)
+
+        s1_counter: dict[str, int] = dict()
         for s in s1:
-            s1_dict[s] = s1_dict.get(s, 0) + 1
-        s1_length = len(s1)
+            s1_counter[s] = s1_counter.get(s, 0) + 1
 
-        l = 0
-        current = dict()
-        for r in range(len(s2)):
-            char = s2[r]
-            current[char] = current.get(char, 0) + 1
+        left: int = 0
+        s2_counter: dict[str, int] = dict()
+        for right in range(len(s2)):
+            s2_counter[s2[right]] = s2_counter.get(s2[right], 0) + 1
 
-            if r - l + 1 == s1_length and current == s1_dict:
+            if right - left + 1 < length:
+                continue
+
+            if s1_counter == s2_counter:
                 return True
-            
-            if char not in s1_dict:
-                l = r + 1
-                current = dict()
-            elif current[char] > s1_dict[char]:
-                while s2[l] != char:
-                    current[s2[l]] = current[s2[l]] - 1
-                    if current[s2[l]] == 0:
-                        del current[s2[l]]
-                    l += 1
-                current[s2[l]] = current[s2[l]] - 1
-                l += 1
+
+            if s2[right] not in s1_counter:
+                s2_counter = dict()
+                left = right + 1
+            else:
+                s2_counter[s2[left]] -= 1
+                if s2_counter[s2[left]] == 0:
+                    s2_counter.pop(s2[left])
+                left += 1
+
+            right += 1
 
         return False
 
@@ -58,6 +62,18 @@ class Solution:
 
 # @lcpr case=start
 # "ab"\n"eidboaoo"\n
+# @lcpr case=end
+
+# @lcpr case=start
+# "hello"\n"ooolleoooleh"\n
+# @lcpr case=end
+
+# @lcpr case=start
+# "a"\n"ab"\n
+# @lcpr case=end
+
+# @lcpr case=start
+# "adc"\n"dcda"\n
 # @lcpr case=end
 
 #

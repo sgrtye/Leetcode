@@ -1,6 +1,7 @@
 # @lcpr-before-debug-begin
 from python3problem121 import *
 from typing import *
+
 # @lcpr-before-debug-end
 
 #
@@ -18,18 +19,18 @@ from typing import *
 # @lc code=start
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        low = prices[0]
-        high = prices[0]
-        profit = 0
+        left: int = 0
+        right: int = 0
+        profit: int = 0
 
-        for p in prices:
-            if p < low:
-                low = p
-                high = p
-            elif p > high:
-                high = p
-                profit = max(profit, high - low)
-        
+        while right < len(prices):
+            profit = max(profit, prices[right] - prices[left])
+
+            if prices[right] < prices[left]:
+                left = right
+
+            right += 1
+
         return profit
 
 

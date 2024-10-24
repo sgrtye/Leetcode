@@ -19,20 +19,21 @@ from typing import *
 # @lc code=start
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        count = dict()
+        left: int = 0
+        right: int = 0
+        max_length: int = 0
+        letter_dict: dict[str, int] = dict()
 
-        l = 0
-        maxf = 0
+        while right < len(s):
+            letter_dict[s[right]] = letter_dict.get(s[right], 0) + 1
+            while max(letter_dict.values()) + k < right - left + 1:
+                letter_dict[s[left]] -= 1
+                left += 1
 
-        for r in range(len(s)):
-            count[s[r]] = 1 + count.get(s[r], 0)
-            maxf = max(maxf, count[s[r]])
+            max_length = max(max_length, right - left + 1)
+            right += 1
 
-            while (r - l + 1) - maxf > k:
-                count[s[l]] -= 1
-                l += 1
-
-        return r - l + 1
+        return max_length
 
 
 # @lc code=end
