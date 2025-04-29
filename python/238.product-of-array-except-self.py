@@ -1,45 +1,27 @@
-# @lcpr-before-debug-begin
-from python3problem238 import *
-from typing import *
-
-# @lcpr-before-debug-end
-
 #
 # @lc app=leetcode id=238 lang=python3
-# @lcpr version=30105
 #
 # [238] Product of Array Except Self
 #
 
 
-# @lcpr-template-start
-
-
-# @lcpr-template-end
 # @lc code=start
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        prefix: list[int] = [1] * (len(nums) + 1)
-        for i in range(len(nums)):
-            prefix[i] = prefix[i - 1] * nums[i]
+        length: int = len(nums)
+        result: list[int] = [1] * length
 
-        suffix: list[int] = [1] * (len(nums) + 1)
-        for i in range(len(nums) - 1, -1, -1):
-            suffix[i] = suffix[i + 1] * nums[i]
+        number: int = 1
+        for i in range(1, length):
+            number *= nums[i - 1]
+            result[i] *= number
 
-        return [prefix[i - 1] * suffix[i + 1] for i in range(len(nums))]
+        number = 1
+        for i in range(length - 2, -1, -1):
+            number *= nums[i + 1]
+            result[i] *= number
+
+        return result
 
 
 # @lc code=end
-
-
-#
-# @lcpr case=start
-# [1,2,3,4]\n
-# @lcpr case=end
-
-# @lcpr case=start
-# [-1,1,0,-3,3]\n
-# @lcpr case=end
-
-#
