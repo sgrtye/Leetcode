@@ -1,7 +1,12 @@
 {
     "python.analysis.typeCheckingMode": "basic",
     "cSpell.words": [
-        "lcpr",
         "leetcode"
-    ]
+    ],
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportUndefinedVariable": "none"
+    },
+    "github.copilot.enable": {
+        "*": false
+    },
 }
