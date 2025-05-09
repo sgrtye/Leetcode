@@ -6,6 +6,9 @@
     "python.analysis.diagnosticSeverityOverrides": {
         "reportUndefinedVariable": "none"
     },
+    "rust-analyzer.diagnostics.disabled": [
+        "unlinked-file"
+    ],
     "github.copilot.enable": {
         "*": false
     },
