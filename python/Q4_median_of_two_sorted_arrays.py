@@ -28,12 +28,13 @@ class Solution:
             long_right: int = long[n] if n < len(long) else (10**6) + 1
 
             if short_left <= long_right and long_left <= short_right:
-                if total % 2 == 1:
-                    result = min(short_right, long_right)
+                max_left: int = max(short_left, long_left)
+                min_right: int = min(short_right, long_right)
+
+                if total % 2 != 0:
+                    result = min_right
                 else:
-                    max_left: int = max(short_left, long_left)
-                    min_right: int = min(short_right, long_right)
-                    result = (max_left + min_right) / 2
+                    result = (max_left + min_right) / 2.0
 
                 break
 
