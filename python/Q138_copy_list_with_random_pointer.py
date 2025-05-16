@@ -1,9 +1,3 @@
-# @before-stub-for-debug-begin
-from python3problem138 import *
-from typing import *
-
-# @before-stub-for-debug-end
-
 #
 # @lc app=leetcode id=138 lang=python3
 #

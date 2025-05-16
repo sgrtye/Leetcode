@@ -1,5 +1,3 @@
-# @before-stub-for-debug-end
-
 #
 # @lc app=leetcode id=230 lang=python3
 #
