@@ -6,9 +6,13 @@
     "python.analysis.diagnosticSeverityOverrides": {
         "reportUndefinedVariable": "none"
     },
-    "rust-analyzer.diagnostics.disabled": [
-        "unlinked-file"
-    ],
+    "ruff.configuration": {
+        "lint": {
+            "ignore": [
+                "F821"
+            ]
+        }
+    },
     "github.copilot.enable": {
         "*": false
     },
