@@ -103,9 +103,24 @@ pub mod Q206_reverse_linked_list {
     include!("Q206_reverse_linked_list.rs");
 }
 
+pub mod Q208_implement_trie_prefix_tree {
+    pub struct Solution;
+    include!("Q208_implement_trie_prefix_tree.rs");
+}
+
 pub mod Q20_valid_parentheses {
     pub struct Solution;
     include!("Q20_valid_parentheses.rs");
+}
+
+pub mod Q211_design_add_and_search_words_data_structure {
+    pub struct Solution;
+    include!("Q211_design_add_and_search_words_data_structure.rs");
+}
+
+pub mod Q212_word_search_ii {
+    pub struct Solution;
+    include!("Q212_word_search_ii.rs");
 }
 
 pub mod Q217_contains_duplicate {

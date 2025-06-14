@@ -13,7 +13,6 @@ class TrieNode:
 
 
 class WordDictionary:
-
     def __init__(self):
         self.root: TrieNode = TrieNode()
 
@@ -28,23 +27,25 @@ class WordDictionary:
 
         current.end = True
 
-    def search_with_node(self, word: str, node: TrieNode) -> bool:
-        for i, c in enumerate(word):
-            if c == ".":
+    def search_with_node(self, word: str, node: TrieNode, index: int) -> bool:
+        if index != len(word):
+            if word[index] == ".":
                 return any(
-                    self.search_with_node(word[i + 1 :], n)
-                    for n in node.children.values()
+                    self.search_with_node(word, child, index + 1)
+                    for child in node.children.values()
                 )
-            
-            if c not in node.children:
+
+            if word[index] in node.children:
+                return self.search_with_node(
+                    word, node.children[word[index]], index + 1
+                )
+            else:
                 return False
-
-            node = node.children[c]
-
-        return node.end
+        else:
+            return node.end
 
     def search(self, word: str) -> bool:
-        return self.search_with_node(word, self.root)
+        return self.search_with_node(word, self.root, 0)
 
 
 # Your WordDictionary object will be instantiated and called as such:
