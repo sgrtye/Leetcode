@@ -8,6 +8,11 @@ pub mod Q102_binary_tree_level_order_traversal {
     include!("Q102_binary_tree_level_order_traversal.rs");
 }
 
+pub mod Q1046_last_stone_weight {
+    pub struct Solution;
+    include!("Q1046_last_stone_weight.rs");
+}
+
 pub mod Q104_maximum_depth_of_binary_tree {
     pub struct Solution;
     include!("Q104_maximum_depth_of_binary_tree.rs");
@@ -123,6 +128,11 @@ pub mod Q212_word_search_ii {
     include!("Q212_word_search_ii.rs");
 }
 
+pub mod Q215_kth_largest_element_in_an_array {
+    pub struct Solution;
+    include!("Q215_kth_largest_element_in_an_array.rs");
+}
+
 pub mod Q217_contains_duplicate {
     pub struct Solution;
     include!("Q217_contains_duplicate.rs");
@@ -183,6 +193,11 @@ pub mod Q287_find_the_duplicate_number {
     include!("Q287_find_the_duplicate_number.rs");
 }
 
+pub mod Q295_find_median_from_data_stream {
+    pub struct Solution;
+    include!("Q295_find_median_from_data_stream.rs");
+}
+
 pub mod Q297_serialize_and_deserialize_binary_tree {
     pub struct Solution;
     include!("Q297_serialize_and_deserialize_binary_tree.rs");
@@ -201,6 +216,11 @@ pub mod Q33_search_in_rotated_sorted_array {
 pub mod Q347_top_k_frequent_elements {
     pub struct Solution;
     include!("Q347_top_k_frequent_elements.rs");
+}
+
+pub mod Q355_design_twitter {
+    pub struct Solution;
+    include!("Q355_design_twitter.rs");
 }
 
 pub mod Q36_valid_sudoku {
@@ -248,6 +268,16 @@ pub mod Q572_subtree_of_another_tree {
     include!("Q572_subtree_of_another_tree.rs");
 }
 
+pub mod Q621_task_scheduler {
+    pub struct Solution;
+    include!("Q621_task_scheduler.rs");
+}
+
+pub mod Q703_kth_largest_element_in_a_stream {
+    pub struct Solution;
+    include!("Q703_kth_largest_element_in_a_stream.rs");
+}
+
 pub mod Q704_binary_search {
     pub struct Solution;
     include!("Q704_binary_search.rs");
@@ -281,6 +311,11 @@ pub mod Q853_car_fleet {
 pub mod Q875_koko_eating_bananas {
     pub struct Solution;
     include!("Q875_koko_eating_bananas.rs");
+}
+
+pub mod Q973_k_closest_points_to_origin {
+    pub struct Solution;
+    include!("Q973_k_closest_points_to_origin.rs");
 }
 
 pub mod Q981_time_based_key_value_store {
