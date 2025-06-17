@@ -53,6 +53,11 @@ pub mod Q128_longest_consecutive_sequence {
     include!("Q128_longest_consecutive_sequence.rs");
 }
 
+pub mod Q131_palindrome_partitioning {
+    pub struct Solution;
+    include!("Q131_palindrome_partitioning.rs");
+}
+
 pub mod Q143_reorder_list {
     pub struct Solution;
     include!("Q143_reorder_list.rs");
@@ -86,6 +91,11 @@ pub mod Q15_3_sum {
 pub mod Q167_two_sum_ii_input_array_is_sorted {
     pub struct Solution;
     include!("Q167_two_sum_ii_input_array_is_sorted.rs");
+}
+
+pub mod Q17_letter_combinations_of_a_phone_number {
+    pub struct Solution;
+    include!("Q17_letter_combinations_of_a_phone_number.rs");
 }
 
 pub mod Q199_binary_tree_right_side_view {
@@ -228,9 +238,19 @@ pub mod Q36_valid_sudoku {
     include!("Q36_valid_sudoku.rs");
 }
 
+pub mod Q39_combination_sum {
+    pub struct Solution;
+    include!("Q39_combination_sum.rs");
+}
+
 pub mod Q3_longest_substring_without_repeating_characters {
     pub struct Solution;
     include!("Q3_longest_substring_without_repeating_characters.rs");
+}
+
+pub mod Q40_combination_sum_ii {
+    pub struct Solution;
+    include!("Q40_combination_sum_ii.rs");
 }
 
 pub mod Q424_longest_repeating_character_replacement {
@@ -243,6 +263,11 @@ pub mod Q42_trapping_rain_water {
     include!("Q42_trapping_rain_water.rs");
 }
 
+pub mod Q46_permutations {
+    pub struct Solution;
+    include!("Q46_permutations.rs");
+}
+
 pub mod Q49_group_anagrams {
     pub struct Solution;
     include!("Q49_group_anagrams.rs");
@@ -251,6 +276,16 @@ pub mod Q49_group_anagrams {
 pub mod Q4_median_of_two_sorted_arrays {
     pub struct Solution;
     include!("Q4_median_of_two_sorted_arrays.rs");
+}
+
+pub mod Q51_n_queens {
+    pub struct Solution;
+    include!("Q51_n_queens.rs");
+}
+
+pub mod Q52_n_queens_ii {
+    pub struct Solution;
+    include!("Q52_n_queens_ii.rs");
 }
 
 pub mod Q543_diameter_of_binary_tree {
@@ -298,6 +333,16 @@ pub mod Q76_minimum_window_substring {
     include!("Q76_minimum_window_substring.rs");
 }
 
+pub mod Q78_subsets {
+    pub struct Solution;
+    include!("Q78_subsets.rs");
+}
+
+pub mod Q79_word_search {
+    pub struct Solution;
+    include!("Q79_word_search.rs");
+}
+
 pub mod Q84_largest_rectangle_in_histogram {
     pub struct Solution;
     include!("Q84_largest_rectangle_in_histogram.rs");
@@ -311,6 +356,11 @@ pub mod Q853_car_fleet {
 pub mod Q875_koko_eating_bananas {
     pub struct Solution;
     include!("Q875_koko_eating_bananas.rs");
+}
+
+pub mod Q90_subsets_ii {
+    pub struct Solution;
+    include!("Q90_subsets_ii.rs");
 }
 
 pub mod Q973_k_closest_points_to_origin {
