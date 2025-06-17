@@ -48,9 +48,19 @@ pub mod Q125_valid_palindrome {
     include!("Q125_valid_palindrome.rs");
 }
 
+pub mod Q127_word_ladder {
+    pub struct Solution;
+    include!("Q127_word_ladder.rs");
+}
+
 pub mod Q128_longest_consecutive_sequence {
     pub struct Solution;
     include!("Q128_longest_consecutive_sequence.rs");
+}
+
+pub mod Q130_surrounded_regions {
+    pub struct Solution;
+    include!("Q130_surrounded_regions.rs");
 }
 
 pub mod Q131_palindrome_partitioning {
@@ -113,9 +123,19 @@ pub mod Q1_two_sum {
     include!("Q1_two_sum.rs");
 }
 
+pub mod Q200_number_of_islands {
+    pub struct Solution;
+    include!("Q200_number_of_islands.rs");
+}
+
 pub mod Q206_reverse_linked_list {
     pub struct Solution;
     include!("Q206_reverse_linked_list.rs");
+}
+
+pub mod Q207_course_schedule {
+    pub struct Solution;
+    include!("Q207_course_schedule.rs");
 }
 
 pub mod Q208_implement_trie_prefix_tree {
@@ -126,6 +146,11 @@ pub mod Q208_implement_trie_prefix_tree {
 pub mod Q20_valid_parentheses {
     pub struct Solution;
     include!("Q20_valid_parentheses.rs");
+}
+
+pub mod Q210_course_schedule_ii {
+    pub struct Solution;
+    include!("Q210_course_schedule_ii.rs");
 }
 
 pub mod Q211_design_add_and_search_words_data_structure {
@@ -253,6 +278,11 @@ pub mod Q40_combination_sum_ii {
     include!("Q40_combination_sum_ii.rs");
 }
 
+pub mod Q417_pacific_atlantic_water_flow {
+    pub struct Solution;
+    include!("Q417_pacific_atlantic_water_flow.rs");
+}
+
 pub mod Q424_longest_repeating_character_replacement {
     pub struct Solution;
     include!("Q424_longest_repeating_character_replacement.rs");
@@ -306,6 +336,16 @@ pub mod Q572_subtree_of_another_tree {
 pub mod Q621_task_scheduler {
     pub struct Solution;
     include!("Q621_task_scheduler.rs");
+}
+
+pub mod Q684_redundant_connection {
+    pub struct Solution;
+    include!("Q684_redundant_connection.rs");
+}
+
+pub mod Q695_max_area_of_island {
+    pub struct Solution;
+    include!("Q695_max_area_of_island.rs");
 }
 
 pub mod Q703_kth_largest_element_in_a_stream {
@@ -376,5 +416,10 @@ pub mod Q981_time_based_key_value_store {
 pub mod Q98_validate_binary_search_tree {
     pub struct Solution;
     include!("Q98_validate_binary_search_tree.rs");
+}
+
+pub mod Q994_rotting_oranges {
+    pub struct Solution;
+    include!("Q994_rotting_oranges.rs");
 }
 
