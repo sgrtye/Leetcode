@@ -118,6 +118,11 @@ pub mod Q17_letter_combinations_of_a_phone_number {
     include!("Q17_letter_combinations_of_a_phone_number.rs");
 }
 
+pub mod Q1851_minimum_interval_to_include_each_query {
+    pub struct Solution;
+    include!("Q1851_minimum_interval_to_include_each_query.rs");
+}
+
 pub mod Q199_binary_tree_right_side_view {
     pub struct Solution;
     include!("Q199_binary_tree_right_side_view.rs");
@@ -308,6 +313,11 @@ pub mod Q42_trapping_rain_water {
     include!("Q42_trapping_rain_water.rs");
 }
 
+pub mod Q435_non_overlapping_intervals {
+    pub struct Solution;
+    include!("Q435_non_overlapping_intervals.rs");
+}
+
 pub mod Q46_permutations {
     pub struct Solution;
     include!("Q46_permutations.rs");
@@ -343,9 +353,19 @@ pub mod Q567_permutation_in_string {
     include!("Q567_permutation_in_string.rs");
 }
 
+pub mod Q56_merge_intervals {
+    pub struct Solution;
+    include!("Q56_merge_intervals.rs");
+}
+
 pub mod Q572_subtree_of_another_tree {
     pub struct Solution;
     include!("Q572_subtree_of_another_tree.rs");
+}
+
+pub mod Q57_insert_interval {
+    pub struct Solution;
+    include!("Q57_insert_interval.rs");
 }
 
 pub mod Q621_task_scheduler {
