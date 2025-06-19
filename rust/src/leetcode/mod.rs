@@ -68,6 +68,11 @@ pub mod Q131_palindrome_partitioning {
     include!("Q131_palindrome_partitioning.rs");
 }
 
+pub mod Q1334_find_the_city_with_the_smallest_number_of_neighbors_at_a_threshold_distance {
+    pub struct Solution;
+    include!("Q1334_find_the_city_with_the_smallest_number_of_neighbors_at_a_threshold_distance.rs");
+}
+
 pub mod Q143_reorder_list {
     pub struct Solution;
     include!("Q143_reorder_list.rs");
@@ -91,6 +96,11 @@ pub mod Q153_find_minimum_in_rotated_sorted_array {
 pub mod Q155_min_stack {
     pub struct Solution;
     include!("Q155_min_stack.rs");
+}
+
+pub mod Q1584_min_cost_to_connect_all_points {
+    pub struct Solution;
+    include!("Q1584_min_cost_to_connect_all_points.rs");
 }
 
 pub mod Q15_3_sum {
@@ -243,6 +253,11 @@ pub mod Q2_add_two_numbers {
     include!("Q2_add_two_numbers.rs");
 }
 
+pub mod Q332_reconstruct_itinerary {
+    pub struct Solution;
+    include!("Q332_reconstruct_itinerary.rs");
+}
+
 pub mod Q33_search_in_rotated_sorted_array {
     pub struct Solution;
     include!("Q33_search_in_rotated_sorted_array.rs");
@@ -363,6 +378,11 @@ pub mod Q739_daily_temperatures {
     include!("Q739_daily_temperatures.rs");
 }
 
+pub mod Q743_network_delay_time {
+    pub struct Solution;
+    include!("Q743_network_delay_time.rs");
+}
+
 pub mod Q74_search_a_2_d_matrix {
     pub struct Solution;
     include!("Q74_search_a_2_d_matrix.rs");
@@ -371,6 +391,16 @@ pub mod Q74_search_a_2_d_matrix {
 pub mod Q76_minimum_window_substring {
     pub struct Solution;
     include!("Q76_minimum_window_substring.rs");
+}
+
+pub mod Q778_swim_in_rising_water {
+    pub struct Solution;
+    include!("Q778_swim_in_rising_water.rs");
+}
+
+pub mod Q787_cheapest_flights_within_k_stops {
+    pub struct Solution;
+    include!("Q787_cheapest_flights_within_k_stops.rs");
 }
 
 pub mod Q78_subsets {
