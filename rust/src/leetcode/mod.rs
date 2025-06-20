@@ -73,6 +73,11 @@ pub mod Q1334_find_the_city_with_the_smallest_number_of_neighbors_at_a_threshold
     include!("Q1334_find_the_city_with_the_smallest_number_of_neighbors_at_a_threshold_distance.rs");
 }
 
+pub mod Q134_gas_station {
+    pub struct Solution;
+    include!("Q134_gas_station.rs");
+}
+
 pub mod Q143_reorder_list {
     pub struct Solution;
     include!("Q143_reorder_list.rs");
@@ -121,6 +126,11 @@ pub mod Q17_letter_combinations_of_a_phone_number {
 pub mod Q1851_minimum_interval_to_include_each_query {
     pub struct Solution;
     include!("Q1851_minimum_interval_to_include_each_query.rs");
+}
+
+pub mod Q1899_merge_triplets_to_form_target_triplet {
+    pub struct Solution;
+    include!("Q1899_merge_triplets_to_form_target_triplet.rs");
 }
 
 pub mod Q199_binary_tree_right_side_view {
@@ -318,6 +328,11 @@ pub mod Q435_non_overlapping_intervals {
     include!("Q435_non_overlapping_intervals.rs");
 }
 
+pub mod Q45_jump_game_ii {
+    pub struct Solution;
+    include!("Q45_jump_game_ii.rs");
+}
+
 pub mod Q46_permutations {
     pub struct Solution;
     include!("Q46_permutations.rs");
@@ -343,9 +358,19 @@ pub mod Q52_n_queens_ii {
     include!("Q52_n_queens_ii.rs");
 }
 
+pub mod Q53_maximum_subarray {
+    pub struct Solution;
+    include!("Q53_maximum_subarray.rs");
+}
+
 pub mod Q543_diameter_of_binary_tree {
     pub struct Solution;
     include!("Q543_diameter_of_binary_tree.rs");
+}
+
+pub mod Q55_jump_game {
+    pub struct Solution;
+    include!("Q55_jump_game.rs");
 }
 
 pub mod Q567_permutation_in_string {
@@ -371,6 +396,11 @@ pub mod Q57_insert_interval {
 pub mod Q621_task_scheduler {
     pub struct Solution;
     include!("Q621_task_scheduler.rs");
+}
+
+pub mod Q678_valid_parenthesis_string {
+    pub struct Solution;
+    include!("Q678_valid_parenthesis_string.rs");
 }
 
 pub mod Q684_redundant_connection {
@@ -408,6 +438,11 @@ pub mod Q74_search_a_2_d_matrix {
     include!("Q74_search_a_2_d_matrix.rs");
 }
 
+pub mod Q763_partition_labels {
+    pub struct Solution;
+    include!("Q763_partition_labels.rs");
+}
+
 pub mod Q76_minimum_window_substring {
     pub struct Solution;
     include!("Q76_minimum_window_substring.rs");
@@ -431,6 +466,11 @@ pub mod Q78_subsets {
 pub mod Q79_word_search {
     pub struct Solution;
     include!("Q79_word_search.rs");
+}
+
+pub mod Q846_hand_of_straights {
+    pub struct Solution;
+    include!("Q846_hand_of_straights.rs");
 }
 
 pub mod Q84_largest_rectangle_in_histogram {
