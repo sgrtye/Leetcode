@@ -78,6 +78,11 @@ pub mod Q134_gas_station {
     include!("Q134_gas_station.rs");
 }
 
+pub mod Q139_word_break {
+    pub struct Solution;
+    include!("Q139_word_break.rs");
+}
+
 pub mod Q143_reorder_list {
     pub struct Solution;
     include!("Q143_reorder_list.rs");
@@ -91,6 +96,11 @@ pub mod Q1448_count_good_nodes_in_binary_tree {
 pub mod Q150_evaluate_reverse_polish_notation {
     pub struct Solution;
     include!("Q150_evaluate_reverse_polish_notation.rs");
+}
+
+pub mod Q152_maximum_product_subarray {
+    pub struct Solution;
+    include!("Q152_maximum_product_subarray.rs");
 }
 
 pub mod Q153_find_minimum_in_rotated_sorted_array {
@@ -131,6 +141,11 @@ pub mod Q1851_minimum_interval_to_include_each_query {
 pub mod Q1899_merge_triplets_to_form_target_triplet {
     pub struct Solution;
     include!("Q1899_merge_triplets_to_form_target_triplet.rs");
+}
+
+pub mod Q198_house_robber {
+    pub struct Solution;
+    include!("Q198_house_robber.rs");
 }
 
 pub mod Q199_binary_tree_right_side_view {
@@ -186,6 +201,11 @@ pub mod Q211_design_add_and_search_words_data_structure {
 pub mod Q212_word_search_ii {
     pub struct Solution;
     include!("Q212_word_search_ii.rs");
+}
+
+pub mod Q213_house_robber_ii {
+    pub struct Solution;
+    include!("Q213_house_robber_ii.rs");
 }
 
 pub mod Q215_kth_largest_element_in_an_array {
@@ -268,6 +288,16 @@ pub mod Q2_add_two_numbers {
     include!("Q2_add_two_numbers.rs");
 }
 
+pub mod Q300_longest_increasing_subsequence {
+    pub struct Solution;
+    include!("Q300_longest_increasing_subsequence.rs");
+}
+
+pub mod Q322_coin_change {
+    pub struct Solution;
+    include!("Q322_coin_change.rs");
+}
+
 pub mod Q332_reconstruct_itinerary {
     pub struct Solution;
     include!("Q332_reconstruct_itinerary.rs");
@@ -306,6 +336,11 @@ pub mod Q3_longest_substring_without_repeating_characters {
 pub mod Q40_combination_sum_ii {
     pub struct Solution;
     include!("Q40_combination_sum_ii.rs");
+}
+
+pub mod Q416_partition_equal_subset_sum {
+    pub struct Solution;
+    include!("Q416_partition_equal_subset_sum.rs");
 }
 
 pub mod Q417_pacific_atlantic_water_flow {
@@ -393,9 +428,19 @@ pub mod Q57_insert_interval {
     include!("Q57_insert_interval.rs");
 }
 
+pub mod Q5_longest_palindromic_substring {
+    pub struct Solution;
+    include!("Q5_longest_palindromic_substring.rs");
+}
+
 pub mod Q621_task_scheduler {
     pub struct Solution;
     include!("Q621_task_scheduler.rs");
+}
+
+pub mod Q647_palindromic_substrings {
+    pub struct Solution;
+    include!("Q647_palindromic_substrings.rs");
 }
 
 pub mod Q678_valid_parenthesis_string {
@@ -423,6 +468,11 @@ pub mod Q704_binary_search {
     include!("Q704_binary_search.rs");
 }
 
+pub mod Q70_climbing_stairs {
+    pub struct Solution;
+    include!("Q70_climbing_stairs.rs");
+}
+
 pub mod Q739_daily_temperatures {
     pub struct Solution;
     include!("Q739_daily_temperatures.rs");
@@ -431,6 +481,11 @@ pub mod Q739_daily_temperatures {
 pub mod Q743_network_delay_time {
     pub struct Solution;
     include!("Q743_network_delay_time.rs");
+}
+
+pub mod Q746_min_cost_climbing_stairs {
+    pub struct Solution;
+    include!("Q746_min_cost_climbing_stairs.rs");
 }
 
 pub mod Q74_search_a_2_d_matrix {
@@ -491,6 +546,11 @@ pub mod Q875_koko_eating_bananas {
 pub mod Q90_subsets_ii {
     pub struct Solution;
     include!("Q90_subsets_ii.rs");
+}
+
+pub mod Q91_decode_ways {
+    pub struct Solution;
+    include!("Q91_decode_ways.rs");
 }
 
 pub mod Q973_k_closest_points_to_origin {
