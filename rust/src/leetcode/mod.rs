@@ -93,6 +93,11 @@ pub mod Q134_gas_station {
     include!("Q134_gas_station.rs");
 }
 
+pub mod Q136_single_number {
+    pub struct Solution;
+    include!("Q136_single_number.rs");
+}
+
 pub mod Q139_word_break {
     pub struct Solution;
     include!("Q139_word_break.rs");
@@ -156,6 +161,16 @@ pub mod Q1851_minimum_interval_to_include_each_query {
 pub mod Q1899_merge_triplets_to_form_target_triplet {
     pub struct Solution;
     include!("Q1899_merge_triplets_to_form_target_triplet.rs");
+}
+
+pub mod Q190_reverse_bits {
+    pub struct Solution;
+    include!("Q190_reverse_bits.rs");
+}
+
+pub mod Q191_number_of_1_bits {
+    pub struct Solution;
+    include!("Q191_number_of_1_bits.rs");
 }
 
 pub mod Q198_house_robber {
@@ -283,6 +298,11 @@ pub mod Q25_reverse_nodes_in_k_group {
     include!("Q25_reverse_nodes_in_k_group.rs");
 }
 
+pub mod Q268_missing_number {
+    pub struct Solution;
+    include!("Q268_missing_number.rs");
+}
+
 pub mod Q287_find_the_duplicate_number {
     pub struct Solution;
     include!("Q287_find_the_duplicate_number.rs");
@@ -333,6 +353,11 @@ pub mod Q332_reconstruct_itinerary {
     include!("Q332_reconstruct_itinerary.rs");
 }
 
+pub mod Q338_counting_bits {
+    pub struct Solution;
+    include!("Q338_counting_bits.rs");
+}
+
 pub mod Q33_search_in_rotated_sorted_array {
     pub struct Solution;
     include!("Q33_search_in_rotated_sorted_array.rs");
@@ -351,6 +376,11 @@ pub mod Q355_design_twitter {
 pub mod Q36_valid_sudoku {
     pub struct Solution;
     include!("Q36_valid_sudoku.rs");
+}
+
+pub mod Q371_sum_of_two_integers {
+    pub struct Solution;
+    include!("Q371_sum_of_two_integers.rs");
 }
 
 pub mod Q39_combination_sum {
@@ -571,6 +601,11 @@ pub mod Q78_subsets {
 pub mod Q79_word_search {
     pub struct Solution;
     include!("Q79_word_search.rs");
+}
+
+pub mod Q7_reverse_integer {
+    pub struct Solution;
+    include!("Q7_reverse_integer.rs");
 }
 
 pub mod Q846_hand_of_straights {
