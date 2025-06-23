@@ -23,9 +23,24 @@ pub mod Q105_construct_binary_tree_from_preorder_and_inorder_traversal {
     include!("Q105_construct_binary_tree_from_preorder_and_inorder_traversal.rs");
 }
 
+pub mod Q10_regular_expression_matching {
+    pub struct Solution;
+    include!("Q10_regular_expression_matching.rs");
+}
+
 pub mod Q110_balanced_binary_tree {
     pub struct Solution;
     include!("Q110_balanced_binary_tree.rs");
+}
+
+pub mod Q1143_longest_common_subsequence {
+    pub struct Solution;
+    include!("Q1143_longest_common_subsequence.rs");
+}
+
+pub mod Q115_distinct_subsequences {
+    pub struct Solution;
+    include!("Q115_distinct_subsequences.rs");
 }
 
 pub mod Q11_container_with_most_water {
@@ -293,9 +308,24 @@ pub mod Q300_longest_increasing_subsequence {
     include!("Q300_longest_increasing_subsequence.rs");
 }
 
+pub mod Q309_best_time_to_buy_and_sell_stock_with_cooldown {
+    pub struct Solution;
+    include!("Q309_best_time_to_buy_and_sell_stock_with_cooldown.rs");
+}
+
+pub mod Q312_burst_balloons {
+    pub struct Solution;
+    include!("Q312_burst_balloons.rs");
+}
+
 pub mod Q322_coin_change {
     pub struct Solution;
     include!("Q322_coin_change.rs");
+}
+
+pub mod Q329_longest_increasing_path_in_a_matrix {
+    pub struct Solution;
+    include!("Q329_longest_increasing_path_in_a_matrix.rs");
 }
 
 pub mod Q332_reconstruct_itinerary {
@@ -373,6 +403,11 @@ pub mod Q46_permutations {
     include!("Q46_permutations.rs");
 }
 
+pub mod Q494_target_sum {
+    pub struct Solution;
+    include!("Q494_target_sum.rs");
+}
+
 pub mod Q49_group_anagrams {
     pub struct Solution;
     include!("Q49_group_anagrams.rs");
@@ -381,6 +416,11 @@ pub mod Q49_group_anagrams {
 pub mod Q4_median_of_two_sorted_arrays {
     pub struct Solution;
     include!("Q4_median_of_two_sorted_arrays.rs");
+}
+
+pub mod Q518_coin_change_ii {
+    pub struct Solution;
+    include!("Q518_coin_change_ii.rs");
 }
 
 pub mod Q51_n_queens {
@@ -438,6 +478,11 @@ pub mod Q621_task_scheduler {
     include!("Q621_task_scheduler.rs");
 }
 
+pub mod Q62_unique_paths {
+    pub struct Solution;
+    include!("Q62_unique_paths.rs");
+}
+
 pub mod Q647_palindromic_substrings {
     pub struct Solution;
     include!("Q647_palindromic_substrings.rs");
@@ -471,6 +516,11 @@ pub mod Q704_binary_search {
 pub mod Q70_climbing_stairs {
     pub struct Solution;
     include!("Q70_climbing_stairs.rs");
+}
+
+pub mod Q72_edit_distance {
+    pub struct Solution;
+    include!("Q72_edit_distance.rs");
 }
 
 pub mod Q739_daily_temperatures {
@@ -556,6 +606,11 @@ pub mod Q91_decode_ways {
 pub mod Q973_k_closest_points_to_origin {
     pub struct Solution;
     include!("Q973_k_closest_points_to_origin.rs");
+}
+
+pub mod Q97_interleaving_string {
+    pub struct Solution;
+    include!("Q97_interleaving_string.rs");
 }
 
 pub mod Q981_time_based_key_value_store {
