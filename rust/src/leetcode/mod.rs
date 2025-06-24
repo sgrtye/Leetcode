@@ -198,6 +198,16 @@ pub mod Q200_number_of_islands {
     include!("Q200_number_of_islands.rs");
 }
 
+pub mod Q2013_detect_squares {
+    pub struct Solution;
+    include!("Q2013_detect_squares.rs");
+}
+
+pub mod Q202_happy_number {
+    pub struct Solution;
+    include!("Q202_happy_number.rs");
+}
+
 pub mod Q206_reverse_linked_list {
     pub struct Solution;
     include!("Q206_reverse_linked_list.rs");
@@ -423,6 +433,11 @@ pub mod Q435_non_overlapping_intervals {
     include!("Q435_non_overlapping_intervals.rs");
 }
 
+pub mod Q43_multiply_strings {
+    pub struct Solution;
+    include!("Q43_multiply_strings.rs");
+}
+
 pub mod Q45_jump_game_ii {
     pub struct Solution;
     include!("Q45_jump_game_ii.rs");
@@ -431,6 +446,11 @@ pub mod Q45_jump_game_ii {
 pub mod Q46_permutations {
     pub struct Solution;
     include!("Q46_permutations.rs");
+}
+
+pub mod Q48_rotate_image {
+    pub struct Solution;
+    include!("Q48_rotate_image.rs");
 }
 
 pub mod Q494_target_sum {
@@ -446,6 +466,11 @@ pub mod Q49_group_anagrams {
 pub mod Q4_median_of_two_sorted_arrays {
     pub struct Solution;
     include!("Q4_median_of_two_sorted_arrays.rs");
+}
+
+pub mod Q50_pow_x_n {
+    pub struct Solution;
+    include!("Q50_pow_x_n.rs");
 }
 
 pub mod Q518_coin_change_ii {
@@ -471,6 +496,11 @@ pub mod Q53_maximum_subarray {
 pub mod Q543_diameter_of_binary_tree {
     pub struct Solution;
     include!("Q543_diameter_of_binary_tree.rs");
+}
+
+pub mod Q54_spiral_matrix {
+    pub struct Solution;
+    include!("Q54_spiral_matrix.rs");
 }
 
 pub mod Q55_jump_game {
@@ -518,6 +548,11 @@ pub mod Q647_palindromic_substrings {
     include!("Q647_palindromic_substrings.rs");
 }
 
+pub mod Q66_plus_one {
+    pub struct Solution;
+    include!("Q66_plus_one.rs");
+}
+
 pub mod Q678_valid_parenthesis_string {
     pub struct Solution;
     include!("Q678_valid_parenthesis_string.rs");
@@ -556,6 +591,11 @@ pub mod Q72_edit_distance {
 pub mod Q739_daily_temperatures {
     pub struct Solution;
     include!("Q739_daily_temperatures.rs");
+}
+
+pub mod Q73_set_matrix_zeroes {
+    pub struct Solution;
+    include!("Q73_set_matrix_zeroes.rs");
 }
 
 pub mod Q743_network_delay_time {
