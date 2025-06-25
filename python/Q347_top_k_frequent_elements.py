@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
         frequent_count: dict[int, int] = dict()
 
         for n in nums:

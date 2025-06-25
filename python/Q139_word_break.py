@@ -4,11 +4,12 @@
 # [139] Word Break
 #
 
+
 # @lc code=start
 class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+    def wordBreak(self, s: str, wordDict: list[str]) -> bool:
         dp: list[bool] = [False] * len(s)
-        sorted_word_dict: list[srt] = sorted(wordDict, key=lambda w: len(w))
+        sorted_word_dict: list[str] = sorted(wordDict, key=lambda w: len(w))
 
         for i in range(len(s)):
             for word in sorted_word_dict:

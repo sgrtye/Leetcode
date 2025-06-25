@@ -4,9 +4,10 @@
 # [763] Partition Labels
 #
 
+
 # @lc code=start
 class Solution:
-    def partitionLabels(self, s: str) -> List[int]:
+    def partitionLabels(self, s: str) -> list[int]:
         last_occurence: dict[str, int] = dict()
 
         for i, c in enumerate(s):

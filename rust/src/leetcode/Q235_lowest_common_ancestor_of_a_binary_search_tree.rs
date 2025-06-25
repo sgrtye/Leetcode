@@ -25,7 +25,6 @@ impl TreeNode {
 
 // @lc code=start
 use std::cell::RefCell;
-use std::cmp::{max, min};
 use std::rc::Rc;
 
 impl Solution {
@@ -57,8 +56,8 @@ impl Solution {
 
         Self::lowest_common_ancestor_in_range(
             root.clone(),
-            min(p_value, q_value),
-            max(p_value, q_value),
+            p_value.min(q_value),
+            p_value.max(q_value),
         )
     }
 }

@@ -4,9 +4,10 @@
 # [45] Jump Game II
 #
 
+
 # @lc code=start
 class Solution:
-    def jump(self, nums: List[int]) -> int:
+    def jump(self, nums: list[int]) -> int:
         left: int = 0
         right: int = 0
         result: int = 0

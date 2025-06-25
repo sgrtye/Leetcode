@@ -4,6 +4,7 @@
 # [417] Pacific Atlantic Water Flow
 #
 
+
 # @lc code=start
 class Solution:
     def dfs(self, row: int, col: int, water_map: list[list[bool]]) -> None:
@@ -45,7 +46,7 @@ class Solution:
         for i, j in visiting:
             self.dfs(i, j, self.atlantic)
 
-    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+    def pacificAtlantic(self, heights: list[list[int]]) -> list[list[int]]:
         self.ROWS: int = len(heights)
         self.COLS: int = len(heights[0])
         self.heights: list[list[int]] = heights

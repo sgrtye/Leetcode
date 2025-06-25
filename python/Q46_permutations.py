@@ -18,7 +18,7 @@ class Solution:
             remaining.add(n)
             stack.pop()
 
-    def permute(self, nums: List[int]) -> List[List[int]]:
+    def permute(self, nums: list[int]) -> list[list[int]]:
         self.result: list[list[int]] = []
         self.backtrack(set(nums), [])
 

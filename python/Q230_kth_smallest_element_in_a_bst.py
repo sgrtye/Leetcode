@@ -5,13 +5,15 @@
 #
 
 
-# @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None) -> None:
+        self.val: int = val
+        self.left: TreeNode | None = left
+        self.right: TreeNode | None = right
+
+
+# @lc code=start
 class Solution:
     def inorder_with_max(self, root: TreeNode, k: int) -> None:
         if len(self.values) >= k:
@@ -25,9 +27,12 @@ class Solution:
         if root.right:
             self.inorder_with_max(root.right, k)
 
-    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+    def kthSmallest(self, root: TreeNode | None, k: int) -> int:
         self.values: list[int] = []
+
+        assert root is not None
         self.inorder_with_max(root, k)
+
         return self.values[k - 1]
 
 

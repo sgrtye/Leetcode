@@ -4,9 +4,10 @@
 # [309] Best Time to Buy and Sell Stock with Cooldown
 #
 
+
 # @lc code=start
 class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
+    def maxProfit(self, prices: list[int]) -> int:
         buy: list[int] = [-prices[0] for _ in range(len(prices))]
         sell: list[int] = [0 for _ in range(len(prices))]
         cooldown: list[int] = [0 for _ in range(len(prices))]

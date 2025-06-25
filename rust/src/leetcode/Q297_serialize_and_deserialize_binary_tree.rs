@@ -26,6 +26,7 @@ impl TreeNode {
 // @lc code=start
 use std::cell::RefCell;
 use std::rc::Rc;
+
 struct Codec {}
 
 /**
@@ -34,7 +35,7 @@ struct Codec {}
  */
 impl Codec {
     fn new() -> Self {
-        Codec {}
+        Self {}
     }
 
     fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>, nodes: &mut Vec<String>) {

@@ -5,15 +5,17 @@
 #
 
 
-# @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None) -> None:
+        self.val: int = val
+        self.left: TreeNode | None = left
+        self.right: TreeNode | None = right
+
+
+# @lc code=start
 class Solution:
-    def build_tree(self, limit: int) -> TreeNode:
+    def build_tree(self, limit: int) -> TreeNode | None:
         if self.pre_index >= len(self.preorder):
             return None
 
@@ -31,7 +33,7 @@ class Solution:
 
         return new_node
 
-    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+    def buildTree(self, preorder: list[int], inorder: list[int]) -> TreeNode | None:
         self.preorder: list[int] = preorder
         self.inorder: list[int] = inorder
 

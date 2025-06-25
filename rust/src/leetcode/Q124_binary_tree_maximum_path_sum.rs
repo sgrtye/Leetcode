@@ -25,7 +25,6 @@ impl TreeNode {
 
 // @lc code=start
 use std::cell::RefCell;
-use std::cmp::max;
 use std::rc::Rc;
 
 impl Solution {
@@ -36,16 +35,14 @@ impl Solution {
             let (right_contained, right_included) =
                 Self::contained_and_included_path(node.borrow().right.clone());
 
-            let left_updated: i32 = max(left_included, 0);
-            let right_updated: i32 = max(right_included, 0);
+            let left_updated: i32 = left_included.max(0);
+            let right_updated: i32 = right_included.max(0);
 
-            let sub_contained: i32 = max(left_contained, right_contained);
-            let contaiend: i32 = max(
-                sub_contained,
-                left_updated + right_updated + node.borrow().val,
-            );
+            let sub_contained: i32 = left_contained.max(right_contained);
+            let contaiend: i32 =
+                sub_contained.max(left_updated + right_updated + node.borrow().val);
 
-            let included: i32 = max(left_updated, right_updated) + node.borrow().val;
+            let included: i32 = left_updated.max(right_updated) + node.borrow().val;
 
             (contaiend, included)
         } else {

@@ -4,6 +4,7 @@
 # [50] Pow(x, n)
 #
 
+
 # @lc code=start
 class Solution:
     def power(self, x: float, n: int) -> float:

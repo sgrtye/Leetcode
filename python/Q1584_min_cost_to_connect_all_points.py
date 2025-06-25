@@ -4,9 +4,10 @@
 # [1584] Min Cost to Connect All Points
 #
 
+
 # @lc code=start
 class Solution:
-    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+    def minCostConnectPoints(self, points: list[list[int]]) -> int:
         target: int = len(points)
         connected: list[bool] = [False] * target
         distances: list[int] = [4 * 10**6 + 1] * target

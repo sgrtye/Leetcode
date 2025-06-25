@@ -4,12 +4,13 @@
 # [215] Kth Largest Element in an Array
 #
 
+
 # @lc code=start
 import heapq
 
 
 class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
+    def findKthLargest(self, nums: list[int], k: int) -> int:
         min_heap: list[int] = []
 
         for n in nums:

@@ -4,11 +4,13 @@
 # [10] Regular Expression Matching
 #
 
+
 # @lc code=start
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         dp: list[list[bool]] = [[False] * (len(p) + 1) for _ in range(len(s) + 1)]
         dp[0][0] = True
+
         for j in range(1, len(p) + 1):
             if p[j - 1] == "*":
                 dp[0][j] = dp[0][j - 2]

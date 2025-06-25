@@ -5,13 +5,15 @@
 #
 
 
-# @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None) -> None:
+        self.val: int = val
+        self.left: TreeNode | None = left
+        self.right: TreeNode | None = right
+
+
+# @lc code=start
 class Solution:
     def max_path(self, root: TreeNode | None) -> tuple[int, int]:
         if not root:
@@ -35,7 +37,7 @@ class Solution:
 
         return connected_max, max_path
 
-    def maxPathSum(self, root: Optional[TreeNode]) -> int:
+    def maxPathSum(self, root: TreeNode | None) -> int:
         return self.max_path(root)[1]
 
 

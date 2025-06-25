@@ -24,7 +24,6 @@ class Node:
 
 
 class LRUCache:
-
     def __init__(self, capacity: int) -> None:
         self.capacity: int = capacity
         self.dict: dict[int, Node] = dict()
@@ -41,11 +40,12 @@ class LRUCache:
         node: Node = self.dict[key]
         del self.dict[key]
 
-        previous: Node = node.previous
-        next: Node = node.next
+        previous: Node | None = node.previous
+        next: Node | None = node.next
 
-        next.set_previous(previous)
-        previous.set_next(next)
+        if next is not None and previous is not None:
+            next.set_previous(previous)
+            previous.set_next(next)
 
     def insert(self, key: int, value: int) -> None:
         self.delete(key)
@@ -53,11 +53,12 @@ class LRUCache:
         new_node: Node = Node(key, value)
         self.dict[key] = new_node
 
-        new_node.set_previous(self.end.previous)
-        new_node.set_next(self.end)
+        if self.end.previous is not None:
+            new_node.set_previous(self.end.previous)
+            new_node.set_next(self.end)
 
-        self.end.previous.set_next(new_node)
-        self.end.set_previous(new_node)
+            self.end.previous.set_next(new_node)
+            self.end.set_previous(new_node)
 
     def get(self, key: int) -> int:
         if key not in self.dict:
@@ -69,7 +70,8 @@ class LRUCache:
 
     def put(self, key: int, value: int) -> None:
         if key not in self.dict and len(self.dict) == self.capacity:
-            self.delete(self.start.next.key)
+            if self.start.next is not None:
+                self.delete(self.start.next.key)
 
         self.insert(key, value)
 

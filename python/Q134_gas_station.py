@@ -4,9 +4,10 @@
 # [134] Gas Station
 #
 
+
 # @lc code=start
 class Solution:
-    def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
+    def canCompleteCircuit(self, gas: list[int], cost: list[int]) -> int:
         if sum(gas) < sum(cost):
             return -1
 

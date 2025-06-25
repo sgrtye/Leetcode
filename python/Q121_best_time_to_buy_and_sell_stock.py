@@ -7,15 +7,15 @@
 
 # @lc code=start
 class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        l: int = 0
+    def maxProfit(self, prices: list[int]) -> int:
+        left: int = 0
         profit: int = 0
 
-        for r in range(len(prices)):
-            if prices[l] > prices[r]:
-                l = r
-            elif prices[r] - prices[l] > profit:
-                profit = prices[r] - prices[l]
+        for right in range(len(prices)):
+            if prices[left] > prices[right]:
+                left = right
+            elif prices[right] - prices[left] > profit:
+                profit = prices[right] - prices[left]
 
         return profit
 

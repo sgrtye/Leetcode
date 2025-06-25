@@ -4,6 +4,7 @@
 # [678] Valid Parenthesis String
 #
 
+
 # @lc code=start
 class Solution:
     def checkValidString(self, s: str) -> bool:

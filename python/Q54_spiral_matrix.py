@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+    def spiralOrder(self, matrix: list[list[int]]) -> list[int]:
         ROWS: int = len(matrix)
         COLS: int = len(matrix[0])
 

@@ -31,8 +31,8 @@ impl Twitter {
 
     fn check_user(&mut self, user_id: i32) {
         if !self.following.contains_key(&user_id) {
-            self.following.entry(user_id).or_insert(HashSet::new());
-            self.tweets.entry(user_id).or_insert(VecDeque::new());
+            self.following.entry(user_id).or_default();
+            self.tweets.entry(user_id).or_default();
         }
     }
 

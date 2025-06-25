@@ -7,32 +7,32 @@
 
 # @lc code=start
 class Solution:
-    def trap(self, height: List[int]) -> int:
+    def trap(self, height: list[int]) -> int:
         if len(height) < 2:
             return 0
 
-        l: int = 0
-        r: int = len(height) - 1
+        left: int = 0
+        right: int = len(height) - 1
 
         l_max: int = height[0]
         r_max: int = height[-1]
         volumn: int = 0
 
-        while l <= r:
+        while left <= right:
             if l_max < r_max:
-                if (water := l_max - (new_max := height[l])) > 0:
+                if (water := l_max - (new_max := height[left])) > 0:
                     volumn += water
                 else:
                     l_max = new_max
 
-                l += 1
+                left += 1
             else:
-                if (water := r_max - (new_max := height[r])) > 0:
+                if (water := r_max - (new_max := height[right])) > 0:
                     volumn += water
                 else:
                     r_max = new_max
 
-                r -= 1
+                right -= 1
 
         return volumn
 

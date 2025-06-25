@@ -4,15 +4,16 @@
 # [2013] Detect Squares
 #
 
+
 # @lc code=start
 class DetectSquares:
-    def __init__(self):
+    def __init__(self) -> None:
         self.points: dict[tuple[int, int], int] = dict()
 
-    def add(self, point: List[int]) -> None:
+    def add(self, point: list[int]) -> None:
         self.points[(point[0], point[1])] = self.points.get((point[0], point[1]), 0) + 1
 
-    def count(self, point: List[int]) -> int:
+    def count(self, point: list[int]) -> int:
         x: int = point[0]
         y: int = point[1]
 

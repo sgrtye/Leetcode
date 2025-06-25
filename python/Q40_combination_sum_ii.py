@@ -24,7 +24,7 @@ class Solution:
             index += 1
         self.backtrack(index + 1, current_sum, stack)
 
-    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum2(self, candidates: list[int], target: int) -> list[list[int]]:
         self.target: int = target
         self.length: int = len(candidates)
         self.candidates: list[int] = candidates

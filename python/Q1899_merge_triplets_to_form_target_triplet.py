@@ -4,9 +4,10 @@
 # [1899] Merge Triplets to Form Target Triplet
 #
 
+
 # @lc code=start
 class Solution:
-    def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
+    def mergeTriplets(self, triplets: list[list[int]], target: list[int]) -> bool:
         x: bool = False
         y: bool = False
         z: bool = False

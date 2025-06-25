@@ -5,16 +5,18 @@
 #
 
 
-# @lc code=start
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None) -> None:
+        self.val: int = val
+        self.next: ListNode | None = next
+
+
+# @lc code=start
 class Solution:
     def mergeTwoLists(
-        self, list1: Optional[ListNode], list2: Optional[ListNode]
-    ) -> Optional[ListNode]:
+        self, list1: ListNode | None, list2: ListNode | None
+    ) -> ListNode | None:
         dummy: ListNode = ListNode()
         current: ListNode = dummy
 

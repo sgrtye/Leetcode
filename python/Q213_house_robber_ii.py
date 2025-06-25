@@ -4,9 +4,10 @@
 # [213] House Robber II
 #
 
+
 # @lc code=start
 class Solution:
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         if len(nums) <= 2:
             return max(nums)
 

@@ -22,7 +22,7 @@ class Solution:
 
         return new_rotten_list
 
-    def orangesRotting(self, grid: List[List[int]]) -> int:
+    def orangesRotting(self, grid: list[list[int]]) -> int:
         self.ROWS: int = len(grid)
         self.COLS: int = len(grid[0])
         self.grid: list[list[int]] = grid

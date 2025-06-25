@@ -13,7 +13,7 @@ class TrieNode:
 
 
 class WordDictionary:
-    def __init__(self):
+    def __init__(self) -> None:
         self.root: TrieNode = TrieNode()
 
     def addWord(self, word: str) -> None:

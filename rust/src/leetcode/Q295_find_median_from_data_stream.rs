@@ -6,11 +6,12 @@
 
 // @lc code=start
 use std::cmp::Ordering;
+use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
 struct MedianFinder {
     left: BinaryHeap<i32>,
-    right: BinaryHeap<i32>,
+    right: BinaryHeap<Reverse<i32>>,
 }
 
 /**
@@ -31,30 +32,34 @@ impl MedianFinder {
                 if self.left.is_empty() || num < *self.left.peek().unwrap() {
                     self.left.push(num);
                 } else {
-                    self.right.push(-num);
+                    self.right.push(Reverse(num));
                 }
             }
             Ordering::Less => {
-                self.right.push(-num);
-                self.left.push(-self.right.pop().unwrap());
+                self.right.push(Reverse(num));
+                if let Some(Reverse(min_val)) = self.right.pop() {
+                    self.left.push(min_val);
+                }
             }
             Ordering::Greater => {
                 self.left.push(num);
-                self.right.push(-self.left.pop().unwrap());
+                if let Some(max_val) = self.left.pop() {
+                    self.right.push(Reverse(max_val));
+                }
             }
         }
     }
 
     fn find_median(&self) -> f64 {
         match self.left.len().cmp(&self.right.len()) {
-            Ordering::Equal => {
-                let &num1 = self.left.peek().unwrap();
-                let &num2 = self.right.peek().unwrap();
-
-                (num1 - num2) as f64 / 2.0
-            }
-            Ordering::Less => -self.right.peek().unwrap() as f64,
+            Ordering::Less => self.right.peek().unwrap().0 as f64,
             Ordering::Greater => *self.left.peek().unwrap() as f64,
+            Ordering::Equal => {
+                let &max_left = self.left.peek().unwrap();
+                let &Reverse(min_right) = self.right.peek().unwrap();
+
+                (max_left + min_right) as f64 / 2.0
+            }
         }
     }
 }

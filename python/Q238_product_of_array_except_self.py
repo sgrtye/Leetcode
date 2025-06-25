@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
+    def productExceptSelf(self, nums: list[int]) -> list[int]:
         length: int = len(nums)
         result: list[int] = [1] * length
 

@@ -4,13 +4,13 @@
 # [295] Find Median from Data Stream
 #
 
+
 # @lc code=start
 import heapq
 
 
 class MedianFinder:
-
-    def __init__(self):
+    def __init__(self) -> None:
         self.small: list[int] = []
         self.large: list[int] = []
 

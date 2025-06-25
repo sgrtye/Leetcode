@@ -4,6 +4,7 @@
 # [202] Happy Number
 #
 
+
 # @lc code=start
 class Solution:
     def isHappy(self, n: int) -> bool:

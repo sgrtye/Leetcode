@@ -7,19 +7,23 @@
 
 # @lc code=start
 class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        l: int = 0
-        r: int = len(numbers) - 1
+    def twoSum(self, numbers: list[int], target: int) -> list[int]:
+        left: int = 0
+        right: int = len(numbers) - 1
+        result: list[int] = []
 
-        while l < r:
-            result: int = numbers[l] + numbers[r]
+        while left < right:
+            current: int = numbers[left] + numbers[right]
 
-            if result < target:
-                l += 1
-            elif result > target:
-                r -= 1
+            if current < target:
+                left += 1
+            elif current > target:
+                right -= 1
             else:
-                return [l + 1, r + 1]
+                result = [left + 1, right + 1]
+                break
+
+        return result
 
 
 # @lc code=end

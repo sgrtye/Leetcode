@@ -5,8 +5,6 @@
  */
 
 // @lc code=start
-use std::cmp::{max, min};
-
 impl Solution {
     fn order_list_by_length(nums1: Vec<i32>, nums2: Vec<i32>) -> (Vec<i32>, Vec<i32>) {
         if nums1.len() <= nums2.len() {
@@ -51,10 +49,10 @@ impl Solution {
 
             if shorter_left <= longer_right && longer_left <= shorter_right {
                 if (shorter.len() + longer.len()) % 2 == 1 {
-                    return min(shorter_right, longer_right) as f64;
+                    return shorter_right.min(longer_right) as f64;
                 } else {
-                    let median_left: i32 = max(shorter_left, longer_left);
-                    let median_right: i32 = min(shorter_right, longer_right);
+                    let median_left: i32 = shorter_left.max(longer_left);
+                    let median_right: i32 = shorter_right.min(longer_right);
 
                     return (median_left + median_right) as f64 / 2.0;
                 }

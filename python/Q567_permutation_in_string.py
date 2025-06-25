@@ -12,17 +12,17 @@ class Solution:
         for s in s1:
             s1_dict[s] = s1_dict.get(s, 0) + 1
 
-        l: int = 0
+        left: int = 0
         remained: int = len(s1_dict)
         counter: dict[str, int] = dict()
 
-        for r in range(len(s2)):
-            letter: str = s2[r]
+        for right in range(len(s2)):
+            letter: str = s2[right]
 
             if letter not in s1_dict:
                 remained = len(s1_dict)
                 counter.clear()
-                l = r + 1
+                left = right + 1
                 continue
 
             counter[letter] = counter.get(letter, 0) + 1
@@ -30,13 +30,13 @@ class Solution:
             if letter in s1_dict and counter[letter] == s1_dict[letter]:
                 remained -= 1
 
-            while l <= r and counter[letter] > s1_dict[letter]:
-                l_letter: str = s2[l]
+            while left <= right and counter[letter] > s1_dict[letter]:
+                l_letter: str = s2[left]
                 if l_letter in s1_dict and counter[l_letter] == s1_dict[l_letter]:
                     remained += 1
 
                 counter[l_letter] -= 1
-                l += 1
+                left += 1
 
             if remained == 0:
                 return True

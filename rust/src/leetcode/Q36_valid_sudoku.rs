@@ -5,12 +5,11 @@
  */
 
 // @lc code=start
-use std::array;
 use std::collections::HashSet;
 
 impl Solution {
     pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
-        let mut sets: [HashSet<char>; 27] = array::from_fn(|_| HashSet::new());
+        let mut sets: Vec<HashSet<char>> = vec![HashSet::new(); 27];
 
         for i in 0..9 {
             for j in 0..9 {

@@ -4,9 +4,10 @@
 # [746] Min Cost Climbing Stairs
 #
 
+
 # @lc code=start
 class Solution:
-    def minCostClimbingStairs(self, cost: List[int]) -> int:
+    def minCostClimbingStairs(self, cost: list[int]) -> int:
         n: int = len(cost)
         steps: list[int] = [0] * n
         steps[n - 1] = cost[n - 1]

@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+    def dailyTemperatures(self, temperatures: list[int]) -> list[int]:
         stack: list[int] = []
         result: list[int] = [0] * len(temperatures)
 

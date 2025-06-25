@@ -4,6 +4,7 @@
 # [695] Max Area of Island
 #
 
+
 # @lc code=start
 class Solution:
     def dfs(self, row: int, col: int) -> int:
@@ -24,7 +25,7 @@ class Solution:
 
         return area
 
-    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+    def maxAreaOfIsland(self, grid: list[list[int]]) -> int:
         self.ROWS: int = len(grid)
         self.COLS: int = len(grid[0])
         self.grid: list[list[int]] = grid

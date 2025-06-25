@@ -4,12 +4,13 @@
 # [778] Swim in Rising Water
 #
 
+
 # @lc code=start
 import heapq
 
 
 class Solution:
-    def swimInWater(self, grid: List[List[int]]) -> int:
+    def swimInWater(self, grid: list[list[int]]) -> int:
         ROWS: int = len(grid)
         COLS: int = len(grid[0])
         directions: list[tuple[int, int]] = [(1, 0), (-1, 0), (0, 1), (0, -1)]

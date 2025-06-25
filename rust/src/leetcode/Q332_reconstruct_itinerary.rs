@@ -9,17 +9,17 @@ use std::collections::HashMap;
 
 impl Solution {
     fn hierholzers_dfs(
-        adjecent_list: &mut HashMap<String, Vec<String>>,
+        adjacent_list: &mut HashMap<String, Vec<String>>,
         result: &mut Vec<String>,
         current: String,
     ) {
-        while let Some(destinations) = adjecent_list.get_mut(&current) {
+        while let Some(destinations) = adjacent_list.get_mut(&current) {
             if destinations.is_empty() {
                 break;
             }
 
             let next: String = destinations.pop().unwrap();
-            Self::hierholzers_dfs(adjecent_list, result, next);
+            Self::hierholzers_dfs(adjacent_list, result, next);
         }
 
         result.push(current);
@@ -30,16 +30,16 @@ impl Solution {
         tickets.sort();
         tickets.reverse();
 
-        let mut adjecent_list: HashMap<String, Vec<String>> = HashMap::new();
+        let mut adjacent_list: HashMap<String, Vec<String>> = HashMap::new();
         for ticket in tickets {
             let from: String = ticket[0].clone();
             let to: String = ticket[1].clone();
 
-            adjecent_list.entry(from).or_default().push(to);
+            adjacent_list.entry(from).or_default().push(to);
         }
 
         let mut result: Vec<String> = Vec::new();
-        Self::hierholzers_dfs(&mut adjecent_list, &mut result, String::from("JFK"));
+        Self::hierholzers_dfs(&mut adjacent_list, &mut result, String::from("JFK"));
 
         result.reverse();
         result
@@ -50,19 +50,19 @@ impl Solution {
         tickets.sort();
         tickets.reverse();
 
-        let mut adjecent_list: HashMap<String, Vec<String>> = HashMap::new();
+        let mut adjacent_list: HashMap<String, Vec<String>> = HashMap::new();
         for ticket in tickets {
             let from: String = ticket[0].clone();
             let to: String = ticket[1].clone();
 
-            adjecent_list.entry(from).or_default().push(to);
+            adjacent_list.entry(from).or_default().push(to);
         }
 
         let mut result: Vec<String> = Vec::new();
         let mut stack: Vec<String> = vec![String::from("JFK")];
 
         while let Some(current) = stack.pop() {
-            if let Some(destinations) = adjecent_list.get_mut(&current) {
+            if let Some(destinations) = adjacent_list.get_mut(&current) {
                 if !destinations.is_empty() {
                     stack.push(current);
                     let next: String = destinations.pop().unwrap();

@@ -48,7 +48,7 @@ class Solution:
         word.pop()
         self.visiting[row][col] = False
 
-    def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
+    def findWords(self, board: list[list[str]], words: list[str]) -> list[str]:
         self.ROWS: int = len(board)
         self.COLS: int = len(board[0])
 

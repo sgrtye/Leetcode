@@ -4,9 +4,10 @@
 # [56] Merge Intervals
 #
 
+
 # @lc code=start
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+    def merge(self, intervals: list[list[int]]) -> list[list[int]]:
         all_times: dict[int, int] = dict()
 
         for start, end in intervals:

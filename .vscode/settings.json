@@ -3,16 +3,16 @@
     "cSpell.words": [
         "leetcode"
     ],
-    "python.analysis.diagnosticSeverityOverrides": {
-        "reportUndefinedVariable": "none"
-    },
-    "ruff.configuration": {
-        "lint": {
-            "ignore": [
-                "F821"
-            ]
-        }
-    },
+    // "python.analysis.diagnosticSeverityOverrides": {
+    //     "reportUndefinedVariable": "none"
+    // },
+    // "ruff.configuration": {
+    //     "lint": {
+    //         "ignore": [
+    //             "F821"
+    //         ]
+    //     }
+    // },
     "github.copilot.enable": {
         "*": false
     },

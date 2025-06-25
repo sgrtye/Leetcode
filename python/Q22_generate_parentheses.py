@@ -7,13 +7,6 @@
 
 # @lc code=start
 class Solution:
-    def generateParenthesis(self, n: int) -> List[str]:
-        result: list[str] = []
-        stack: list[str] = []
-
-        self.backtrack(n, result, stack)
-        return result
-
     def backtrack(
         self,
         n: int,
@@ -35,6 +28,13 @@ class Solution:
             stack.append(")")
             self.backtrack(n, result, stack, open_count, close_count + 1)
             stack.pop()
+
+    def generateParenthesis(self, n: int) -> list[str]:
+        result: list[str] = []
+        stack: list[str] = []
+
+        self.backtrack(n, result, stack)
+        return result
 
 
 # @lc code=end

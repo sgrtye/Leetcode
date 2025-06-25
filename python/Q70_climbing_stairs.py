@@ -4,6 +4,7 @@
 # [70] Climbing Stairs
 #
 
+
 # @lc code=start
 class Solution:
     def climbStairs(self, n: int) -> int:

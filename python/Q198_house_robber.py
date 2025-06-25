@@ -4,9 +4,10 @@
 # [198] House Robber
 #
 
+
 # @lc code=start
 class Solution:
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         if len(nums) == 1:
             return nums[0]
 

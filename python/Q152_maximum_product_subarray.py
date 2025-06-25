@@ -4,9 +4,10 @@
 # [152] Maximum Product Subarray
 #
 
+
 # @lc code=start
 class Solution:
-    def maxProduct(self, nums: List[int]) -> int:
+    def maxProduct(self, nums: list[int]) -> int:
         min_dp: list[int] = [nums[0]] * len(nums)
         max_dp: list[int] = [nums[0]] * len(nums)
         result: int = nums[0]

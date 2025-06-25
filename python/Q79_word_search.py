@@ -30,7 +30,7 @@ class Solution:
 
         return result
 
-    def exist(self, board: List[List[str]], word: str) -> bool:
+    def exist(self, board: list[list[str]], word: str) -> bool:
         self.ROWS: int = len(board)
         self.COLS: int = len(board[0])
 

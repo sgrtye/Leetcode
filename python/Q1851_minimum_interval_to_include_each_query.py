@@ -4,12 +4,13 @@
 # [1851] Minimum Interval to Include Each Query
 #
 
+
 # @lc code=start
 import heapq
 
 
 class Solution:
-    def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
+    def minInterval(self, intervals: list[list[int]], queries: list[int]) -> list[int]:
         intervals.sort()
         sorted_queries: list[int] = sorted(set(queries))
 

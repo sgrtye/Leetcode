@@ -25,7 +25,6 @@ impl TreeNode {
 
 // @lc code=start
 use std::cell::RefCell;
-use std::cmp::max;
 use std::rc::Rc;
 
 impl Solution {
@@ -34,7 +33,7 @@ impl Solution {
             let left_count = Self::max_depth(node.borrow_mut().left.clone());
             let right_count = Self::max_depth(node.borrow_mut().right.clone());
 
-            max(left_count, right_count) + 1
+            left_count.max(right_count) + 1
         } else {
             0
         }

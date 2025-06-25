@@ -7,8 +7,7 @@
 
 # @lc code=start
 class MinStack:
-
-    def __init__(self):
+    def __init__(self) -> None:
         self.stack: list[int] = []
         self.min_stack: list[int] = []
 

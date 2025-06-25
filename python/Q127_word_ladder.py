@@ -4,25 +4,26 @@
 # [127] Word Ladder
 #
 
+
 # @lc code=start
 class Solution:
-    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: list[str]) -> int:
         if endWord not in wordList:
             return 0
 
         if beginWord not in wordList:
             wordList.append(beginWord)
 
-        adjecent_list: dict[str, list[str]] = dict()
+        adjacent_list: dict[str, list[str]] = dict()
 
         for word in wordList:
             for i in range(len(word)):
                 pattern: str = word[:i] + "*" + word[i + 1 :]
 
-                if pattern not in adjecent_list:
-                    adjecent_list[pattern] = []
+                if pattern not in adjacent_list:
+                    adjacent_list[pattern] = []
 
-                adjecent_list[pattern].append(word)
+                adjacent_list[pattern].append(word)
 
         result: int = 0
         layer: list[str] = [beginWord]
@@ -39,10 +40,10 @@ class Solution:
                 for i in range(len(word)):
                     pattern: str = word[:i] + "*" + word[i + 1 :]
 
-                    for adjecent_word in adjecent_list[pattern]:
-                        if adjecent_word not in visited:
-                            visited.add(adjecent_word)
-                            new_layer.append(adjecent_word)
+                    for adjacent_word in adjacent_list[pattern]:
+                        if adjacent_word not in visited:
+                            visited.add(adjacent_word)
+                            new_layer.append(adjacent_word)
 
             layer = new_layer
 

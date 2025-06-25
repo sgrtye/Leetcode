@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         result: dict[str, list[str]] = dict()
 
         for s in strs:

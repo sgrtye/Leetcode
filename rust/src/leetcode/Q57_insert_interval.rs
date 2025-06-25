@@ -5,6 +5,8 @@
  */
 
 // @lc code=start
+use std::cmp::Ordering;
+
 impl Solution {
     fn insert_with_looping(intervals: Vec<Vec<i32>>, new_interval: Vec<i32>) -> Vec<Vec<i32>> {
         let mut res: Vec<Vec<i32>> = Vec::new();
@@ -28,7 +30,10 @@ impl Solution {
         res
     }
 
-    fn find_non_lapping_start(intervals: &Vec<Vec<i32>>, new_interval: &Vec<i32>) -> Option<usize> {
+    fn find_non_overlapping_start(
+        intervals: &Vec<Vec<i32>>,
+        new_interval: &Vec<i32>,
+    ) -> Option<usize> {
         let mut left: usize = 0;
         let mut right: i32 = intervals.len() as i32 - 1;
 
@@ -37,12 +42,10 @@ impl Solution {
         while left as i32 <= right {
             let mid: usize = left + ((right - left as i32) / 2) as usize;
 
-            if intervals[mid][1] < target {
-                left = mid + 1;
-            } else if intervals[mid][1] > target {
-                right = mid as i32 - 1;
-            } else {
-                right = mid as i32 - 1;
+            match intervals[mid][1].cmp(&target) {
+                Ordering::Less => left = mid + 1,
+                Ordering::Greater => right = mid as i32 - 1,
+                Ordering::Equal => right = mid as i32 - 1,
             }
         }
 
@@ -53,7 +56,10 @@ impl Solution {
         }
     }
 
-    fn find_non_lapping_end(intervals: &Vec<Vec<i32>>, new_interval: &Vec<i32>) -> Option<usize> {
+    fn find_non_overlapping_end(
+        intervals: &Vec<Vec<i32>>,
+        new_interval: &Vec<i32>,
+    ) -> Option<usize> {
         let mut left: i32 = 0;
         let mut right: i32 = intervals.len() as i32 - 1;
 
@@ -62,12 +68,10 @@ impl Solution {
         while left <= right {
             let mid: i32 = left + ((right - left) / 2);
 
-            if intervals[mid as usize][0] < target {
-                left = mid + 1;
-            } else if intervals[mid as usize][0] > target {
-                right = mid - 1;
-            } else {
-                left = mid + 1;
+            match intervals[mid as usize][0].cmp(&target) {
+                Ordering::Less => left = mid + 1,
+                Ordering::Greater => right = mid - 1,
+                Ordering::Equal => left = mid + 1,
             }
         }
 
@@ -87,9 +91,9 @@ impl Solution {
         let mut new_interval_end: i32 = new_interval[1];
         let mut result: Vec<Vec<i32>> = Vec::new();
 
-        if let Some(start) = Self::find_non_lapping_start(&intervals, &new_interval) {
+        if let Some(start) = Self::find_non_overlapping_start(&intervals, &new_interval) {
             if start == intervals.len() - 1 {
-                let mut res = intervals;
+                let mut res: Vec<Vec<i32>> = intervals;
                 res.push(new_interval);
                 return res;
             }
@@ -100,9 +104,9 @@ impl Solution {
             new_interval_start = new_interval_start.min(intervals[0][0]);
         }
 
-        if let Some(end) = Self::find_non_lapping_end(&intervals, &new_interval) {
+        if let Some(end) = Self::find_non_overlapping_end(&intervals, &new_interval) {
             if end == 0 {
-                let mut res = vec![new_interval];
+                let mut res: Vec<Vec<i32>> = vec![new_interval];
                 res.extend_from_slice(&intervals);
                 return res;
             }

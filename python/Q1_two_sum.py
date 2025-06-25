@@ -7,14 +7,18 @@
 
 # @lc code=start
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        result: dict[int, int] = dict()
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        mapping: dict[int, int] = dict()
+        result: list[int] = []
 
         for i, n in enumerate(nums):
-            if n in result:
-                return [i, result[n]]
+            if n in mapping:
+                result = [i, mapping[n]]
+                break
 
-            result[target - n] = i
+            mapping[target - n] = i
+
+        return result
 
 
 # @lc code=end

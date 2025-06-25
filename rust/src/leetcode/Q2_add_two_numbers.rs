@@ -45,7 +45,7 @@ impl Solution {
             }
 
             carry = sum / 10;
-            sum = sum % 10;
+            sum %= 10;
 
             *current = Some(Box::new(ListNode::new(sum)));
             current = &mut current.as_mut().unwrap().next;

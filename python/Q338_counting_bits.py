@@ -4,9 +4,10 @@
 # [338] Counting Bits
 #
 
+
 # @lc code=start
 class Solution:
-    def countBits(self, n: int) -> List[int]:
+    def countBits(self, n: int) -> list[int]:
         result: list[int] = [0, 1]
 
         while len(result) < n + 1:

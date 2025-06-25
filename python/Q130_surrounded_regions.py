@@ -4,6 +4,7 @@
 # [130] Surrounded Regions
 #
 
+
 # @lc code=start
 class Solution:
     def dfs(self, row: int, col: int) -> None:
@@ -21,7 +22,7 @@ class Solution:
         for i, j in self.directions:
             self.dfs(row + i, col + j)
 
-    def solve(self, board: List[List[str]]) -> None:
+    def solve(self, board: list[list[str]]) -> None:
         """
         Do not return anything, modify board in-place instead.
         """

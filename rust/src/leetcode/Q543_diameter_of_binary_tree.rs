@@ -25,7 +25,6 @@ impl TreeNode {
 
 // @lc code=start
 use std::cell::RefCell;
-use std::cmp::max;
 use std::rc::Rc;
 
 impl Solution {
@@ -36,9 +35,9 @@ impl Solution {
             let (right_depth, right_diameter) =
                 Self::depth_and_diameter_of_subtree(node.borrow_mut().right.clone());
 
-            let max_depth: i32 = max(left_depth, right_depth) + 1;
-            let max_subtree_diameter: i32 = max(left_diameter, right_diameter);
-            let max_diameter: i32 = max(max_subtree_diameter, left_depth + right_depth);
+            let max_depth: i32 = left_depth.max(right_depth) + 1;
+            let max_subtree_diameter: i32 = left_diameter.max(right_diameter);
+            let max_diameter: i32 = max_subtree_diameter.max(left_depth + right_depth);
 
             (max_depth, max_diameter)
         } else {

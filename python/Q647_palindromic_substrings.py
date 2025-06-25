@@ -4,6 +4,7 @@
 # [647] Palindromic Substrings
 #
 
+
 # @lc code=start
 class Solution:
     def countSubstrings(self, s: str) -> int:

@@ -5,8 +5,6 @@
  */
 
 // @lc code=start
-use std::cmp::min;
-
 impl Solution {
     pub fn max_area(height: Vec<i32>) -> i32 {
         let mut result: i32 = 0;
@@ -15,7 +13,7 @@ impl Solution {
         let mut right: usize = height.len() - 1;
 
         while left < right {
-            let current: i32 = (right - left) as i32 * min(height[left], height[right]);
+            let current: i32 = (right - left) as i32 * height[left].min(height[right]);
 
             if current > result {
                 result = current

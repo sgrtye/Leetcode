@@ -5,13 +5,15 @@
 #
 
 
-# @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None) -> None:
+        self.val: int = val
+        self.left: TreeNode | None = left
+        self.right: TreeNode | None = right
+
+
+# @lc code=start
 class Solution:
     def is_balanced(self, root: TreeNode | None) -> tuple[int, bool]:
         if not root:
@@ -29,7 +31,7 @@ class Solution:
 
         return depth, abs(left_depth - right_depth) < 2
 
-    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+    def isBalanced(self, root: TreeNode | None) -> bool:
         return self.is_balanced(root)[1]
 
 

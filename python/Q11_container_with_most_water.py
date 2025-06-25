@@ -7,18 +7,18 @@
 
 # @lc code=start
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
-        l: int = 0
-        r: int = len(height) - 1
+    def maxArea(self, height: list[int]) -> int:
+        left: int = 0
+        right: int = len(height) - 1
         max_area: int = 0
 
-        while l < r:
-            max_area = max(max_area, (r - l) * min(height[l], height[r]))
+        while left < right:
+            max_area = max(max_area, (right - left) * min(height[left], height[right]))
 
-            if height[l] < height[r]:
-                l += 1
+            if height[left] < height[right]:
+                left += 1
             else:
-                r -= 1
+                right -= 1
 
         return max_area
 

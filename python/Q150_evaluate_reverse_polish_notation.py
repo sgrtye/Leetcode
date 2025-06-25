@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def evalRPN(self, tokens: List[str]) -> int:
+    def evalRPN(self, tokens: list[str]) -> int:
         result: list[int] = []
 
         for t in tokens:

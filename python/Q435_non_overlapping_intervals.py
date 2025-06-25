@@ -4,9 +4,10 @@
 # [435] Non-overlapping Intervals
 #
 
+
 # @lc code=start
 class Solution:
-    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+    def eraseOverlapIntervals(self, intervals: list[list[int]]) -> int:
         intervals.sort()
 
         result: int = 0

@@ -7,25 +7,25 @@
 
 # @lc code=start
 class Solution:
-    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+    def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
         short: list[int] = nums1 if len(nums1) <= len(nums2) else nums2
         long: list[int] = nums2 if len(nums1) <= len(nums2) else nums1
 
         total: int = len(short) + len(long)
         half: int = total // 2
 
-        l: int = 0
-        r: int = len(short)
+        left: int = 0
+        right: int = len(short)
         result: float = 0.0
 
-        while l <= r:
-            m: int = l + ((r - l) // 2)
-            n: int = half - m
+        while left <= right:
+            mid: int = left + ((right - left) // 2)
+            other_mid: int = half - mid
 
-            short_left: int = short[m - 1] if m > 0 else -(10**6) - 1
-            short_right: int = short[m] if m < len(short) else (10**6) + 1
-            long_left: int = long[n - 1] if n > 0 else -(10**6) - 1
-            long_right: int = long[n] if n < len(long) else (10**6) + 1
+            short_left: int = short[mid - 1] if mid > 0 else -(10**6) - 1
+            short_right: int = short[mid] if mid < len(short) else (10**6) + 1
+            long_left: int = long[other_mid - 1] if other_mid > 0 else -(10**6) - 1
+            long_right: int = long[other_mid] if other_mid < len(long) else (10**6) + 1
 
             if short_left <= long_right and long_left <= short_right:
                 max_left: int = max(short_left, long_left)
@@ -39,9 +39,9 @@ class Solution:
                 break
 
             if short_left > long_right:
-                r = m - 1
+                right = mid - 1
             else:
-                l = m + 1
+                left = mid + 1
 
         return result
 

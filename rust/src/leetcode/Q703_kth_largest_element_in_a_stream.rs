@@ -5,10 +5,11 @@
  */
 
 // @lc code=start
+use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
 struct KthLargest {
-    heap: BinaryHeap<i32>,
+    heap: BinaryHeap<Reverse<i32>>,
     capacity: i32,
 }
 
@@ -18,22 +19,22 @@ struct KthLargest {
  */
 impl KthLargest {
     fn new(k: i32, nums: Vec<i32>) -> Self {
-        let mut heap: BinaryHeap<i32> = nums.into_iter().map(|x| -x).collect();
+        let mut heap: BinaryHeap<Reverse<i32>> = nums.into_iter().map(|x| Reverse(x)).collect();
         while heap.len() > k as usize {
             heap.pop();
         }
 
-        KthLargest { heap, capacity: k }
+        Self { heap, capacity: k }
     }
 
     fn add(&mut self, val: i32) -> i32 {
-        self.heap.push(-val);
+        self.heap.push(Reverse(val));
 
         if self.heap.len() > self.capacity as usize {
             self.heap.pop();
         }
 
-        -self.heap.peek().unwrap()
+        self.heap.peek().unwrap().0
     }
 }
 

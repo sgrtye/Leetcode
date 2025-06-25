@@ -4,9 +4,10 @@
 # [268] Missing Number
 #
 
+
 # @lc code=start
 class Solution:
-    def missingNumber(self, nums: List[int]) -> int:
+    def missingNumber(self, nums: list[int]) -> int:
         result: int = len(nums)
 
         for i, v in enumerate(nums):

@@ -10,8 +10,7 @@ import heapq
 
 
 class Twitter:
-
-    def __init__(self):
+    def __init__(self) -> None:
         self.count: int = 0
         self.tweets: dict[int, list[tuple[int, int]]] = dict()
         self.followers: dict[int, set[int]] = dict()
@@ -23,7 +22,7 @@ class Twitter:
         self.tweets[userId].append((self.count, tweetId))
         self.count += 1
 
-    def getNewsFeed(self, userId: int) -> List[int]:
+    def getNewsFeed(self, userId: int) -> list[int]:
         all_ids: set[int] = self.followers.get(userId, set()) | set([userId])
 
         all_feeds: list[tuple[int, int]] = []

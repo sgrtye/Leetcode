@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def largestRectangleArea(self, heights: List[int]) -> int:
+    def largestRectangleArea(self, heights: list[int]) -> int:
         max_area: int = 0
         stack: list[tuple[int, int]] = []  # (index, height)
 

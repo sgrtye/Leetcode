@@ -7,21 +7,21 @@
 
 # @lc code=start
 class Solution:
-    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+    def searchMatrix(self, matrix: list[list[int]], target: int) -> bool:
         rows: int = len(matrix)
         cols: int = len(matrix[0])
 
-        l: int = 0
-        r: int = rows * cols - 1
+        left: int = 0
+        right: int = rows * cols - 1
 
-        while l <= r:
-            m: int = l + ((r - l) // 2)
-            number: int = matrix[m // cols][m % cols]
+        while left <= right:
+            mid: int = left + ((right - left) // 2)
+            number: int = matrix[mid // cols][mid % cols]
 
             if number < target:
-                l = m + 1
+                left = mid + 1
             elif number > target:
-                r = m - 1
+                right = mid - 1
             else:
                 return True
 

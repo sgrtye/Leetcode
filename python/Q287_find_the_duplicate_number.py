@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def findDuplicate(self, nums: List[int]) -> int:
+    def findDuplicate(self, nums: list[int]) -> int:
         slow: int = 0
         fast: int = 0
         while True:

@@ -7,13 +7,13 @@
 
 # @lc code=start
 class Solution:
-    def is_palindrome(self, l: int, r: int) -> bool:
-        while l < r:
-            if self.s[l] != self.s[r]:
+    def is_palindrome(self, left: int, right: int) -> bool:
+        while left < right:
+            if self.s[left] != self.s[right]:
                 return False
 
-            l += 1
-            r -= 1
+            left += 1
+            right -= 1
 
         return True
 
@@ -28,7 +28,7 @@ class Solution:
                 self.backtrack(j + 1, stack)
                 stack.pop()
 
-    def partition(self, s: str) -> List[List[str]]:
+    def partition(self, s: str) -> list[list[str]]:
         self.s: str = s
         self.length: int = len(s)
         self.result: list[list[str]] = []

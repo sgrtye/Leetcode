@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+    def minEatingSpeed(self, piles: list[int], h: int) -> int:
         l: int = 1
         r: int = max(piles)
         result: int = r

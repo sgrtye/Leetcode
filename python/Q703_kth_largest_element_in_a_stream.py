@@ -4,13 +4,13 @@
 # [703] Kth Largest Element in a Stream
 #
 
+
 # @lc code=start
 import heapq
 
 
 class KthLargest:
-
-    def __init__(self, k: int, nums: List[int]):
+    def __init__(self, k: int, nums: list[int]) -> None:
         self.min_heap: list[int] = nums
         self.k: int = k
 

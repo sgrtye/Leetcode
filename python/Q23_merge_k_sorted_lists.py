@@ -5,12 +5,14 @@
 #
 
 
-# @lc code=start
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None) -> None:
+        self.val: int = val
+        self.next: ListNode | None = next
+
+
+# @lc code=start
 class Solution:
     def mergeList(self, l1: ListNode | None, l2: ListNode | None) -> ListNode | None:
         dummy: ListNode = ListNode()
@@ -34,7 +36,7 @@ class Solution:
 
         return dummy.next
 
-    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+    def mergeKLists(self, lists: list[ListNode | None]) -> ListNode | None:
         while len(lists) > 1:
             new_list: list[ListNode | None] = []
 

@@ -4,6 +4,7 @@
 # [684] Redundant Connection
 #
 
+
 # @lc code=start
 class UnionFind:
     def __init__(self, n: int) -> None:
@@ -27,12 +28,14 @@ class UnionFind:
 
 
 class Solution:
-    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+    def findRedundantConnection(self, edges: list[list[int]]) -> list[int]:
         union_find: UnionFind = UnionFind(len(edges) + 1)
 
         for x, y in edges:
             if not union_find.union(x, y):
                 return [x, y]
+
+        return []
 
 
 # @lc code=end

@@ -4,9 +4,10 @@
 # [63] Unique Paths II
 #
 
+
 # @lc code=start
 class Solution:
-    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+    def uniquePathsWithObstacles(self, obstacleGrid: list[list[int]]) -> int:
         ROWS: int = len(obstacleGrid)
         COLS: int = len(obstacleGrid[0])
         dp: list[list[int]] = [[1] * COLS for _ in range(ROWS)]

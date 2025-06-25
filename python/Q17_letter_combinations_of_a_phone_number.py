@@ -17,7 +17,7 @@ class Solution:
             self.backtrack(index + 1, stack)
             stack.pop()
 
-    def letterCombinations(self, digits: str) -> List[str]:
+    def letterCombinations(self, digits: str) -> list[str]:
         if not digits:
             return []
 

@@ -5,6 +5,7 @@
  */
 
 // @lc code=start
+use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
 impl Solution {
@@ -13,19 +14,19 @@ impl Solution {
         static DIRECTIONS: [(i32, i32); 4] = [(-1, 0), (1, 0), (0, -1), (0, 1)];
 
         let mut visited: Vec<bool> = vec![false; size * size];
-        let mut explore: BinaryHeap<(i32, i32, i32)> = BinaryHeap::new();
+        let mut explore: BinaryHeap<(Reverse<i32>, i32, i32)> = BinaryHeap::new();
 
-        explore.push((-grid[0][0], 0, 0));
+        explore.push((Reverse(grid[0][0]), 0, 0));
 
         while !explore.is_empty() {
-            let (time, row, col) = explore.pop().unwrap();
+            let (Reverse(time), row, col) = explore.pop().unwrap();
 
             if visited[row as usize * size + col as usize] {
                 continue;
             }
 
             if row == size as i32 - 1 && col == size as i32 - 1 {
-                return -time;
+                return time;
             }
 
             visited[row as usize * size + col as usize] = true;
@@ -41,7 +42,7 @@ impl Solution {
                     && !visited[new_row as usize * size + new_col as usize]
                 {
                     explore.push((
-                        time.min(-grid[new_row as usize][new_col as usize]),
+                        Reverse(time.max(grid[new_row as usize][new_col as usize])),
                         new_row,
                         new_col,
                     ));

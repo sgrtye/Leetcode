@@ -4,9 +4,10 @@
 # [494] Target Sum
 #
 
+
 # @lc code=start
 class Solution:
-    def findTargetSumWays(self, nums: List[int], target: int) -> int:
+    def findTargetSumWays(self, nums: list[int], target: int) -> int:
         dp: list[dict[int, int]] = [dict() for _ in range(len(nums) + 1)]
         dp[0][0] = 1
 

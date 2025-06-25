@@ -4,15 +4,16 @@
 # [297] Serialize and Deserialize Binary Tree
 #
 
-# @lc code=start
+
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+class TreeNode:
+    def __init__(self, x: int) -> None:
+        self.val: int = x
+        self.left: TreeNode | None = None
+        self.right: TreeNode | None = None
 
 
+# @lc code=start
 class Codec:
     def preorder(self, root: TreeNode | None, node_list: list[str]) -> None:
         if not root:
@@ -23,7 +24,7 @@ class Codec:
         self.preorder(root.left, node_list)
         self.preorder(root.right, node_list)
 
-    def serialize(self, root):
+    def serialize(self, root) -> str:
         """Encodes a tree to a single string.
 
         :type root: TreeNode
@@ -34,7 +35,7 @@ class Codec:
 
         return ",".join(result)
 
-    def create(self) -> TreeNode:
+    def create(self) -> TreeNode | None:
         value: str = self.node_list[self.index]
         if value == "N":
             self.index += 1
@@ -48,7 +49,7 @@ class Codec:
 
         return new_node
 
-    def deserialize(self, data):
+    def deserialize(self, data) -> TreeNode | None:
         """Decodes your encoded data to tree.
 
         :type data: str

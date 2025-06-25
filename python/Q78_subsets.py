@@ -18,7 +18,7 @@ class Solution:
         subset.pop()
         self.backtrack(index + 1, subset)
 
-    def subsets(self, nums: List[int]) -> List[List[int]]:
+    def subsets(self, nums: list[int]) -> list[list[int]]:
         self.nums: list[int] = nums
         self.length: int = len(nums)
         self.result: list[list[int]] = []

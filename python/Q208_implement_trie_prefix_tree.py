@@ -13,8 +13,7 @@ class TrieNode:
 
 
 class Trie:
-
-    def __init__(self):
+    def __init__(self) -> None:
         self.words: TrieNode = TrieNode()
 
     def insert(self, word: str) -> None:

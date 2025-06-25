@@ -5,13 +5,15 @@
 #
 
 
-# @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None) -> None:
+        self.val: int = val
+        self.left: TreeNode | None = left
+        self.right: TreeNode | None = right
+
+
+# @lc code=start
 class Solution:
     def depth_and_diameter_of_subtree(self, root: TreeNode | None) -> tuple[int, int]:
         if not root:
@@ -27,7 +29,7 @@ class Solution:
 
         return max_depth, max_diameter
 
-    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+    def diameterOfBinaryTree(self, root: TreeNode | None) -> int:
         return self.depth_and_diameter_of_subtree(root)[1]
 
 

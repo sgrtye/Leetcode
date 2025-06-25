@@ -5,13 +5,15 @@
 #
 
 
-# @lc code=start
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None) -> None:
+        self.val: int = val
+        self.left: TreeNode | None = left
+        self.right: TreeNode | None = right
+
+
+# @lc code=start
 class Solution:
     def same_tree(self, root: TreeNode | None, other: TreeNode | None) -> bool:
         if not root and not other:
@@ -24,7 +26,7 @@ class Solution:
         right_match: bool = self.same_tree(root.right, other.right)
         return left_match and right_match
 
-    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+    def isSubtree(self, root: TreeNode | None, subRoot: TreeNode | None) -> bool:
         if root is None:
             return False
 

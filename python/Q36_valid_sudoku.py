@@ -7,13 +7,13 @@
 
 # @lc code=start
 class Solution:
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
+    def isValidSudoku(self, board: list[list[str]]) -> bool:
         # In the order of rows, cols, then boxes ordered from left to right, top to bottom
         check_sets: list[set[str]] = [set() for _ in range(27)]
 
         for i in range(9):
             for j in range(9):
-                char = board[i][j]
+                char: str = board[i][j]
                 if char == ".":
                     continue
 

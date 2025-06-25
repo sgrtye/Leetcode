@@ -23,7 +23,7 @@ class Solution:
         stack.pop()
         self.backtrack(index + 1, current_sum, stack)
 
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum(self, candidates: list[int], target: int) -> list[list[int]]:
         self.target: int = target
         self.length: int = len(candidates)
         self.candidates: list[int] = candidates

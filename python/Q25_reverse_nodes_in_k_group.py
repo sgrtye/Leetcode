@@ -40,7 +40,9 @@ class Solution:
         reversed_head.next = current
         return reversed_head
 
-    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+    def reverse_k_group_iterative(
+        self, head: ListNode | None, k: int
+    ) -> ListNode | None:
         dummy: ListNode = ListNode(next=head)
         current: ListNode = dummy
 
@@ -49,9 +51,9 @@ class Solution:
 
         return dummy.next
 
-    def reverseKGroupRecursive(
-        self, head: Optional[ListNode], k: int
-    ) -> Optional[ListNode]:
+    def reverse_k_group_recursive(
+        self, head: ListNode | None, k: int
+    ) -> ListNode | None:
         count: int = 0
         counting_node: ListNode | None = head
 
@@ -76,9 +78,12 @@ class Solution:
             current = tmp
 
         if head:
-            head.next = self.reverseKGroup(current, k)
+            head.next = self.reverse_k_group_recursive(current, k)
 
         return previous
+
+    def reverseKGroup(self, head: ListNode | None, k: int) -> ListNode | None:
+        return self.reverse_k_group_recursive(head, k)
 
 
 # @lc code=end

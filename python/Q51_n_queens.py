@@ -39,7 +39,7 @@ class Solution:
             self.pos_diag[number + i] = False
             self.neg_diag[number - i + self.target - 1] = False
 
-    def solveNQueens(self, n: int) -> List[List[str]]:
+    def solveNQueens(self, n: int) -> list[list[str]]:
         self.col: list[bool] = [False] * n
         self.pos_diag: list[bool] = [False] * (2 * n - 1)
         self.neg_diag: list[bool] = [False] * (2 * n - 1)

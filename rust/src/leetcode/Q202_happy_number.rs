@@ -21,7 +21,7 @@ impl Solution {
             let mut summation: Vec<i32> = Vec::new();
             while n != 0 {
                 let digit: i32 = n % 10;
-                n = n / 10;
+                n /= 10;
                 summation.push(digit * digit);
             }
 

@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
         nums.sort()
         result: list[list[int]] = []
 
@@ -18,22 +18,22 @@ class Solution:
             if i > 0 and n == nums[i - 1]:
                 continue
 
-            l: int = i + 1
-            r: int = len(nums) - 1
-            while l < r:
-                sum: int = n + nums[l] + nums[r]
+            left: int = i + 1
+            right: int = len(nums) - 1
+            while left < right:
+                sum: int = n + nums[left] + nums[right]
 
                 if sum > 0:
-                    r -= 1
+                    right -= 1
                 elif sum < 0:
-                    l += 1
+                    left += 1
                 else:
-                    result.append([n, nums[l], nums[r]])
+                    result.append([n, nums[left], nums[right]])
 
-                    l += 1
-                    r -= 1
-                    while nums[l] == nums[l - 1] and l < r:
-                        l += 1
+                    left += 1
+                    right -= 1
+                    while nums[left] == nums[left - 1] and left < right:
+                        left += 1
 
         return result
 

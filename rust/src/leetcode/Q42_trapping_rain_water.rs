@@ -5,8 +5,6 @@
  */
 
 // @lc code=start
-use std::cmp::{max, min};
-
 impl Solution {
     pub fn trap(height: Vec<i32>) -> i32 {
         let mut left_max: i32 = 0;
@@ -19,12 +17,12 @@ impl Solution {
 
         while left <= right {
             if left_max <= right_max {
-                result += max(min(left_max, right_max) - height[left], 0);
-                left_max = max(left_max, height[left]);
+                result += (left_max.min(right_max) - height[left]).max(0);
+                left_max = left_max.max(height[left]);
                 left += 1;
             } else {
-                result += max(min(left_max, right_max) - height[right], 0);
-                right_max = max(right_max, height[right]);
+                result += (left_max.min(right_max) - height[right]).max(0);
+                right_max = right_max.max(height[right]);
                 right -= 1;
             }
         }

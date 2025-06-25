@@ -4,6 +4,7 @@
 # [43] Multiply Strings
 #
 
+
 # @lc code=start
 class Solution:
     def multiply(self, num1: str, num2: str) -> str:

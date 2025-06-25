@@ -4,14 +4,15 @@
 # [207] Course Schedule
 #
 
+
 # @lc code=start
 class Solution:
-    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+    def canFinish(self, numCourses: int, prerequisites: list[list[int]]) -> bool:
         indegrees: list[int] = [0] * numCourses
-        adjecent_list: dict[int, list[int]] = {i: [] for i in range(numCourses)}
+        adjacent_list: dict[int, list[int]] = {i: [] for i in range(numCourses)}
 
         for i, j in prerequisites:
-            adjecent_list[j].append(i)
+            adjacent_list[j].append(i)
             indegrees[i] += 1
 
         leaves: list[int] = [i for i, v in enumerate(indegrees) if v == 0]
@@ -21,7 +22,7 @@ class Solution:
             finished += 1
             node: int = leaves.pop()
 
-            for n in adjecent_list[node]:
+            for n in adjacent_list[node]:
                 indegrees[n] -= 1
                 if indegrees[n] == 0:
                     leaves.append(n)

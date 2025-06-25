@@ -5,6 +5,7 @@
  */
 
 // @lc code=start
+use std::cmp::Reverse;
 use std::collections::BinaryHeap;
 
 struct UnionFind {
@@ -78,7 +79,7 @@ impl Solution {
     }
 
     fn prims(points: Vec<Vec<i32>>) -> i32 {
-        let mut adjecent_list: Vec<Vec<(i32, usize)>> = vec![vec![]; points.len()];
+        let mut adjacent_list: Vec<Vec<(i32, usize)>> = vec![vec![]; points.len()];
         for i in 0..points.len() {
             let i_x: i32 = points[i][0];
             let i_y: i32 = points[i][1];
@@ -88,29 +89,29 @@ impl Solution {
                 let j_y: i32 = points[j][1];
                 let distance: i32 = (i_x - j_x).abs() + (i_y - j_y).abs();
 
-                adjecent_list[i].push((distance, j));
-                adjecent_list[j].push((distance, i));
+                adjacent_list[i].push((distance, j));
+                adjacent_list[j].push((distance, i));
             }
         }
 
         let mut result: i32 = 0;
         let mut connected: Vec<bool> = vec![false; points.len()];
-        let mut heap: BinaryHeap<(i32, usize)> = BinaryHeap::new();
-        heap.push((0, 0));
+        let mut heap: BinaryHeap<(Reverse<i32>, usize)> = BinaryHeap::new();
+        heap.push((Reverse(0), 0));
 
         while !heap.is_empty() {
-            let (distance, vertex) = heap.pop().unwrap();
+            let (Reverse(distance), vertex) = heap.pop().unwrap();
 
             if connected[vertex] {
                 continue;
             }
 
-            result -= distance;
+            result += distance;
             connected[vertex] = true;
 
-            for &(new_distance, target) in &adjecent_list[vertex] {
+            for &(new_distance, target) in &adjacent_list[vertex] {
                 if !connected[target] {
-                    heap.push((-new_distance, target));
+                    heap.push((Reverse(new_distance), target));
                 }
             }
         }
@@ -155,7 +156,7 @@ impl Solution {
     }
 
     pub fn min_cost_connect_points(points: Vec<Vec<i32>>) -> i32 {
-        Self::prims_eager(points)
+        Self::prims(points)
     }
 }
 // @lc code=end

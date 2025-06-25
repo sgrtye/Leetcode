@@ -25,7 +25,6 @@ impl TreeNode {
 
 // @lc code=start
 use std::cell::RefCell;
-use std::cmp::max;
 use std::rc::Rc;
 
 impl Solution {
@@ -39,7 +38,7 @@ impl Solution {
             let self_balanced: bool =
                 left_balanced && right_balanced && (left_depth - right_depth).abs() <= 1;
 
-            (self_balanced, max(left_depth, right_depth) + 1)
+            (self_balanced, left_depth.max(right_depth) + 1)
         } else {
             (true, 0)
         }

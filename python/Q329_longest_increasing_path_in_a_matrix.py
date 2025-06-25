@@ -4,6 +4,7 @@
 # [329] Longest Increasing Path in a Matrix
 #
 
+
 # @lc code=start
 class Solution:
     def dfs(self, row: int, col: int) -> int:
@@ -26,7 +27,7 @@ class Solution:
         self.dp[row][col] = result + 1
         return result + 1
 
-    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
+    def longestIncreasingPath(self, matrix: list[list[int]]) -> int:
         self.ROWS: int = len(matrix)
         self.COLS: int = len(matrix[0])
         self.matrix: list[list[int]] = matrix

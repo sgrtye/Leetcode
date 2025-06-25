@@ -16,7 +16,7 @@ class Solution:
             matrix[right][right - i] = matrix[left + i][right]
             matrix[left + i][right] = value
 
-    def rotate(self, matrix: List[List[int]]) -> None:
+    def rotate(self, matrix: list[list[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
         """

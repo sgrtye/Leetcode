@@ -21,7 +21,7 @@ class Solution:
             index += 1
         self.backtrack(index + 1, subset)
 
-    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+    def subsetsWithDup(self, nums: list[int]) -> list[list[int]]:
         self.nums: list[int] = nums
         self.nums.sort()
 

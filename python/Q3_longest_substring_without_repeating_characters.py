@@ -8,19 +8,19 @@
 # @lc code=start
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        l: int = 0
+        left: int = 0
         result: int = 0
         char_set: set[str] = set()
 
-        for r in range(len(s)):
-            while s[r] in char_set:
-                char_set.remove(s[l])
-                l += 1
+        for right in range(len(s)):
+            while s[right] in char_set:
+                char_set.remove(s[left])
+                left += 1
 
-            char_set.add(s[r])
+            char_set.add(s[right])
 
-            if r - l + 1 > result:
-                result = r - l + 1
+            if (new_length := right - left + 1) > result:
+                result = new_length
 
         return result
 

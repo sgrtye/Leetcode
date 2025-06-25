@@ -10,15 +10,15 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         formated: list[str] = [c for c in s.lower() if c.isalnum()]
 
-        l: int = 0
-        r: int = len(formated) - 1
+        left: int = 0
+        right: int = len(formated) - 1
 
-        while l < r:
-            if formated[l] != formated[r]:
+        while left < right:
+            if formated[left] != formated[right]:
                 return False
 
-            l += 1
-            r -= 1
+            left += 1
+            right -= 1
 
         return True
 

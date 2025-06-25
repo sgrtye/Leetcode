@@ -65,13 +65,13 @@ impl Solution {
     }
 
     fn dijkstras(times: Vec<Vec<i32>>, n: i32, k: i32) -> i32 {
-        let mut adjecent_list: Vec<Vec<(usize, i32)>> = vec![vec![]; n as usize];
+        let mut adjacent_list: Vec<Vec<(usize, i32)>> = vec![vec![]; n as usize];
         for t in times {
             let source: usize = t[0] as usize - 1;
             let target: usize = t[1] as usize - 1;
             let time: i32 = t[2];
 
-            adjecent_list[source].push((target, time));
+            adjacent_list[source].push((target, time));
         }
 
         let mut visited: Vec<bool> = vec![false; n as usize];
@@ -89,7 +89,7 @@ impl Solution {
             visited[vertex] = true;
             distances[vertex] = -accumulated_time;
 
-            for &(target, time) in &adjecent_list[vertex] {
+            for &(target, time) in &adjacent_list[vertex] {
                 if !visited[target] {
                     explore.push((accumulated_time - time, target));
                 }

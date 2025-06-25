@@ -4,9 +4,10 @@
 # [846] Hand of Straights
 #
 
+
 # @lc code=start
 class Solution:
-    def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
+    def isNStraightHand(self, hand: list[int], groupSize: int) -> bool:
         if len(hand) % groupSize != 0:
             return False
 

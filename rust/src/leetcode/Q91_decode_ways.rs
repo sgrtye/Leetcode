@@ -22,7 +22,7 @@ impl Solution {
         }
 
         let first_two: i32 = format!("{}{}", chars[0], chars[1]).parse::<i32>().unwrap();
-        if first_two >= 10 && first_two <= 26 {
+        if (10..=26).contains(&first_two) {
             dp[1] += 1;
         }
 

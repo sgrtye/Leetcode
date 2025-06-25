@@ -5,25 +5,25 @@
 #
 
 
-# @lc code=start
-"""
 # Definition for a Node.
 class Node:
-    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
-        self.val = int(x)
-        self.next = next
-        self.random = random
-"""
+    def __init__(
+        self, x: int, next: "Node | None" = None, random: "Node | None" = None
+    ) -> None:
+        self.val: int = x
+        self.next: Node | None = next
+        self.random: Node | None = random
 
 
+# @lc code=start
 class Solution:
-    def copyRandomList(self, head: "Optional[Node]") -> "Optional[Node]":
+    def copyRandomList(self, head: Node | None) -> Node | None:
         if not head:
             return head
 
         dummy: Node = Node(0)
 
-        original_current: Node = head
+        original_current: Node | None = head
         copy_current: Node = dummy
         while original_current:
             new_node: Node = Node(original_current.val)
@@ -38,6 +38,7 @@ class Solution:
 
         current: Node | None = dummy.next
         while current:
+            assert current.random is not None
             if current.random.random:
                 current.random = current.random.random.next
             else:

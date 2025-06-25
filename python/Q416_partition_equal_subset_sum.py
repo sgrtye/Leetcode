@@ -4,9 +4,10 @@
 # [416] Partition Equal Subset Sum
 #
 
+
 # @lc code=start
 class Solution:
-    def canPartition(self, nums: List[int]) -> bool:
+    def canPartition(self, nums: list[int]) -> bool:
         target: int = sum(nums)
         if target % 2 == 1:
             return False

@@ -17,16 +17,13 @@ struct TimeMap {
  */
 impl TimeMap {
     fn new() -> Self {
-        TimeMap {
+        Self {
             map: HashMap::new(),
         }
     }
 
     fn set(&mut self, key: String, value: String, timestamp: i32) {
-        self.map
-            .entry(key)
-            .or_insert(vec![])
-            .push((value, timestamp));
+        self.map.entry(key).or_default().push((value, timestamp));
     }
 
     fn get(&self, key: String, timestamp: i32) -> String {

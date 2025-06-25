@@ -5,6 +5,8 @@
  */
 
 // @lc code=start
+use std::cmp::Ordering;
+
 impl Solution {
     pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut nums = nums;
@@ -23,18 +25,22 @@ impl Solution {
             while j < k {
                 let current: i32 = nums[i] + nums[j] + nums[k];
 
-                if current < 0 {
-                    j += 1;
-                } else if current > 0 {
-                    k -= 1;
-                } else {
-                    result.push(vec![nums[i], nums[j], nums[k]]);
-
-                    j += 1;
-                    k -= 1;
-
-                    while j < k && nums[j] == nums[j - 1] {
+                match current.cmp(&0) {
+                    Ordering::Less => {
                         j += 1;
+                    }
+                    Ordering::Greater => {
+                        k -= 1;
+                    }
+                    Ordering::Equal => {
+                        result.push(vec![nums[i], nums[j], nums[k]]);
+
+                        j += 1;
+                        k -= 1;
+
+                        while j < k && nums[j] == nums[j - 1] {
+                            j += 1;
+                        }
                     }
                 }
             }

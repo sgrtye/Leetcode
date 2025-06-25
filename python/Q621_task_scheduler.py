@@ -4,13 +4,14 @@
 # [621] Task Scheduler
 #
 
+
 # @lc code=start
 import heapq
 from collections import deque
 
 
 class Solution:
-    def leastInterval(self, tasks: List[str], n: int) -> int:
+    def leastInterval(self, tasks: list[str], n: int) -> int:
         remaining: dict[str, int] = dict()
         for t in tasks:
             if t not in remaining:
@@ -26,7 +27,7 @@ class Solution:
 
         while max_heap or processing:
             if max_heap:
-                count = heapq.heappop(max_heap)
+                count: int = heapq.heappop(max_heap)
 
                 if count + 1 < 0:
                     processing.append((count + 1, time + n))

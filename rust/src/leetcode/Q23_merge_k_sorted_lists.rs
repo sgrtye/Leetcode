@@ -80,7 +80,7 @@ impl Solution {
             lists = new_lists;
         }
 
-        if lists.len() == 0 {
+        if lists.is_empty() {
             None
         } else {
             lists.pop().unwrap()

@@ -7,7 +7,7 @@
 // @lc code=start
 impl Solution {
     pub fn car_fleet(target: i32, position: Vec<i32>, speed: Vec<i32>) -> i32 {
-        let mut cars: Vec<(i32, i32)> = position.into_iter().zip(speed.into_iter()).collect();
+        let mut cars: Vec<(i32, i32)> = position.into_iter().zip(speed).collect();
         cars.sort();
         cars.reverse();
 

@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def containsDuplicate(self, nums: list[int]) -> bool:
         return len(nums) != len(set(nums))
 
 

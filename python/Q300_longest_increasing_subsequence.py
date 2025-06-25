@@ -4,9 +4,10 @@
 # [300] Longest Increasing Subsequence
 #
 
+
 # @lc code=start
 class Solution:
-    def lengthOfLIS(self, nums: List[int]) -> int:
+    def lengthOfLIS(self, nums: list[int]) -> int:
         dp: list[int] = [1] * len(nums)
         result: int = 1
 
