@@ -18,7 +18,7 @@ fn main() {
     for entry in entries {
         let file_name = entry.file_name().into_string().unwrap();
         if file_name != "mod.rs" {
-            let module_name = file_name.trim_end_matches(".rs");
+            let module_name = file_name.trim_end_matches(".rs").to_lowercase();
             writeln!(mod_file, "pub mod {} {{", module_name).expect("Failed to write module start");
             writeln!(mod_file, "    pub struct Solution;").expect("Failed to write local Solution struct");
             writeln!(mod_file, "    include!(\"{}\");", file_name).expect("Failed to write include");
