@@ -7,19 +7,18 @@
 // @lc code=start
 impl Solution {
     pub fn is_palindrome(s: String) -> bool {
-        let cleaned: String = s
+        let chars: Vec<char> = s
             .to_lowercase()
             .chars()
             .filter(|c| c.is_alphanumeric())
             .collect();
 
-        if cleaned.is_empty() {
+        if chars.is_empty() {
             return true;
         }
 
-        let chars: Vec<char> = cleaned.chars().collect();
         let mut left: usize = 0;
-        let mut right: usize = cleaned.len().saturating_sub(1);
+        let mut right: usize = chars.len() - 1;
 
         while left < right {
             if chars[left] != chars[right] {

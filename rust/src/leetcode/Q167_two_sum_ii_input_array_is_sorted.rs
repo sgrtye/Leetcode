@@ -10,19 +10,19 @@ impl Solution {
         let mut left: usize = 0;
         let mut right: usize = numbers.len() - 1;
 
-        let mut current: i32 = numbers[left] + numbers[right];
+        while left < right {
+            let current: i32 = numbers[left] + numbers[right];
 
-        while current != target {
             if current < target {
                 left += 1;
-            } else {
+            } else if current > target {
                 right -= 1;
+            } else {
+                return vec![left as i32 + 1, right as i32 + 1];
             }
-
-            current = numbers[left] + numbers[right];
         }
 
-        vec![left as i32 + 1, right as i32 + 1]
+        vec![]
     }
 }
 // @lc code=end

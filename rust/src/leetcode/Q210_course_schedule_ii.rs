@@ -31,6 +31,7 @@ impl Solution {
 
             for &advanced_course in &prerequisites_map[course] {
                 indegrees[advanced_course] -= 1;
+
                 if indegrees[advanced_course] == 0 {
                     current.push(advanced_course);
                 }
@@ -40,7 +41,7 @@ impl Solution {
         if finished == num_courses {
             result
         } else {
-            Vec::new()
+            vec![]
         }
     }
 }

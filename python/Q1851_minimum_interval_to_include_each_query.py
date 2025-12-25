@@ -14,14 +14,14 @@ class Solution:
         intervals.sort()
         sorted_queries: list[int] = sorted(set(queries))
 
-        pointer: int = 0
+        index: int = 0
         active: list[tuple[int, int]] = []
         query_result: dict[int, int] = dict()
 
         for q in sorted_queries:
-            while pointer < len(intervals) and (interval := intervals[pointer])[0] <= q:
+            while index < len(intervals) and (interval := intervals[index])[0] <= q:
                 heapq.heappush(active, (interval[1] - interval[0] + 1, interval[1]))
-                pointer += 1
+                index += 1
 
             while active and active[0][1] < q:
                 heapq.heappop(active)

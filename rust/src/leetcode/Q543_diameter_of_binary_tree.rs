@@ -31,9 +31,9 @@ impl Solution {
     fn depth_and_diameter_of_subtree(root: Option<Rc<RefCell<TreeNode>>>) -> (i32, i32) {
         if let Some(node) = root {
             let (left_depth, left_diameter) =
-                Self::depth_and_diameter_of_subtree(node.borrow_mut().left.clone());
+                Self::depth_and_diameter_of_subtree(node.borrow().left.clone());
             let (right_depth, right_diameter) =
-                Self::depth_and_diameter_of_subtree(node.borrow_mut().right.clone());
+                Self::depth_and_diameter_of_subtree(node.borrow().right.clone());
 
             let max_depth: i32 = left_depth.max(right_depth) + 1;
             let max_subtree_diameter: i32 = left_diameter.max(right_diameter);

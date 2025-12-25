@@ -26,7 +26,7 @@ impl Solution {
                 (false, true) => {
                     right = mid;
                 }
-                (false, false) => {}
+                (false, false) => panic!()
             }
         }
 

@@ -34,16 +34,16 @@ impl Solution {
 
         while !current_level.is_empty() {
             let mut new_level: Vec<Option<Rc<RefCell<TreeNode>>>> = vec![];
-            let mut level_result: Vec<i32> = vec![];
+            let mut last_value: Option<i32> = None;
 
             for n in current_level.into_iter().flatten() {
-                level_result.push(n.borrow().val);
+                last_value = Some(n.borrow().val);
                 new_level.push(n.borrow().left.clone());
                 new_level.push(n.borrow().right.clone());
             }
 
-            if !level_result.is_empty() {
-                result.push(*level_result.last().unwrap());
+            if let Some(value) = last_value {
+                result.push(value);
             }
 
             current_level = new_level;

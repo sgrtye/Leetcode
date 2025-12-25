@@ -16,25 +16,25 @@ class Solution:
 
         l_max: int = height[0]
         r_max: int = height[-1]
-        volumn: int = 0
+        volume: int = 0
 
         while left <= right:
             if l_max < r_max:
                 if (water := l_max - (new_max := height[left])) > 0:
-                    volumn += water
+                    volume += water
                 else:
                     l_max = new_max
 
                 left += 1
             else:
                 if (water := r_max - (new_max := height[right])) > 0:
-                    volumn += water
+                    volume += water
                 else:
                     r_max = new_max
 
                 right -= 1
 
-        return volumn
+        return volume
 
 
 # @lc code=end

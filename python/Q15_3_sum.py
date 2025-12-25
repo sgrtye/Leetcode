@@ -20,6 +20,7 @@ class Solution:
 
             left: int = i + 1
             right: int = len(nums) - 1
+
             while left < right:
                 sum: int = n + nums[left] + nums[right]
 

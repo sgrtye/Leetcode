@@ -35,13 +35,13 @@
 #### Bellman-Ford
 - **Use case**: Single source shortest path, detect negative cycles
 - **Time complexity**: O(VE)
-- **Process**: Loop V-1 times over all vertices finding minimum distance
+- **Process**: Loop V - 1 times over all vertices finding minimum distance
 - **Related problems**: [743](../rust/src/leetcode/Q743_network_delay_time.rs)
 
 #### Dijkstra's Algorithm
 - **Use case**: Single source shortest path (non-negative weights)
 - **Time complexity**: O((V + E) log E)
-- **Process**: Min heap for visitable nodes, visit cells greedily
+- **Process**: Min heap for visitable nodes, update heap as more nodes being discovered
 - **Related problems**: [743](../rust/src/leetcode/Q743_network_delay_time.rs), [778](../rust/src/leetcode/Q778_swim_in_rising_water.rs)
 
 ### Eulerian Path/Circuit

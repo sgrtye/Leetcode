@@ -5,51 +5,56 @@
  */
 
 // @lc code=start
-impl Solution {
-    fn backtrack(
-        candidates: &Vec<i32>,
-        target: i32,
-        current: &mut Vec<i32>,
-        value: i32,
-        result: &mut Vec<Vec<i32>>,
-        index: usize,
-    ) {
-        if value == target {
-            result.push(current.clone());
-            return;
-        } else if value > target || index == candidates.len() {
-            return;
-        }
+struct Solver {
+    candidates: Vec<i32>,
+    target: i32,
+    result: Vec<Vec<i32>>,
+}
 
-        current.push(candidates[index]);
-        Self::backtrack(
+impl Solver {
+    fn new(candidates: Vec<i32>, target: i32) -> Self {
+        let mut candidates = candidates;
+        candidates.sort();
+
+        Solver {
             candidates,
             target,
-            current,
-            value + candidates[index],
-            result,
-            index + 1,
-        );
-
-        current.pop();
-        let mut new_index: usize = index;
-        let candidate: i32 = candidates[index];
-        while new_index < candidates.len() && candidates[new_index] == candidate {
-            new_index += 1;
+            result: Vec::new(),
         }
-        Self::backtrack(candidates, target, current, value, result, new_index);
     }
 
+    fn backtrack(&mut self, current: &mut Vec<i32>, value: i32, index: usize) {
+        if value == self.target {
+            self.result.push(current.clone());
+            return;
+        } else if value > self.target || index == self.candidates.len() {
+            return;
+        }
+
+        current.push(self.candidates[index]);
+        self.backtrack(current, value + self.candidates[index], index + 1);
+
+        current.pop();
+
+        let v = self.candidates[index];
+        let mut new_index = index;
+        while new_index < self.candidates.len() && self.candidates[new_index] == v {
+            new_index += 1;
+        }
+
+        self.backtrack(current, value, new_index);
+    }
+
+    fn solve(&mut self) {
+        self.backtrack(&mut vec![], 0, 0);
+    }
+}
+
+impl Solution {
     pub fn combination_sum2(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
-        let mut result: Vec<Vec<i32>> = vec![];
-        let mut current: Vec<i32> = vec![];
-
-        let mut sorted_candidates: Vec<i32> = candidates;
-        sorted_candidates.sort();
-
-        Self::backtrack(&sorted_candidates, target, &mut current, 0, &mut result, 0);
-
-        result
+        let mut solver = Solver::new(candidates, target);
+        solver.solve();
+        solver.result
     }
 }
 // @lc code=end

@@ -9,16 +9,14 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         mapping: dict[int, int] = dict()
-        result: list[int] = []
 
         for i, n in enumerate(nums):
             if n in mapping:
-                result = [i, mapping[n]]
-                break
+                return [i, mapping[n]]
 
             mapping[target - n] = i
 
-        return result
+        return []
 
 
 # @lc code=end

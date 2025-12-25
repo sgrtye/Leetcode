@@ -16,7 +16,8 @@ impl Solution {
         let mut result: usize = 0;
 
         for right in 0..chars.len() {
-            *current_map.entry(chars[right]).or_insert(0) += 1;
+            *current_map.entry(chars[right]).or_default() += 1;
+
             if current_map[&chars[right]] > max_frequency {
                 max_frequency = current_map[&chars[right]];
             }

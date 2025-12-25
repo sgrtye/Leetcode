@@ -42,7 +42,7 @@ impl Solution {
                 Some(node)
             }
         } else {
-            None
+            panic!()
         }
     }
 

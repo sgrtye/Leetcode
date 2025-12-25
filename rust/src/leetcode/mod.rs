@@ -113,6 +113,11 @@ pub mod q1448_count_good_nodes_in_binary_tree {
     include!("Q1448_count_good_nodes_in_binary_tree.rs");
 }
 
+pub mod q146_lru_cache {
+    pub struct Solution;
+    include!("Q146_lru_cache.rs");
+}
+
 pub mod q150_evaluate_reverse_polish_notation {
     pub struct Solution;
     include!("Q150_evaluate_reverse_polish_notation.rs");

@@ -17,7 +17,7 @@ struct TimeMap {
  */
 impl TimeMap {
     fn new() -> Self {
-        Self {
+        TimeMap {
             map: HashMap::new(),
         }
     }
@@ -27,8 +27,8 @@ impl TimeMap {
     }
 
     fn get(&self, key: String, timestamp: i32) -> String {
-        static EMPTY: Vec<(String, i32)> = vec![];
-        let saved = self.map.get(&key).unwrap_or(&EMPTY);
+        let empty_vec: Vec<(String, i32)> = vec![];
+        let saved = self.map.get(&key).unwrap_or(&empty_vec);
 
         let mut left: i32 = 0;
         let mut right: i32 = saved.len() as i32 - 1;

@@ -7,7 +7,7 @@
 
 # @lc code=start
 class Solution:
-    def productExceptSelf(self, nums: list[int]) -> list[int]:
+    def in_place(self, nums: list[int]) -> list[int]:
         length: int = len(nums)
         result: list[int] = [1] * length
 
@@ -22,6 +22,24 @@ class Solution:
             result[i] *= number
 
         return result
+
+    def prefix_and_suffix(self, nums: list[int]) -> list[int]:
+        prefix: list[int] = [1] * len(nums)
+
+        for i in range(1, len(nums)):
+            prefix[i] = prefix[i - 1] * nums[i - 1]
+
+        suffix: list[int] = [1] * len(nums)
+
+        for i in range(len(nums) - 2, -1, -1):
+            suffix[i] = suffix[i + 1] * nums[i + 1]
+
+        result: list[int] = [prefix[i] * suffix[i] for i in range(len(nums))]
+
+        return result
+
+    def productExceptSelf(self, nums: list[int]) -> list[int]:
+        return self.in_place(nums)
 
 
 # @lc code=end

@@ -43,7 +43,7 @@
 | # | Problem | Difficulty | Python | Rust | Note |
 |---|---------|------------|--------|------|------|
 | 704 | Binary Search | Easy | [Python](../python/Q704_binary_search.py) | [Rust](../rust/src/leetcode/Q704_binary_search.rs) | [Note](https://neetcode.io/solutions/binary-search) |
-| 74 | Search a 2D Matrix | Medium | [Python](../python/Q74_search_a_2d_matrix.py) | [Rust](../rust/src/leetcode/Q74_search_a_2d_matrix.rs) | [Note](https://neetcode.io/solutions/search-a-2d-matrix) |
+| 74 | Search a 2D Matrix | Medium | [Python](../python/Q74_search_a_2_d_matrix.py) | [Rust](../rust/src/leetcode/Q74_search_a_2_d_matrix.rs) | [Note](https://neetcode.io/solutions/search-a-2d-matrix) |
 | 875 | Koko Eating Bananas | Medium | [Python](../python/Q875_koko_eating_bananas.py) | [Rust](../rust/src/leetcode/Q875_koko_eating_bananas.rs) | [Note](https://neetcode.io/solutions/koko-eating-bananas) |
 | 153 | Find Minimum In Rotated Sorted Array | Medium | [Python](../python/Q153_find_minimum_in_rotated_sorted_array.py) | [Rust](../rust/src/leetcode/Q153_find_minimum_in_rotated_sorted_array.rs) | [Note](https://neetcode.io/solutions/find-minimum-in-rotated-sorted-array) |
 | 33 | Search In Rotated Sorted Array | Medium | [Python](../python/Q33_search_in_rotated_sorted_array.py) | [Rust](../rust/src/leetcode/Q33_search_in_rotated_sorted_array.rs) | [Note](https://neetcode.io/solutions/search-in-rotated-sorted-array) |
@@ -55,10 +55,10 @@
 |---|---------|------------|--------|------|------|
 | 206 | Reverse Linked List | Easy | [Python](../python/Q206_reverse_linked_list.py) | [Rust](../rust/src/leetcode/Q206_reverse_linked_list.rs) | [Note](https://neetcode.io/solutions/reverse-linked-list) |
 | 21 | Merge Two Sorted Lists | Easy | [Python](../python/Q21_merge_two_sorted_lists.py) | [Rust](../rust/src/leetcode/Q21_merge_two_sorted_lists.rs) | [Note](https://neetcode.io/solutions/merge-two-sorted-lists) |
-| 141 | Linked List Cycle | Easy | [Python](../python/Q141_linked_list_cycle.py) | [Rust](../rust/src/leetcode/Q141_linked_list_cycle.rs) | [Note](https://neetcode.io/solutions/linked-list-cycle) |
+| 141 | Linked List Cycle | Easy | [Python](../python/Q141_linked_list_cycle.py) | Rust | [Note](https://neetcode.io/solutions/linked-list-cycle) |
 | 143 | Reorder List | Medium | [Python](../python/Q143_reorder_list.py) | [Rust](../rust/src/leetcode/Q143_reorder_list.rs) | [Note](https://neetcode.io/solutions/reorder-list) |
 | 19 | Remove Nth Node From End of List | Medium | [Python](../python/Q19_remove_nth_node_from_end_of_list.py) | [Rust](../rust/src/leetcode/Q19_remove_nth_node_from_end_of_list.rs) | [Note](https://neetcode.io/solutions/remove-nth-node-from-end-of-list) |
-| 138 | Copy List With Random Pointer | Medium | [Python](../python/Q138_copy_list_with_random_pointer.py) | [Rust](../rust/src/leetcode/Q138_copy_list_with_random_pointer.rs) | [Note](https://neetcode.io/solutions/copy-list-with-random-pointer) |
+| 138 | Copy List With Random Pointer | Medium | [Python](../python/Q138_copy_list_with_random_pointer.py) | Rust | [Note](https://neetcode.io/solutions/copy-list-with-random-pointer) |
 | 2 | Add Two Numbers | Medium | [Python](../python/Q2_add_two_numbers.py) | [Rust](../rust/src/leetcode/Q2_add_two_numbers.rs) | [Note](https://neetcode.io/solutions/add-two-numbers) |
 | 287 | Find The Duplicate Number | Medium | [Python](../python/Q287_find_the_duplicate_number.py) | [Rust](../rust/src/leetcode/Q287_find_the_duplicate_number.rs) | [Note](https://neetcode.io/solutions/find-the-duplicate-number) |
 | 146 | LRU Cache | Medium | [Python](../python/Q146_lru_cache.py) | [Rust](../rust/src/leetcode/Q146_lru_cache.rs) | [Note](https://neetcode.io/solutions/lru-cache) |
@@ -141,7 +141,7 @@
 |---|---------|------------|--------|------|------|
 | 200 | Number of Islands | Medium | [Python](../python/Q200_number_of_islands.py) | [Rust](../rust/src/leetcode/Q200_number_of_islands.rs) | [Note](https://neetcode.io/solutions/number-of-islands) |
 | 695 | Max Area of Island | Medium | [Python](../python/Q695_max_area_of_island.py) | [Rust](../rust/src/leetcode/Q695_max_area_of_island.rs) | [Note](https://neetcode.io/solutions/max-area-of-island) |
-| 133 | Clone Graph | Medium | [Python](../python/Q133_clone_graph.py) | [Rust](../rust/src/leetcode/Q133_clone_graph.rs) | [Note](https://neetcode.io/solutions/clone-graph) |
+| 133 | Clone Graph | Medium | [Python](../python/Q133_clone_graph.py) | Rust | [Note](https://neetcode.io/solutions/clone-graph) |
 | 994 | Rotting Oranges | Medium | [Python](../python/Q994_rotting_oranges.py) | [Rust](../rust/src/leetcode/Q994_rotting_oranges.rs) | [Note](https://neetcode.io/solutions/rotting-oranges) |
 | 417 | Pacific Atlantic Water Flow | Medium | [Python](../python/Q417_pacific_atlantic_water_flow.py) | [Rust](../rust/src/leetcode/Q417_pacific_atlantic_water_flow.rs) | [Note](https://neetcode.io/solutions/pacific-atlantic-water-flow) |
 | 130 | Surrounded Regions | Medium | [Python](../python/Q130_surrounded_regions.py) | [Rust](../rust/src/leetcode/Q130_surrounded_regions.rs) | [Note](https://neetcode.io/solutions/surrounded-regions) |
@@ -209,6 +209,6 @@
 | 73 | Set Matrix Zeroes | Medium | [Python](../python/Q73_set_matrix_zeroes.py) | [Rust](../rust/src/leetcode/Q73_set_matrix_zeroes.rs) | [Note](https://neetcode.io/solutions/set-matrix-zeroes) |
 | 202 | Happy Number | Easy | [Python](../python/Q202_happy_number.py) | [Rust](../rust/src/leetcode/Q202_happy_number.rs) | [Note](https://neetcode.io/solutions/happy-number) |
 | 66 | Plus One | Easy | [Python](../python/Q66_plus_one.py) | [Rust](../rust/src/leetcode/Q66_plus_one.rs) | [Note](https://neetcode.io/solutions/plus-one) |
-| 50 | Pow(x, n) | Medium | [Python](../python/Q50_powx_n.py) | [Rust](../rust/src/leetcode/Q50_powx_n.rs) | [Note](https://neetcode.io/solutions/powx-n) |
+| 50 | Pow(x, n) | Medium | [Python](../python/Q50_pow_x_n.py) | [Rust](../rust/src/leetcode/Q50_pow_x_n.rs) | [Note](https://neetcode.io/solutions/powx-n) |
 | 43 | Multiply Strings | Medium | [Python](../python/Q43_multiply_strings.py) | [Rust](../rust/src/leetcode/Q43_multiply_strings.rs) | [Note](https://neetcode.io/solutions/multiply-strings) |
 | 2013 | Detect Squares | Medium | [Python](../python/Q2013_detect_squares.py) | [Rust](../rust/src/leetcode/Q2013_detect_squares.rs) | [Note](https://neetcode.io/solutions/detect-squares) |

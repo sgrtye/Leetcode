@@ -8,13 +8,13 @@
 # @lc code=start
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        formated: list[str] = [c for c in s.lower() if c.isalnum()]
+        formatted: list[str] = [c for c in s.lower() if c.isalnum()]
 
         left: int = 0
-        right: int = len(formated) - 1
+        right: int = len(formatted) - 1
 
         while left < right:
-            if formated[left] != formated[right]:
+            if formatted[left] != formatted[right]:
                 return False
 
             left += 1

@@ -5,40 +5,48 @@
  */
 
 // @lc code=start
-impl Solution {
-    fn backtrack(
-        nums: &Vec<i32>,
-        included: &mut Vec<bool>,
-        current: &mut Vec<i32>,
-        reamined: usize,
-        result: &mut Vec<Vec<i32>>,
-    ) {
-        if reamined == 0 {
-            result.push(current.clone());
-            return;
-        }
+use std::collections::HashSet;
 
-        for i in 0..nums.len() {
-            if !included[i] {
-                included[i] = true;
-                current.push(nums[i]);
+struct Solver {
+    nums: HashSet<i32>,
+    result: Vec<Vec<i32>>,
+}
 
-                Self::backtrack(nums, included, current, reamined - 1, result);
-
-                included[i] = false;
-                current.pop();
-            }
+impl Solver {
+    fn new(nums: Vec<i32>) -> Self {
+        Solver {
+            nums: nums.into_iter().collect(),
+            result: Vec::new(),
         }
     }
 
+    fn backtrack(&mut self, current: &mut Vec<i32>) {
+        if self.nums.is_empty() {
+            self.result.push(current.clone());
+            return;
+        }
+
+        for n in self.nums.clone() {
+            current.push(n);
+            self.nums.remove(&n);
+
+            self.backtrack(current);
+
+            self.nums.insert(n);
+            current.pop();
+        }
+    }
+
+    fn solve(&mut self) {
+        self.backtrack(&mut vec![]);
+    }
+}
+
+impl Solution {
     pub fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {
-        let mut result: Vec<Vec<i32>> = Vec::new();
-        let mut current: Vec<i32> = Vec::new();
-        let mut included: Vec<bool> = vec![false; nums.len()];
-
-        Self::backtrack(&nums, &mut included, &mut current, nums.len(), &mut result);
-
-        result
+        let mut solver = Solver::new(nums);
+        solver.solve();
+        solver.result
     }
 }
 // @lc code=end

@@ -34,16 +34,14 @@ impl Solution {
             match (&list1, &list2) {
                 (Some(node1), Some(node2)) => {
                     if node1.val <= node2.val {
-                        let next: Option<Box<ListNode>> = list1.as_mut().unwrap().next.take();
                         current.next = list1.take();
-                        current = current.next.as_mut().unwrap();
-                        list1 = next;
+                        list1 = current.next.as_mut().unwrap().next.take();
                     } else {
-                        let next: Option<Box<ListNode>> = list2.as_mut().unwrap().next.take();
                         current.next = list2.take();
-                        current = current.next.as_mut().unwrap();
-                        list2 = next;
+                        list2 = current.next.as_mut().unwrap().next.take();
                     }
+
+                    current = current.next.as_mut().unwrap();
                 }
                 (Some(_), _) => {
                     current.next = list1.take();

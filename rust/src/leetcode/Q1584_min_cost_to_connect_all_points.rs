@@ -14,7 +14,7 @@ struct UnionFind {
 
 impl UnionFind {
     fn new(size: usize) -> Self {
-        Self {
+        UnionFind {
             parents: (0..size).collect(),
         }
     }
@@ -54,9 +54,9 @@ impl Solution {
             let i_x: i32 = points[i][0];
             let i_y: i32 = points[i][1];
 
-            for j in i + 1..points.len() {
-                let j_x: i32 = points[j][0];
-                let j_y: i32 = points[j][1];
+            for (j, point) in points.iter().enumerate().skip(i + 1) {
+                let j_x: i32 = point[0];
+                let j_y: i32 = point[1];
                 let distance: i32 = (i_x - j_x).abs() + (i_y - j_y).abs();
 
                 edges.push((distance, i, j));
@@ -84,9 +84,9 @@ impl Solution {
             let i_x: i32 = points[i][0];
             let i_y: i32 = points[i][1];
 
-            for j in i + 1..points.len() {
-                let j_x: i32 = points[j][0];
-                let j_y: i32 = points[j][1];
+            for (j, point) in points.iter().enumerate().skip(i + 1) {
+                let j_x: i32 = point[0];
+                let j_y: i32 = point[1];
                 let distance: i32 = (i_x - j_x).abs() + (i_y - j_y).abs();
 
                 adjacent_list[i].push((distance, j));

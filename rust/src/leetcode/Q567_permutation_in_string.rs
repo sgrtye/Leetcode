@@ -12,7 +12,7 @@ impl Solution {
         let s1_vec: Vec<char> = s1.chars().collect();
         let mut s1_map: HashMap<char, i32> = HashMap::new();
         for c in s1_vec {
-            *s1_map.entry(c).or_insert(0) += 1;
+            *s1_map.entry(c).or_default() += 1;
         }
 
         let s2_vec: Vec<char> = s2.chars().collect();
@@ -31,7 +31,7 @@ impl Solution {
                 continue;
             }
 
-            *s2_map.entry(right_char).or_insert(0) += 1;
+            *s2_map.entry(right_char).or_default() += 1;
 
             if s1_map.get(&right_char) == s2_map.get(&right_char) {
                 remained -= 1;
@@ -46,7 +46,7 @@ impl Solution {
                         remained += 1;
                     }
 
-                    *s2_map.get_mut(&left_char).unwrap() -= 1;
+                    *s2_map.entry(left_char).or_default() -= 1;
                     left += 1;
                 }
             }

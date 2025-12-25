@@ -9,14 +9,18 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn is_anagram(s: String, t: String) -> bool {
+        if s.len() != t.len() {
+            return false;
+        }
+
         let mut char_count: HashMap<char, i32> = HashMap::new();
 
         for c in s.chars() {
-            *char_count.entry(c).or_insert(0) += 1;
+            *char_count.entry(c).or_default() += 1;
         }
 
         for c in t.chars() {
-            *char_count.entry(c).or_insert(0) -= 1;
+            *char_count.entry(c).or_default() -= 1;
         }
 
         char_count.into_values().all(|count| count == 0)

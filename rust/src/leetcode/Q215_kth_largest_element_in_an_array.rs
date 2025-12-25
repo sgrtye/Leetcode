@@ -13,16 +13,15 @@ impl Solution {
         let k: usize = k as usize;
         let mut heap: BinaryHeap<Reverse<i32>> = BinaryHeap::with_capacity(k);
 
-        for &n in nums.iter() {
-            if heap.len() < k {
-                heap.push(Reverse(n));
-            } else if n > heap.peek().unwrap().0 {
+        for (index, &n) in nums.iter().enumerate() {
+            heap.push(Reverse(n));
+
+            if index >= k {
                 heap.pop();
-                heap.push(Reverse(n));
             }
         }
 
-        heap.peek().unwrap().0
+        heap.pop().unwrap().0
     }
 }
 // @lc code=end

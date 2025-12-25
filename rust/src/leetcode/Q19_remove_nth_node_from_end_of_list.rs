@@ -29,9 +29,8 @@ impl Solution {
             current = node.next.as_ref();
         }
 
-        let mut dummy: Box<ListNode> = Box::new(ListNode::new(0));
-        dummy.next = head;
-        let mut dummy: Option<Box<ListNode>> = Some(dummy);
+        let mut dummy: Option<Box<ListNode>> = Some(Box::new(ListNode::new(0)));
+        dummy.as_mut().unwrap().next = head;
 
         let mut previous: Option<&mut Box<ListNode>> = dummy.as_mut();
 

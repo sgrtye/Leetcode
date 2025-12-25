@@ -13,7 +13,7 @@ impl Solution {
         let mut counts: HashMap<i32, i32> = HashMap::new();
 
         for n in nums {
-            *counts.entry(n).or_insert(0) += 1;
+            *counts.entry(n).or_default() += 1;
         }
 
         let mut frequency_heap: BinaryHeap<(i32, i32)> = BinaryHeap::new();

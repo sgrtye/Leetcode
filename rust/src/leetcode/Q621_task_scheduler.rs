@@ -14,7 +14,7 @@ impl Solution {
         let mut task_map: HashMap<char, i32> = HashMap::new();
 
         for &c in tasks.iter() {
-            *task_map.entry(c).or_insert(0) += 1
+            *task_map.entry(c).or_default() += 1
         }
 
         let mut task_heap: BinaryHeap<i32> = BinaryHeap::new();
@@ -24,19 +24,18 @@ impl Solution {
 
         let mut time: i32 = 0;
         let mut processing: VecDeque<(i32, i32)> = VecDeque::new();
+
         while !processing.is_empty() || !task_heap.is_empty() {
-            while let Some(&(ready_time, count)) = processing.front() {
-                if ready_time <= time {
-                    processing.pop_front();
-                    task_heap.push(count);
-                } else {
-                    break;
+            if let Some(count) = task_heap.pop() {
+                if count != 1 {
+                    processing.push_back((time + n, count - 1));
                 }
             }
 
-            if let Some(count) = task_heap.pop() {
-                if count != 1 {
-                    processing.push_back((time + n + 1, count - 1));
+            if let Some(&(ready_time, count)) = processing.front() {
+                if ready_time == time {
+                    processing.pop_front();
+                    task_heap.push(count);
                 }
             }
 

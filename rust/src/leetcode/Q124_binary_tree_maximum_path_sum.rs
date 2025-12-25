@@ -39,12 +39,12 @@ impl Solution {
             let right_updated: i32 = right_included.max(0);
 
             let sub_contained: i32 = left_contained.max(right_contained);
-            let contaiend: i32 =
+            let contained: i32 =
                 sub_contained.max(left_updated + right_updated + node.borrow().val);
 
             let included: i32 = left_updated.max(right_updated) + node.borrow().val;
 
-            (contaiend, included)
+            (contained, included)
         } else {
             (i32::MIN, 0)
         }

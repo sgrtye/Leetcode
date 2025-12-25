@@ -37,11 +37,11 @@ impl Solution {
             (Some(node1), Some(node2)) => {
                 if node1.borrow().val == node2.borrow().val {
                     Self::is_same_tree(
-                        node1.borrow_mut().left.clone(),
-                        node2.borrow_mut().left.clone(),
+                        node1.borrow().left.clone(),
+                        node2.borrow().left.clone(),
                     ) && Self::is_same_tree(
-                        node1.borrow_mut().right.clone(),
-                        node2.borrow_mut().right.clone(),
+                        node1.borrow().right.clone(),
+                        node2.borrow().right.clone(),
                     )
                 } else {
                     false

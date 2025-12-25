@@ -13,12 +13,12 @@ impl Solution {
         let mut result: i32 = 0;
         let mut end: i32 = intervals[0][1];
 
-        for i in 1..intervals.len() {
-            if intervals[i][0] < end {
+        for interval in intervals.iter().skip(1) {
+            if interval[0] < end {
                 result += 1;
-                end = end.min(intervals[i][1]);
+                end = end.min(interval[1]);
             } else {
-                end = intervals[i][1];
+                end = interval[1];
             }
         }
 

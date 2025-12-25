@@ -30,8 +30,8 @@ use std::rc::Rc;
 impl Solution {
     pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         if let Some(node) = root {
-            let left_count = Self::max_depth(node.borrow_mut().left.clone());
-            let right_count = Self::max_depth(node.borrow_mut().right.clone());
+            let left_count = Self::max_depth(node.borrow().left.clone());
+            let right_count = Self::max_depth(node.borrow().right.clone());
 
             left_count.max(right_count) + 1
         } else {

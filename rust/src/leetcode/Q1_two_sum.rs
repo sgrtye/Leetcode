@@ -11,9 +11,9 @@ impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         let mut result: HashMap<i32, i32> = HashMap::new();
 
-        for (i, &num) in nums.iter().enumerate() {
-            if let Some(&idx) = result.get(&num) {
-                return vec![idx, i as i32];
+        for (i, num) in nums.iter().enumerate() {
+            if let Some(index) = result.get(num) {
+                return vec![*index, i as i32];
             }
 
             result.insert(target - num, i as i32);

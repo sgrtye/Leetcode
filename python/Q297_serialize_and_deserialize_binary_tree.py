@@ -37,12 +37,12 @@ class Codec:
 
     def create(self) -> TreeNode | None:
         value: str = self.node_list[self.index]
+        self.index += 1
+
         if value == "N":
-            self.index += 1
             return None
 
         new_node: TreeNode = TreeNode(int(value))
-        self.index += 1
 
         new_node.left = self.create()
         new_node.right = self.create()
@@ -57,6 +57,7 @@ class Codec:
         """
         self.node_list: list[str] = data.split(",")
         self.index: int = 0
+
         return self.create()
 
 

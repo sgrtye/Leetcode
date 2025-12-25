@@ -31,9 +31,9 @@ impl Solution {
     fn is_balanced_with_depth(root: Option<Rc<RefCell<TreeNode>>>) -> (bool, i32) {
         if let Some(node) = root {
             let (left_balanced, left_depth) =
-                Self::is_balanced_with_depth(node.borrow_mut().left.clone());
+                Self::is_balanced_with_depth(node.borrow().left.clone());
             let (right_balanced, right_depth) =
-                Self::is_balanced_with_depth(node.borrow_mut().right.clone());
+                Self::is_balanced_with_depth(node.borrow().right.clone());
 
             let self_balanced: bool =
                 left_balanced && right_balanced && (left_depth - right_depth).abs() <= 1;

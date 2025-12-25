@@ -43,9 +43,9 @@ class LRUCache:
         previous: Node | None = node.previous
         next: Node | None = node.next
 
-        if next is not None and previous is not None:
-            next.set_previous(previous)
-            previous.set_next(next)
+        assert next is not None and previous is not None
+        next.set_previous(previous)
+        previous.set_next(next)
 
     def insert(self, key: int, value: int) -> None:
         self.delete(key)

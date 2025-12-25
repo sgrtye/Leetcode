@@ -11,7 +11,7 @@ class Solution:
         result: list[int] = [0, 1]
 
         while len(result) < n + 1:
-            result += [n + 1 for n in result]
+            result += [x + 1 for x in result]
 
         return result[: n + 1]
 

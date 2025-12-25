@@ -12,8 +12,8 @@ impl Solution {
         let mut heap: BinaryHeap<i32> = BinaryHeap::from(stones);
 
         while heap.len() > 1 {
-            let stone1: i32 = heap.pop().unwrap();
-            let stone2: i32 = heap.pop().unwrap();
+            let stone1 = heap.pop().unwrap();
+            let stone2 = heap.pop().unwrap();
 
             if stone1 != stone2 {
                 heap.push(stone1 - stone2);
@@ -21,7 +21,7 @@ impl Solution {
         }
 
         if !heap.is_empty() {
-            *heap.peek().unwrap()
+            heap.pop().unwrap()
         } else {
             0
         }

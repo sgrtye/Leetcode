@@ -10,21 +10,24 @@ impl Solution {
         let mut result: i32 = 0;
         let mut stack: Vec<(usize, i32)> = vec![];
 
-        for i in 0..heights.len() {
+        for (i, h) in heights.iter().enumerate() {
             let mut start: usize = i;
-            let current_height: i32 = heights[i];
 
-            while !stack.is_empty() && current_height <= stack.last().unwrap().1 {
-                let (index, height) = stack.pop().unwrap();
+            while let Some(&(index, height)) = stack.last() {
+                if h <= &height {
+                    stack.pop();
 
-                if height * (i - index) as i32 > result {
-                    result = height * (i - index) as i32;
+                    if height * (i - index) as i32 > result {
+                        result = height * (i - index) as i32;
+                    }
+
+                    start = index;
+                } else {
+                    break
                 }
-
-                start = index;
             }
 
-            stack.push((start, current_height));
+            stack.push((start, *h));
         }
 
         for (index, height) in stack {

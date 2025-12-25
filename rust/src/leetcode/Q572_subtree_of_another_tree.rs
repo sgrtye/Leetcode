@@ -33,13 +33,11 @@ impl Solution {
             (None, None) => true,
             (Some(node1), Some(node2)) => {
                 if node1.borrow().val == node2.borrow().val {
-                    Self::is_same_tree(
-                        node1.borrow_mut().left.clone(),
-                        node2.borrow_mut().left.clone(),
-                    ) && Self::is_same_tree(
-                        node1.borrow_mut().right.clone(),
-                        node2.borrow_mut().right.clone(),
-                    )
+                    Self::is_same_tree(node1.borrow().left.clone(), node2.borrow().left.clone())
+                        && Self::is_same_tree(
+                            node1.borrow().right.clone(),
+                            node2.borrow().right.clone(),
+                        )
                 } else {
                     false
                 }
@@ -55,8 +53,8 @@ impl Solution {
         if Self::is_same_tree(root.clone(), sub_root.clone()) {
             true
         } else if let Some(node) = root {
-            Self::is_subtree(node.borrow_mut().left.clone(), sub_root.clone())
-                || Self::is_subtree(node.borrow_mut().right.clone(), sub_root.clone())
+            Self::is_subtree(node.borrow().left.clone(), sub_root.clone())
+                || Self::is_subtree(node.borrow().right.clone(), sub_root.clone())
         } else {
             false
         }

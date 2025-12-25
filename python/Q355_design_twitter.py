@@ -34,11 +34,12 @@ class Twitter:
     def follow(self, followerId: int, followeeId: int) -> None:
         if followerId not in self.followers:
             self.followers[followerId] = set()
+
         self.followers[followerId].add(followeeId)
 
     def unfollow(self, followerId: int, followeeId: int) -> None:
         if followerId not in self.followers:
-            self.followers[followerId] = set()
+            return
 
         if followeeId in self.followers[followerId]:
             self.followers[followerId].remove(followeeId)
