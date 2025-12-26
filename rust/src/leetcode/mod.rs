@@ -448,6 +448,11 @@ pub mod q45_jump_game_ii {
     include!("Q45_jump_game_ii.rs");
 }
 
+pub mod q460_lfu_cache {
+    pub struct Solution;
+    include!("Q460_lfu_cache.rs");
+}
+
 pub mod q46_permutations {
     pub struct Solution;
     include!("Q46_permutations.rs");
