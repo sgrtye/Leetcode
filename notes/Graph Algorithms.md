@@ -1,8 +1,8 @@
-# Algorithm Notes
+<!-- # Algorithm Notes
 
 ## Binary Search
 - **Use case**: Finding elements in sorted arrays
-- **Time complexity**: O(log n)
+- **Time complexity**: O(log n) -->
 
 ## Graph Algorithms
 
